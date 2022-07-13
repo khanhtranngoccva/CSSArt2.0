@@ -1,0 +1,209 @@
+.face {
+    position: absolute;
+    left: 55px;
+    top: 120px;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50% / 55% 60% 40% 40%;
+    border: 1px solid var(--darkColor);
+    z-index: 2;
+    background: var(--skin);
+    /*display: none;*/
+}
+
+.cheek {
+    position: absolute;
+    width: 20px;
+    height: 23px;
+    /*outline: 1px solid;*/
+    background: var(--lightPink);
+    border-radius: 50%;
+    top: 96px;
+    left: 6px;
+    transform: rotate(321deg);
+}
+
+.cheek2 {
+    left: 112px;
+    transform: scaleX(-1) rotate(321deg);
+}
+
+.eye {
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 51px;
+    border: 1px solid var(--darkColor);
+    border-radius: 50%;
+    top: 34px;
+    left: 20px;
+    transform: rotate(10deg);
+    overflow: hidden;
+    background: var(--eyeWhite);
+}
+
+.eye2 {
+    left: 78px;
+    transform: scaleX(-1) rotate(10deg);
+}
+
+.eye::before {
+    position: absolute;
+    border-radius: 50% / 55% 55% 45% 45%;
+    border: 1px solid var(--darkColor);
+    width: 30px;
+    height: 38px;
+    top: 10px;
+    left: 14px;
+    transform: rotate(34deg);
+    background: var(--eyeYellow);
+}
+
+.eye::after {
+    position: absolute;
+    border-radius: 50% / 55% 55% 45% 45%;
+    border: 1px solid var(--darkColor);
+    width: 20px;
+    height: 24px;
+    top: 18px;
+    left: 21px;
+    transform: rotate(21deg);
+    background: var(--darkColor);
+}
+
+.eyebrow {
+    border: 1px solid var(--darkColor);
+    position: absolute;
+    width: 21px;
+    height: 4px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-bottom: none;
+    transform: rotate(9deg);
+    top: 27px;
+    left: 30px;
+}
+
+.eyebrow2 {
+    left: 87px;
+    transform: scaleX(-1) rotate(9deg);
+}
+
+.eyelash1 {
+    border: 1px solid var(--darkColor);
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-bottom: none;
+    transform: rotate(16deg);
+    top: 54px;
+    left: 12px;
+}
+
+.eyelash1p {
+    transform: scaleX(-1) rotate(16deg);
+    left: 117px;
+}
+
+.eyelash2 {
+    border: 1px solid var(--darkColor);
+    position: absolute;
+    width: 11px;
+    height: 2px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-bottom: none;
+    transform: rotate(3deg);
+    top: 61px;
+    left: 10px;
+}
+
+.eyelash2p {
+    transform: scaleX(-1) rotate(3deg);
+    left: 117px
+}
+
+.eyelash3 {
+    border: 1px solid var(--darkColor);
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-bottom: none;
+    transform: rotate(-19deg);
+    top: 69px;
+    left: 12px;
+}
+
+.eyelash3p {
+    transform: scaleX(-1) rotate(-19deg);
+    left: 116px
+}
+
+.mouth {
+    /*outline: 1px solid;*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 92px;
+    left: 37px;
+}
+
+.mouthP {
+    background: var(--darkColor);
+    outline: 1px solid var(--darkColor);
+}
+
+.mouthP1 {
+    position: absolute;
+    transform: rotate(44deg);
+    top: 2px;
+    left: -1px;
+    width: 30px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.mouthP1p {
+    transform: scaleY(-1) rotate(44deg);
+    left: 37px
+}
+
+.mouthP2 {
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    width: 65px;
+    height: 21px;
+    border-radius: 50% / 0 0 100% 100%;
+}
+
+.mouthP3 {
+    position: absolute;
+    top: 6px;
+    left: 25px;
+    width: 16px;
+    height: 8px;
+    outline: 0;
+    border-bottom: 3px solid var(--darkColor);
+    border-radius: 50% / 0 0 100% 100%;
+    background: none;
+}
+
+.tongue {
+    position: absolute;
+    transform: scale(0.5);
+    top: 105px;
+    left: 53px;
+}
+
+.tongue .mouthP {
+    background: var(--tongueRed);
+    outline: none;
+}
+
+.tongue .mouthP3 {
+    background: none;
+    top: 7px;
+    border-bottom: 4px solid var(--tongueRed);
+}
