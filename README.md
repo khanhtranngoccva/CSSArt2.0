@@ -33,3 +33,4 @@ outlines and borders, gradients,...
 
 ## Gallery
 ![CSS Baroness von Bon Bon from Cuphead](https://github.com/khanhtranngoccva/CSSArt2.0/raw/main/CupheadVonBonBon/CSSThumbnail.png)
+![CSS Sonic the Hedgehog](https://github.com/khanhtranngoccva/CSSArt2.0/raw/main/SonicTheHedgehog/CSSThumbnail.png)
