@@ -1,0 +1,686 @@
+* {
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    content: "";
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /*background: #fbfffd;*/
+    overflow: hidden;
+    background: skyblue;
+}
+
+.tracedImage {
+    position: absolute;
+    height: 1024px;
+    /*display: none;*/
+    opacity: 0.3;
+}
+
+.table {
+    /*opacity: 0.2;*/
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid;
+    background: #AC6132;
+    z-index: 2;
+}
+
+.chefSaltbaker {
+    position: absolute;
+    z-index: 1;
+    width: 1000px;
+    height: 820px;
+    display: flex;
+    justify-content: center;
+    --skin: #cce8ff;
+    --tongue: #FF4B5C;
+    --eyeGold: #FFD47A;
+    --hatSide: #d0d0d0;
+    --hatTop: #eaeaea;
+    --scarfRed: #FF4D4D;
+    /*opacity: 0.5;*/
+    animation: popIn 1s forwards;
+    /*animation-delay: 5s;*/
+    transform: translateY(1000px);
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateY(1000px);
+        animation-timing-function: ease-out;
+    }
+
+    75% {
+        transform: translateY(-20px);
+        animation-timing-function: ease-in-out;
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+.chefSaltbaker * {
+    position: absolute;
+}
+
+.saltHead {
+    top: 250px;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    /*opacity: 0.2;*/
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.flipHorizontal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: scaleX(-1) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.saltHeadP1 {
+    border-radius: 26% / 70% 70% 30% 30%;
+    width: 200px;
+    height: 340px;
+    top: -145px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background: var(--skin);
+}
+
+.eye {
+    outline: 1px solid;
+    height: 100px;
+    width: 65px;
+    border-radius: 50%;
+    --x: -43px;
+    --y: -37px;
+    --r: -10deg;
+    overflow: hidden;
+    background: white;
+    /*display: none;*/
+}
+
+.eye::before, .eye::after {
+    outline: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.eye::before {
+    width: 58px;
+    height: 80px;
+    top: 33px;
+    left: 12px;
+    transform: rotate(20deg);
+    background: var(--eyeGold);
+}
+
+.eye::after {
+    width: 43px;
+    height: 60px;
+    top: 48px;
+    left: 25px;
+    transform: rotate(20deg);
+    background: black;
+}
+
+.eyebrow {
+    position: absolute;
+    border-radius: 50% / 100% 100% 0 0;
+    width: 45px;
+    height: 11px;
+    border: 1px solid;
+    border-bottom: none;
+    --x: -37px;
+    --y: -102px;
+    --r: 15deg;
+}
+
+.saltHeadP2 {
+    top: 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cheekP1 {
+    border: 1px solid;
+    border-radius: 100% 0 0 100% / 50%;
+    height: 64px;
+    width: 33px;
+    border-right: none;
+    --x: 50px;
+    --y: -92px;
+    --r: 342deg;
+    background: var(--skin);
+}
+
+.cheekP2 {
+    border: 1px solid;
+    border-radius: 100% 0 0 100% / 50%;
+    height: 115px;
+    width: 52px;
+    border-right: none;
+    --x: 100px;
+    --y: -121px;
+    --r: 135deg;
+    background: var(--skin);
+}
+
+.cheekP3 {
+    width: 282px;
+    border-radius: 50%;
+    height: 251px;
+    border: 1px solid;
+    --y: -143px;
+    clip-path: polygon(0% 33%, 100% 33%, 100% 105%, 0% 105%);
+    background: var(--skin);
+}
+
+
+.salt, .saltMask {
+    width: 242px;
+    border: 1px solid;
+    height: 120px;
+    border-radius: 50% / 27% 27% 73% 73%;
+    --y: -30px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    background: white;
+    z-index: 1;
+}
+
+.salt::before {
+    width: 242px;
+    height: 55px;
+    border: 1px solid;
+    border-radius: 50%;
+    top: -1px;
+}
+
+.saltMask {
+    background: var(--skin);
+    opacity: 0.2;
+    border: none;
+}
+
+.mouth {
+    width: 100px;
+    position: absolute;
+    z-index: 2;
+    /*outline: 1px solid;*/
+    height: 140px;
+    border-radius: 50%;
+    --y: -70px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mouth::before {
+    width: 110px;
+    height: 180px;
+    border-bottom: 67px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+}
+
+.mouth::after {
+    width: 140px;
+    aspect-ratio: 1/1;
+    background: var(--tongue);
+    border-radius: 50%;
+    top: 100px;
+}
+
+.nose {
+    display: flex;
+    justify-content: center;
+    /*outline: 1px solid black;*/
+    z-index: 3;
+    --y: -55px;
+    width: 45px;
+    height: 70px;
+    background: rgba(189, 222, 255, 0.55);
+    border-radius: 20% 20% 50% 50% / 40% 40% 60% 60%;
+}
+
+.noseP1 {
+	border-radius: 50% 50% 10% 10% / 60% 60% 40% 40%;
+	border: 1px solid;
+	border-bottom: none;
+	width: 70px;
+	height: 25px;
+	--r: -105deg;
+	--y: 26px;
+	--x: -10px;
+}
+
+.saltHat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 250px;
+    z-index: 3;
+    /*border-radius: 50%;*/
+}
+
+.saltHatP1 {
+    border-radius: 50%;
+    outline: 1px solid;
+    width: 150px;
+    height: 40px;
+    --y: 53px;
+    background: var(--hatSide);
+}
+
+.saltHatP2 {
+    border-radius: 50%;
+    outline: 1px solid;
+    width: 250px;
+    height: 110px;
+    --y: 0px;
+    background: var(--hatSide);
+}
+
+.saltHatP3 {
+    border-radius: 50%;
+    outline: 1px solid;
+    width: 245px;
+    height: 110px;
+    --y: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--hatTop);
+}
+
+
+.saltHatHole {
+    border-radius: 50%;
+    outline: 1px solid;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    overflow: hidden;
+    /*background: var(--hatTop);*/
+    /* background: var(--hatTop); */
+}
+
+.saltHatHole::before {
+    width: 80px;
+    height: 40px;
+    outline: 1px solid;
+    border-radius: 50%;
+    top: 10px;
+    left: -8px;
+    background: var(--hatSide);
+}
+
+.saltHatHole1 {
+    --y: -20px;
+    --x: -42px;
+    --r: -3deg;
+}
+
+.saltHatHole2 {
+    --y: 22px;
+    --x: -42px;
+    --r: -3deg;
+}
+
+.scarf {
+    z-index: 2;
+    top: 395px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scarfP1 {
+    width: 270px;
+    outline: 1px solid;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--scarfRed);
+    /*opacity: 0.2;*/
+}
+
+.scarfP1::before {
+    width: 270px;
+    height: 190px;
+    border-radius: 50%;
+    outline: 1px solid;
+    top: -25px;
+}
+
+.scarfP1::after {
+    width: 200px;
+    height: 150px;
+    background: var(--scarfRed);
+    top: 20px;
+}
+
+.scarfP2 {
+    width: 55px;
+    height: 45px;
+    border-radius: 50%;
+    outline: 1px solid;
+    top: 52px;
+    background: var(--scarfRed);
+}
+
+.scarfP3 {
+    border-radius: 100% 0;
+    width: 75px;
+    aspect-ratio: 1/1;
+    outline: 1px solid;
+    background: var(--scarfRed);
+    top: 80px;
+    left: -78px;
+    transform-origin: 100% 0%;
+    transform: rotate(343deg);
+}
+
+.scarfP3_ {
+    transform: rotate(287deg);
+    left: -72px;
+}
+
+.body {
+    width: 401px;
+    height: 600px;
+    top: 440px;
+    overflow: hidden;
+    border-radius: 30% 30% 50% 50% / 50%;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.body::before {
+    width: 399px;
+    height: 600px;
+    border: 1px solid;
+    border-radius: 30% 30% 50% 50% / 50%;
+}
+
+.body::after {
+    width: 800px;
+    height: 150px;
+    background: white;
+    top: 0;
+}
+
+
+.button {
+    background: black;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 50px;
+    z-index: 1;
+}
+
+.button1 {
+    --y: -180px;
+    --x: -92px;
+}
+
+.button2 {
+    --y: -105px;
+    width: 52px;
+    --x: -105px;
+}
+
+.button3 {
+    --y: -23px;
+    width: 55px;
+    --x: -115px;
+}
+
+
+.armAnchor {
+
+    outline: 3px solid green;
+    top: 478px;
+    --x: -35px;
+    display: flex;
+    align-items: center;
+}
+
+
+.armNode1 {
+    width: 320px;
+    height: 210px;
+    transform: rotate(153deg);
+    border-radius: 50%;
+    transform-origin: 0% 50%;
+    left: 0;
+    animation: r1 2s infinite linear;
+}
+
+.armNode1Inner {
+    width: 320px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+    z-index: 1;
+}
+
+.armNode1Shirt {
+    width: 319px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+    border: 1px solid;
+}
+
+.armNode1Shirt::before {
+    width: 170px;
+    height: 212px;
+    /* aspect-ratio: 1/1; */
+    background: var(--scarfRed);
+    /*opacity: 0.2;*/
+    border-radius: 50%;
+    outline: 1px solid;
+    left: 245px;
+    top: 20px;
+}
+
+.armNode1Inner::after {
+    width: 180px;
+    height: 206px;
+    /* aspect-ratio: 1/1; */
+    background: var(--skin);
+    /* opacity: 0.2; */
+    border-radius: 50%;
+    outline: 1px solid;
+    left: 268px;
+    top: 22px;
+}
+
+.armNode2 {
+    top: 123px;
+    left: 292px;
+    display: flex;
+    align-items: center;
+}
+
+.armNode2Inner {
+    outline: 1px solid;
+    width: 240px;
+    height: 118px;
+    z-index: 0;
+    border-radius: 50%;
+    --anchor: 60px;
+    background: var(--skin);
+    transform: rotate(331deg);
+    left: calc(var(--anchor) * -1);
+    transform-origin: var(--anchor) 50%;
+    animation: r2 2s infinite linear;
+}
+
+@keyframes r1 {
+    0% {
+        transform: rotate(153deg);
+    }
+
+    50% {
+        transform: rotate(148deg);
+    }
+}
+
+@keyframes r2 {
+    0% {
+        transform: rotate(331deg);
+    }
+
+    50% {
+        transform: rotate(325deg);
+    }
+}
+
+.evil .eye::after {
+    top: 55px;
+    transform: scale(0.7) rotate(20deg);
+}
+
+.evil .eyebrow {
+    --r: 30deg;
+    --y: -80px;
+    --x: -50px;
+    width: 85px;
+    height: 78px;
+    clip-path: polygon(0% 0%, 0% 20%, 100% 20%, 100% 0%);
+}
+
+.evil .eyelash {
+    --r: -115deg;
+    --y: -55px;
+    --x: -26px;
+}
+
+.evil .eyelash::before {
+    width: 48px;
+    height: 22px;
+    border: 2px solid;
+    background: var(--skin);
+    clip-path: polygon(0% 0%, 0% 80%, 100% 0%, 100% 0%);
+    border-bottom: none;
+    border-radius: 30% 70% 70% 30% / 50%;
+}
+
+.evil {
+    background: #204367;
+}
+
+.evil .eyelash::after {
+    width: 35px;
+    height: 30px;
+    border: 2px solid;
+    clip-path: polygon(0% 0%, 0% 30%, 100% 30%, 100% 0%);
+    border-bottom: none;
+    border-radius: 50%;
+    transform: rotate(137deg);
+    top: -27px;
+    left: 25px;
+}
+
+.evil .chefSaltbaker {
+    --skin: rgb(86, 121, 148);
+}
+
+.evil .mouth {
+    transform: scaleX(1.15) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+    filter: drop-shadow(0 -1px black) drop-shadow(1px 0 black) drop-shadow(-1px 0 black) drop-shadow(0 1px black);
+}
+
+.evil .nose {
+    background: rgba(86, 121, 148, 0.55);
+}
+
+.evil .mouth::after {
+    border-radius: 0;
+    width: 1px;
+    height: 70px;
+    top: 74px;
+    background: black;
+}
+
+.evil .mouth::before {
+    border-color: white;
+}
+
+.evil .mouthP1 {
+    width: 40px;
+    height: 70px;
+    top: 71px;
+    border-inline: 1px solid;
+    border-radius: 20% / 50%;
+}
+
+.evil .mouthP2 {
+    width: 77px;
+    height: 60px;
+    top: 69px;
+    border-inline: 1px solid;
+    border-radius: 10% / 50%;
+}
+
+.evil .mouthP3 {
+    border-radius: 50% / 0 0 100% 100%;
+    border: 1px solid;
+    border-top: none;
+    width: 140px;
+    height: 40px;
+    top: 68px;
+}
+
+.lightning1 {
+    background: white;
+}
+
+.lightning1 > * {
+    filter: brightness(0);
+}
