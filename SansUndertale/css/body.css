@@ -1,0 +1,47 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shirt {
+    /*z-index: 1;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 3px solid green;
+    top: -30px;
+}
+
+
+.coatInner {
+    width: 90px;
+    height: 279px;
+    border-radius: 0 0 50% 50% / 0 0 5% 5%;
+    outline: 1px solid;
+    z-index: 0;
+    background: var(--darkGray);
+}
+
+.coatOuter {
+    width: 125px;
+    height: 280px;
+    border-radius: 55% 40% 20% 80% / 70% 20% 5% 30% ;
+    outline: 1px solid;
+    z-index: 2;
+    --x: -97px;
+    --y: 5px;
+    background: var(--blue);
+}
+
+.coatHat {
+    border-radius: 30% 70% 0% 60% / 50% 100% 0% 50%;
+    width: 136px;
+    height: 77px;
+    outline: 1px solid;
+    --x: -82px;
+    --y: -118px;
+    --r: 20deg;
+    background: var(--gray);
+    z-index: 4;
+}

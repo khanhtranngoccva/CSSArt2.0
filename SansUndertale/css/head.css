@@ -1,0 +1,193 @@
+.face {
+    width: 325px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 1px solid;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    /*display: none;*/
+    z-index: 5;
+    animation: toss 3s infinite;
+}
+
+@keyframes toss {
+    0% {
+        top: 50px;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        top: 60px;
+        animation-timing-function: linear;
+    }
+
+    20% {
+        transform: rotate(0);
+        top: 60px;
+    }
+
+    30% {
+        top: 0px;
+    }
+
+    40% {
+        transform: rotate(360deg);
+        top: 50px;
+        /*animation-timing-function: ease-in;*/
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cheekP1 {
+    width: 80px;
+    height: 40px;
+    border: 1px solid;
+    border-bottom: 0;
+    border-radius: 55% 45% 10% 0 / 90% 70% 30% 10%;
+    --r: 25deg;
+    --y: -7px;
+    --x: -139px;
+    background: white;
+}
+
+.cheekP2 {
+    width: 375px;
+    height: 286px;
+    border: 1px solid;
+    border-radius: 50%;
+    --y: 20px;
+    --hClip: 41%;
+    background: white;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+}
+
+.eye {
+    outline: 1px solid;
+    border-radius: 45% 70% 51% 48% / 56% 80% 30% 54%;
+    width: 127px;
+    height: 103px;
+    --r: 30deg;
+    --y: -23px;
+    --x: -70px;
+    background: black;
+}
+
+.eye::before {
+    width: 20px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    top: 25px;
+    left: 82px;
+    transform: rotate(-30deg);
+}
+
+.nose {
+    background: black;
+    height: 12px;
+    width: 28px;
+    border-radius: 25% 75% 75% 25% / 50% 100% 0% 50%;
+    --r: 270deg;
+    --x: -4px;
+    --y: 50px;
+}
+
+.mouth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --y: 100px;
+}
+
+.mouthP1 {
+    width: 194px;
+    height: 120px;
+    border: 2px solid;
+    border-radius: 50%;
+    --y: -13px;
+    --hClip: 38%;
+    /*background: white; */
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+}
+
+.mouthP3 {
+    width: 67px;
+    height: 36px;
+    border: 2px solid;
+    border-radius: 50%;
+    --y: -34px;
+    --hClip: 73%;
+    /* background: white; */
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 110%, 0% 110%);
+}
+
+.mouthP2 {
+    width: 72px;
+    height: 46px;
+    border: 2px solid;
+    border-radius: 35% 65% / 50%;
+    --y: -17px;
+    --x: -60px;
+    --r: 181deg;
+    --hClip: 68%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 110%, 0% 110%);
+}
+
+.mouthLine1 {
+    height: 63px;
+    --y: 14px;
+    width: 2px;
+    background: black;
+}
+
+.mouthLine2 {
+    height: 66px;
+    --y: 8px;
+    --r: 22deg;
+    --x: -35px;
+    width: 2px;
+    background: black;
+}
+
+.mouthLine3 {
+    height: 60px;
+    --y: -13px;
+    --r: 42deg;
+    --x: -68px;
+    width: 2px;
+    background: black;
+}
+
+.eyebrow {
+    width: 76px;
+    height: 43px;
+    border: 2px solid;
+    border-radius: 50%;
+    --hClip: 69%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --r: 194deg;
+    --y: -86px;
+    --x: -57px;
+}
+
+.coatOuter.maskTop {
+    z-index: 3;
+    --hClip: 40%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 0%, 0% 0%);
+}
+
+.neck {
+    width: 200px;
+    height: 60px;
+    border-radius: 50%;
+    /*outline: 1px solid;*/
+    top: 300px;
+    background: #252525;
+    z-index: 1;
+}

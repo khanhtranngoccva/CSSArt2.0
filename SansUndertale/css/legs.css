@@ -1,0 +1,154 @@
+.leg {
+    outline: 2px solid red;
+    --y: 60px;
+    --x: -70px;
+    z-index: -1;
+}
+
+.pants {
+    width: 150px;
+    height: 225px;
+    outline: 1px solid;
+    left: -90px;
+    --r: -4deg;
+    border-radius: 33% 73% 25% 75% / 75% 19% 81% 25%;
+    overflow: hidden;
+    background: black;
+    z-index: 2;
+}
+
+.pants::after {
+    width: 100%;
+    height: 240px;
+    outline: 1px solid;
+    border-radius: 25% / 50%;
+    left: 47px;
+    top: 9px;
+    background: black;
+    transform: rotate(7deg);
+}
+
+.pants::before {
+    width: 100%;
+    height: 260px;
+    outline: 1px solid;
+    border-radius: 25% / 50%;
+    left: 27px;
+    background: whitesmoke;
+    /*top: 0px;*/
+    transform: rotate(6deg);
+}
+
+.legBone {
+    width: 30px;
+    height: 200px;
+    top: 152px;
+    left: -31px;
+    outline: 1px solid;
+    --r: -3deg;
+    border-radius: 0 0 30% 70% / 0 0 2% 4%;
+    background: white;
+    z-index: 1;
+}
+
+.foot {
+    outline: 3px solid blue;
+    top: 350px;
+    left: -12px;
+    z-index: 0;
+}
+
+.footBone {
+    border-radius: 50%;
+    background: white;
+    width: 71px;
+    height: 49px;
+    --r: -10deg;
+    left: -45px;
+    top: -5px;
+    outline: 1px solid;
+    z-index: 2;
+}
+
+.shoeBack {
+    border-radius: 10px;
+    background: pink;
+    width: 90px;
+    height: 20px;
+    left: -58px;
+    top: 13px;
+    outline: 1px solid;
+}
+
+.shoeLeft {
+    border-radius: 20px;
+    background: hotpink;
+    width: 100px;
+    height: 33px;
+    left: -68px;
+    top: 13px;
+    outline: 1px solid;
+    z-index: 0;
+}
+
+.shoeFront {
+    border-radius: 50%;
+    background: hotpink;
+    width: 76px;
+    height: 91px;
+    left: -104px;
+    top: -44px;
+    outline: 1px solid;
+    --r: -29deg;
+    z-index: 2;
+}
+
+.shoeLeftP {
+    background: hotpink;
+    width: 75px;
+    height: 13px;
+    left: -58px;
+    top: 32px;
+    /* border-top: 1px solid; */
+    z-index: 2;
+}
+
+.shoeLeftP2 {
+    background: hotpink;
+    width: 55px;
+    height: 13px;
+    left: -32px;
+    top: 32px;
+     border-top: 1px solid;
+    z-index: 2;
+}
+
+.pantsMiddle {
+    width: 200px;
+    background: black;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -1;
+    --y: 90px;
+}
+
+.tapFoot {
+    animation: tap 1s infinite;
+}
+
+@keyframes tap {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+    }
+
+    25% {
+        transform: rotate(10deg);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+}
