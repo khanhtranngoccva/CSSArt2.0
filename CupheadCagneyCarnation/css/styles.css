@@ -1,0 +1,780 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+.traceTemplate {
+    z-index: 0;
+    position: absolute;
+    width: revert;
+    height: 800px;
+    display: none;
+}
+
+.canvas {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    --bg: skyblue;
+    background: var(--bg);
+    align-items: center;
+    /*border: 5px solid;*/
+}
+
+.ground {
+    background: #c77c4d;
+    width: 100%;
+    height: 120px;
+    flex: none;
+    z-index: 1;
+    border-top: 1px solid;
+}
+
+.cagney {
+    width: 600px;
+    height: 600px;
+    /*outline: 1px solid;*/
+    position: relative;
+    flex: none;
+    --yellow: #FFCE2B;
+    --orange: #FA632D;
+    --lightOrange: #FF9E69;
+    --green: #34A350;
+    --darkGreen: #2A7F3E;
+}
+
+.cagney * {
+    position: absolute;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: scaleX(-1) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.faceAnchor {
+    --y: -70px;
+    outline: 4px solid green;
+    z-index: 2;
+}
+
+.face {
+    width: 185px;
+    height: 180px;
+    outline: 2px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--yellow);
+    /*display: none;*/
+}
+
+.eyeOuter {
+    border-radius: 50%;
+    width: 105px;
+    aspect-ratio: 1/1;
+    outline: 2px solid;
+    --x: -40px;
+    --y: -37px;
+    overflow: hidden;
+    background: white;
+    --vClip: 88.5%;
+    clip-path: polygon(0% 0%, var(--vClip) 0%, var(--vClip) 110%, 0% 110%);
+    /*opacity: 0.3;*/
+}
+
+.eye {
+    width: 70px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    --x: 20px;
+    --y: 42px;
+    background: black;
+}
+
+.eye::before {
+    outline: 1px solid;
+    width: 10px;
+    border-radius: 50%;
+    height: 15px;
+    top: 12px;
+    transform: rotate(30deg);
+    left: 15px;
+    background: white;
+}
+
+.eyelid {
+    width: 140px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 2px solid;
+    --y: -122px;
+    background: var(--orange);
+    /*opacity: 0.3;*/
+}
+
+.eyelid::before {
+    width: 120px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 2px solid;
+    background: var(--yellow);
+}
+
+.mouth {
+    --y: 54px;
+}
+
+.mouthP1 {
+    width: 97px;
+    height: 53px;
+    border-radius: 50%;
+    outline: 2px solid;
+    --r: 29deg;
+    --x: -35px;
+    background: white;
+}
+
+.mouthP2 {
+    width: 161px;
+    height: 112px;
+    border: 2px solid;
+    border-radius: 50%;
+     --hClip: 47%;
+     clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: -18px;
+    background: white;
+}
+
+.mouthP3 {
+    width: 41px;
+    height: 15px;
+    border: 2px solid;
+    border-radius: 50%;
+    --hClip: 70%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: -25px;
+    background: var(--yellow);
+    /* transform: rotate(180deg); */
+}
+
+
+.mouthP4 {
+    width: 49px;
+    height: 1px;
+    background: black;
+    --r: 85deg;
+    --x: -63px;
+    --y: -8px;
+}
+
+.mouthP5 {
+    width: 53px;
+    height: 1px;
+    background: black;
+    --r: 122deg;
+    --x: -47px;
+    --y: -7px;
+}
+
+.mouthP6 {
+    width: 60px;
+    height: 1px;
+    background: black;
+    --r: 81deg;
+    --x: -28px;
+    --y: 2px;
+}
+
+
+.mouthP7 {
+    width: 54px;
+    height: 1px;
+    background: black;
+    --r: 115deg;
+    --x: -12px;
+    --y: 8px;
+}
+
+
+.cheek {
+    width: 25px;
+    aspect-ratio: 1/1;
+    border: 1px solid;
+    border-radius: 50%;
+    --hClip: 80%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: 25px;
+    --x: -70px;
+    --r: 130deg;
+    /*background: white;*/
+}
+
+.noseAnchor {
+    --y: -20px;
+}
+
+.nose {
+    width: 30px;
+    height: 90px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: 2px solid black;
+    border-bottom: none;
+    background: var(--yellow);
+    animation: noseMove 1.5s infinite;
+    transform-origin: 50% 100%;
+}
+
+@keyframes noseMove {
+    0% {
+        transform: none;
+        transition-timing-function: cubic-bezier(.19,1,.22,1);
+    }
+
+    25% {
+        transform: scaleY(1.05) skewX(5deg);
+        transition-timing-function: cubic-bezier(.95,.05,.8,.04);
+    }
+
+    50% {
+        transform: none;
+        transition-timing-function: cubic-bezier(.19,1,.22,1);
+    }
+
+    75% {
+        transform: scaleY(1.05) skewX(-5deg);
+        transition-timing-function: cubic-bezier(.95,.05,.8,.04);
+    }
+}
+
+.petalAnchor1 {
+    --y: -65px;
+    --x: 30px;
+    z-index: 1;
+}
+
+.petal {
+    width: 270px;
+    height: 210px;
+    transform-origin: 0% 50%;
+    --r: -50deg;
+}
+
+.petalInner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.petalP1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid;
+    background: var(--orange);
+}
+
+.petalP2 {
+    width: 91%;
+    height: 101%;
+    border-radius: 50%;
+    border: 1px solid;
+    --x: 149px;
+    --r: -153deg;
+    --y: -40px;
+    background: var(--bg);
+}
+
+.petalP6 {
+    width: 91%;
+    height: 101%;
+    /* border-radius: 50%; */
+    --x: 53px;
+    --r: -153deg;
+    --y: -147px;
+    background: var(--bg);
+    /* background: #ff00004d; */
+}
+
+.petalP3 {
+    width: 116px;
+    height: 63px;
+    border: 1px solid;
+    border-radius: 50%;
+    --hClip: 66%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: 22px;
+    --x: 43px;
+    --r: 207deg;
+    background: var(--lightOrange);
+}
+
+.petalP4 {
+    width: 289px;
+    height: 219px;
+    border: 1px solid;
+    border-radius: 50%;
+    --y: -21px;
+    --x: -8px;
+    --r: 164deg;
+    background: var(--lightOrange);
+}
+
+.petalP5 {
+    width: 215px;
+    height: 219px;
+    border: 1px solid;
+    border-radius: 50%;
+    --y: -36px;
+    --x: 157px;
+    --r: 82deg;
+    background: var(--orange);
+}
+
+.petalP7 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.petalP8 {
+    width: 27%;
+    height: 27%;
+    background: var(--bg);
+    --x: 133px;
+    --y: 3px;
+    --r: 64deg;
+}
+
+.petalP9 {
+    width: 5%;
+    height: 6%;
+    background: var(--orange);
+    --x: 217px;
+    --y: 167px;
+    --r: 52deg;
+}
+
+.petalOuter {
+    width: 100.5%;
+    height: 100.5%;
+    /* background: red; */
+    border: 3px solid var(--bg);
+    border-radius: 50%;
+    --x: 1px;
+    --y: 0px;
+    clip-path: polygon(100% 0%, 107.84% 95.62%, 69.7% 58.49%, 50.3% 11%, 14.63% 1.75%);
+
+}
+
+.petalAnchor2 {
+    --y: -120px;
+    --x: 40px;
+    z-index: 1;
+}
+
+.petalAnchor2 .petal {
+    --r: -80deg;
+}
+
+.petalP {
+    border-radius: 100% 0 100% 0;
+    aspect-ratio: 1/1;
+    width: 200px;
+    background: var(--orange);
+    z-index: 1;
+    outline: 1px solid;
+    --y: -155px;
+    --r: -45deg;
+    transform: scaleX(1.2) translateY(-155px) rotate(-45deg);
+    padding: 16px;
+}
+
+.petalP::before {
+    width: 100%;
+    height: 100%;
+    position: static;
+    border-radius: 100% 0 100% 0;
+    background: var(--lightOrange);
+    transform: rotate(-45deg) scaleY(1.2) rotate(45deg);
+    outline: 1px solid;
+}
+
+.stalkAnchor {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.stalk {
+    outline: 2px solid;
+    width: 150px;
+    height: 300px;
+    /*z-index: -1;*/
+    /*--y: 240px;*/
+    transform-origin: 50% 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: var(--green);
+    border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+}
+
+.stalk::before {
+    width: 50%;
+    height: 100%;
+    outline: 2px solid;
+    background: var(--darkGreen);
+    border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+}
+
+.armAnchor {
+    outline: 2px solid red;
+    --y: 310px;
+    clip-path: polygon(-1000px -1000px, 0px -1000px, 0px 0px, -1000px 0px);
+}
+
+.armMain {
+    left: 40px;
+    animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+.arm {
+    border: 25px solid var(--darkGreen);
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    filter: drop-shadow(0 -1px black) drop-shadow(1px 0 black) drop-shadow(-1px 0 black) drop-shadow(0 1px black);
+}
+
+.thorn {
+    width: 10px;
+    aspect-ratio: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 100%;
+}
+
+.thorn::before {
+    background: var(--yellow);
+    width: 133.33%;
+    aspect-ratio: 1/1;
+    outline: 2px solid;
+    border-radius: 0 0 100% 0;
+    transform: translateY(20%) scaleX(0.5) rotate(45deg);
+}
+
+.t1 {
+    --x: -148px;
+    --y: -189px;
+    --r: -47deg;
+}
+
+.t2 {
+    --x: -69px;
+    --y: -222px;
+    --r: 150deg;
+}
+
+.t3 {
+    --x: -179px;
+    --y: -134px;
+    --r: 123deg;
+}
+
+.t4 {
+    --x: -223px;
+    --y: -79px;
+    --r: -64deg;
+}
+
+.t5 {
+    --x: -219px;
+    --y: -11px;
+    --r: 91deg;
+}
+
+
+.t7 {
+    --x: -225px;
+    --y: 53px;
+    --r: -113deg;
+}
+
+
+.t9 {
+    --x: -181px;
+    --y: 118px;
+    --r: 64deg;
+}
+
+.t10 {
+    --x: -144px;
+    --y: 177px;
+    --r: 222deg;
+}
+
+.t11 {
+    --x: -58px;
+    --y: 203px;
+    --r: 20deg;
+}
+
+.t12 {
+    --x: 20px;
+    --y: 226px;
+    --r: 172deg;
+}
+
+
+.t13 {
+    --x: 102px;
+    --y: 188px;
+    --r: -15deg;
+}
+
+.t14 {
+    --x: 163px;
+    --y: 160px;
+    --r: 144deg;
+}
+
+.t15 {
+    --x: 201px;
+    --y: 96px;
+    --r: -48deg;
+}
+
+.t16 {
+    --x: 234px;
+    --y: 22px;
+    --r: 106deg;
+}
+
+.t17 {
+    --x: 217px;
+    --y: -56px;
+    --r: -112deg;
+}
+
+.t18 {
+    --x: 194px;
+    --y: -140px;
+    --r: 70deg;
+}
+
+.t19 {
+    --x: 118px;
+    --y: -193px;
+    --r: -137deg;
+}
+
+.t20 {
+    --x: 37px;
+    --y: -238px;
+    --r: -1deg;
+}
+
+.t21 {
+    --x: 201px;
+    --y: 96px;
+    --r: -48deg;
+}
+
+/*.petal, .face, .petalP {*/
+/*    display: none;*/
+/*}*/
+
+/*.ground {*/
+/*    opacity: 0;*/
+/*}*/
+
+body {
+    /*overflow: revert;*/
+}
+
+.petal {
+    animation: flutter1 3s infinite ease-in-out;
+}
+
+.petalAnchor2 .petal {
+    animation: flutter2 3s infinite ease-in-out;
+    /*animation-delay: -0.25s;*/
+}
+
+@keyframes flutter2 {
+    0% {
+        transform: rotate(-80deg);
+    }
+
+    50% {
+        /*transform: scale(0.975, 0.95) rotate(-90deg);*/
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes flutter1 {
+    0% {
+        transform: rotate(-50deg);
+    }
+
+    50% {
+        /*transform: scale(0.95, 1) rotate(-60deg);*/
+        transform: rotate(-65deg);
+    }
+}
+
+.tP1 {
+    --y: 57px;
+    --x: -39px;
+    --r: -70deg;
+}
+
+.tP2 {
+    --y: 149px;
+    --x: 55px;
+    --r: 31deg;
+}
+
+.tP3 {
+    --y: 138px;
+    --x: 3px;
+    --r: -23deg;
+    width: 11px;
+}
+
+.tP4 {
+    --y: 227px;
+    --x: 67px;
+    --r: 45deg;
+}
+
+.tP5 {
+    --y: 166px;
+    --x: -64px;
+    --r: -113deg;
+}
+
+.tP6 {
+    --y: 247px;
+    --x: 3px;
+    --r: 11deg;
+}
+
+.tP7 {
+    --y: 51px;
+    --x: 48px;
+    --r: 25deg;
+}
+
+.tP8 {
+    --y: 166px;
+    --x: -64px;
+    --r: -113deg;
+}
+
+.head {
+    transform: translateY(10px) scale(1.2);
+    animation: floatingHead 3s infinite ease-in-out;
+}
+
+@keyframes floatingHead {
+    0% {
+        transform: translateY(10px) scale(1.2);
+    }
+
+    50% {
+        transform: translateY(20px) scale(1.2);
+    }
+}
+
+.leafAnchor {
+    --x: -50px;
+    --y: 294px;
+}
+
+.leaf {
+    width: 150px;
+    aspect-ratio: 1/1;
+    outline: 2px solid;
+    border-radius: 0 100% 0 100%;
+    transform-origin: 100% 100%;
+    background: var(--green);
+    overflow: hidden;
+    transform: rotate(-5deg);
+    animation: leafFlutter 3s -1.5s ease-in-out infinite;
+}
+
+@keyframes leafFlutter {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.leaf::before {
+    width: 342px;
+    aspect-ratio: 3/1;
+    outline: 2px solid;
+    border-radius: 50%;
+    left: -130px;
+    top: 49px;
+    transform: rotate(45deg);
+}

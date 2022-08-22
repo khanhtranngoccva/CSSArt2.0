@@ -1,0 +1,781 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    --unitSize: 1.25vmin;
+}
+
+.traceTemplate {
+    z-index: 0;
+    position: absolute;
+    width: revert;
+    height: calc(var(--unitSize) * 80);
+    display: none;
+}
+
+.canvas {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    --bg: skyblue;
+    background: var(--bg);
+    align-items: center;
+    /*border: calc(var(--unitSize) * 0.5) solid;*/
+}
+
+.ground {
+    background: #c77c4d;
+    width: 100%;
+    height: calc(var(--unitSize) * 12);
+    flex: none;
+    z-index: 1;
+    border-top: calc(var(--unitSize) * 0.1) solid;
+}
+
+.cagney {
+    width: calc(var(--unitSize) * 60);
+    height: calc(var(--unitSize) * 60);
+    /*outline: calc(var(--unitSize) * 0.1) solid;*/
+    position: relative;
+    flex: none;
+    --yellow: #FFCE2B;
+    --orange: #FA632D;
+    --lightOrange: #FF9E69;
+    --green: #34A350;
+    --darkGreen: #2A7F3E;
+}
+
+.cagney * {
+    position: absolute;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: scaleX(-1) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.faceAnchor {
+    --y: calc(var(--unitSize) * -7);
+    outline: calc(var(--unitSize) * 0.4) solid green;
+    z-index: 2;
+}
+
+.face {
+    width: calc(var(--unitSize) * 18.5);
+    height: calc(var(--unitSize) * 18);
+    outline: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--yellow);
+    /*display: none;*/
+}
+
+.eyeOuter {
+    border-radius: 50%;
+    width: calc(var(--unitSize) * 10.5);
+    aspect-ratio: 1/1;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    --x: calc(var(--unitSize) * -4);
+    --y: calc(var(--unitSize) * -3.7);
+    overflow: hidden;
+    background: white;
+    --vClip: 88.5%;
+    clip-path: polygon(0% 0%, var(--vClip) 0%, var(--vClip) 110%, 0% 110%);
+    /*opacity: 0.3;*/
+}
+
+.eye {
+    width: calc(var(--unitSize) * 7);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    --x: calc(var(--unitSize) * 2);
+    --y: calc(var(--unitSize) * 4.2);
+    background: black;
+}
+
+.eye::before {
+    outline: calc(var(--unitSize) * 0.1) solid;
+    width: calc(var(--unitSize) * 1);
+    border-radius: 50%;
+    height: calc(var(--unitSize) * 1.5);
+    top: calc(var(--unitSize) * 1.2);
+    transform: rotate(30deg);
+    left: calc(var(--unitSize) * 1.5);
+    background: white;
+}
+
+.eyelid {
+    width: calc(var(--unitSize) * 14);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    --y: calc(var(--unitSize) * -12.2);
+    background: var(--orange);
+    /*opacity: 0.3;*/
+}
+
+.eyelid::before {
+    width: calc(var(--unitSize) * 12);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    background: var(--yellow);
+}
+
+.mouth {
+    --y: calc(var(--unitSize) * 5.4);
+}
+
+.mouthP1 {
+    width: calc(var(--unitSize) * 9.7);
+    height: calc(var(--unitSize) * 5.3);
+    border-radius: 50%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    --r: 29deg;
+    --x: calc(var(--unitSize) * -3.5);
+    background: white;
+}
+
+.mouthP2 {
+    width: calc(var(--unitSize) * 16.1);
+    height: calc(var(--unitSize) * 11.2);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 50%;
+     --hClip: 47%;
+     clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: calc(var(--unitSize) * -1.8);
+    background: white;
+}
+
+.mouthP3 {
+    width: calc(var(--unitSize) * 4.1);
+    height: calc(var(--unitSize) * 1.5);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 50%;
+    --hClip: 70%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: calc(var(--unitSize) * -2.5);
+    background: var(--yellow);
+    /* transform: rotate(180deg); */
+}
+
+
+.mouthP4 {
+    width: calc(var(--unitSize) * 4.9);
+    height: calc(var(--unitSize) * 0.1);
+    background: black;
+    --r: 85deg;
+    --x: calc(var(--unitSize) * -6.3);
+    --y: calc(var(--unitSize) * -0.8);
+}
+
+.mouthP5 {
+    width: calc(var(--unitSize) * 5.3);
+    height: calc(var(--unitSize) * 0.1);
+    background: black;
+    --r: 122deg;
+    --x: calc(var(--unitSize) * -4.7);
+    --y: calc(var(--unitSize) * -0.7);
+}
+
+.mouthP6 {
+    width: calc(var(--unitSize) * 6);
+    height: calc(var(--unitSize) * 0.1);
+    background: black;
+    --r: 81deg;
+    --x: calc(var(--unitSize) * -2.8);
+    --y: calc(var(--unitSize) * 0.2);
+}
+
+
+.mouthP7 {
+    width: calc(var(--unitSize) * 5.4);
+    height: calc(var(--unitSize) * 0.1);
+    background: black;
+    --r: 115deg;
+    --x: calc(var(--unitSize) * -1.2);
+    --y: calc(var(--unitSize) * 0.8);
+}
+
+
+.cheek {
+    width: calc(var(--unitSize) * 2.5);
+    aspect-ratio: 1/1;
+    border: calc(var(--unitSize) * 0.1) solid;
+    border-radius: 50%;
+    --hClip: 80%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: calc(var(--unitSize) * 2.5);
+    --x: calc(var(--unitSize) * -7);
+    --r: 130deg;
+    /*background: white;*/
+}
+
+.noseAnchor {
+    --y: calc(var(--unitSize) * -2);
+}
+
+.nose {
+    width: calc(var(--unitSize) * 3);
+    height: calc(var(--unitSize) * 9);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: calc(var(--unitSize) * 0.2) solid black;
+    border-bottom: none;
+    background: var(--yellow);
+    animation: noseMove 1.5s infinite;
+    transform-origin: 50% 100%;
+}
+
+@keyframes noseMove {
+    0% {
+        transform: none;
+        transition-timing-function: cubic-bezier(.19,1,.22,1);
+    }
+
+    25% {
+        transform: scaleY(1.05) skewX(5deg);
+        transition-timing-function: cubic-bezier(.95,.05,.8,.04);
+    }
+
+    50% {
+        transform: none;
+        transition-timing-function: cubic-bezier(.19,1,.22,1);
+    }
+
+    75% {
+        transform: scaleY(1.05) skewX(-5deg);
+        transition-timing-function: cubic-bezier(.95,.05,.8,.04);
+    }
+}
+
+.petalAnchor1 {
+    --y: calc(var(--unitSize) * -6.5);
+    --x: calc(var(--unitSize) * 3);
+    z-index: 1;
+}
+
+.petal {
+    width: calc(var(--unitSize) * 27);
+    height: calc(var(--unitSize) * 21);
+    transform-origin: 0% 50%;
+    --r: -50deg;
+}
+
+.petalInner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.petalP1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: calc(var(--unitSize) * 0.1) solid;
+    background: var(--orange);
+}
+
+.petalP2 {
+    width: 91%;
+    height: 101%;
+    border-radius: 50%;
+    border: calc(var(--unitSize) * 0.1) solid;
+    --x: calc(var(--unitSize) * 14.9);
+    --r: -153deg;
+    --y: calc(var(--unitSize) * -4);
+    background: var(--bg);
+}
+
+.petalP6 {
+    width: 91%;
+    height: 101%;
+    /* border-radius: 50%; */
+    --x: calc(var(--unitSize) * 5.3);
+    --r: -153deg;
+    --y: calc(var(--unitSize) * -14.7);
+    background: var(--bg);
+    /* background: #ff00004d; */
+}
+
+.petalP3 {
+    width: calc(var(--unitSize) * 11.6);
+    height: calc(var(--unitSize) * 6.3);
+    border: calc(var(--unitSize) * 0.1) solid;
+    border-radius: 50%;
+    --hClip: 66%;
+    clip-path: polygon(0% var(--hClip), 100% var(--hClip), 100% 100%, 0% 100%);
+    --y: calc(var(--unitSize) * 2.2);
+    --x: calc(var(--unitSize) * 4.3);
+    --r: 207deg;
+    background: var(--lightOrange);
+}
+
+.petalP4 {
+    width: calc(var(--unitSize) * 28.9);
+    height: calc(var(--unitSize) * 21.9);
+    border: calc(var(--unitSize) * 0.1) solid;
+    border-radius: 50%;
+    --y: calc(var(--unitSize) * -2.1);
+    --x: calc(var(--unitSize) * -0.8);
+    --r: 164deg;
+    background: var(--lightOrange);
+}
+
+.petalP5 {
+    width: calc(var(--unitSize) * 21.5);
+    height: calc(var(--unitSize) * 21.9);
+    border: calc(var(--unitSize) * 0.1) solid;
+    border-radius: 50%;
+    --y: calc(var(--unitSize) * -3.6);
+    --x: calc(var(--unitSize) * 15.7);
+    --r: 82deg;
+    background: var(--orange);
+}
+
+.petalP7 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: calc(var(--unitSize) * 0.1) solid;
+}
+
+.petalP8 {
+    width: 27%;
+    height: 27%;
+    background: var(--bg);
+    --x: calc(var(--unitSize) * 13.3);
+    --y: calc(var(--unitSize) * 0.3);
+    --r: 64deg;
+}
+
+.petalP9 {
+    width: 5%;
+    height: 6%;
+    background: var(--orange);
+    --x: calc(var(--unitSize) * 21.7);
+    --y: calc(var(--unitSize) * 16.7);
+    --r: 52deg;
+}
+
+.petalOuter {
+    width: 100.5%;
+    height: 100.5%;
+    /* background: red; */
+    border: calc(var(--unitSize) * 0.3) solid var(--bg);
+    border-radius: 50%;
+    --x: calc(var(--unitSize) * 0.1);
+    --y: calc(var(--unitSize) * 0);
+    clip-path: polygon(100% 0%, 107.84% 95.62%, 69.7% 58.49%, 50.3% 11%, 14.63% 1.75%);
+
+}
+
+.petalAnchor2 {
+    --y: calc(var(--unitSize) * -12);
+    --x: calc(var(--unitSize) * 4);
+    z-index: 1;
+}
+
+.petalAnchor2 .petal {
+    --r: -80deg;
+}
+
+.petalP {
+    border-radius: 100% 0 100% 0;
+    aspect-ratio: 1/1;
+    width: calc(var(--unitSize) * 20);
+    background: var(--orange);
+    z-index: 1;
+    outline: calc(var(--unitSize) * 0.1) solid;
+    --y: calc(var(--unitSize) * -15.5);
+    --r: -45deg;
+    transform: scaleX(1.2) translateY(calc(var(--unitSize) * -15.5)) rotate(-45deg);
+    padding: calc(var(--unitSize) * 1.6);
+}
+
+.petalP::before {
+    width: 100%;
+    height: 100%;
+    position: static;
+    border-radius: 100% 0 100% 0;
+    background: var(--lightOrange);
+    transform: rotate(-45deg) scaleY(1.2) rotate(45deg);
+    outline: calc(var(--unitSize) * 0.1) solid;
+}
+
+.stalkAnchor {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.stalk {
+    outline: calc(var(--unitSize) * 0.2) solid;
+    width: calc(var(--unitSize) * 15);
+    height: calc(var(--unitSize) * 30);
+    /*z-index: -1;*/
+    /*--y: calc(var(--unitSize) * 24);*/
+    transform-origin: 50% 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background: var(--green);
+    border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+}
+
+.stalk::before {
+    width: 50%;
+    height: 100%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    background: var(--darkGreen);
+    border-radius: 40% 40% 0 0 / 100% 100% 0 0;
+}
+
+.armAnchor {
+    outline: calc(var(--unitSize) * 0.2) solid red;
+    --y: calc(var(--unitSize) * 31);
+    clip-path: polygon(calc(var(--unitSize) * -100) calc(var(--unitSize) * -100), calc(var(--unitSize) * 0) calc(var(--unitSize) * -100), calc(var(--unitSize) * 0) calc(var(--unitSize) * 0), calc(var(--unitSize) * -100) calc(var(--unitSize) * 0));
+}
+
+.armMain {
+    left: calc(var(--unitSize) * 4);
+    animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+.arm {
+    border: calc(var(--unitSize) * 2.5) solid var(--darkGreen);
+    width: calc(var(--unitSize) * 48);
+    height: calc(var(--unitSize) * 48);
+    border-radius: 50%;
+    filter: drop-shadow(0 calc(var(--unitSize) * -0.1) black) drop-shadow(calc(var(--unitSize) * 0.1) 0 black) drop-shadow(calc(var(--unitSize) * -0.1) 0 black) drop-shadow(0 calc(var(--unitSize) * 0.1) black);
+}
+
+.thorn {
+    width: calc(var(--unitSize) * 1);
+    aspect-ratio: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 100%;
+}
+
+.thorn::before {
+    background: var(--yellow);
+    width: 133.33%;
+    aspect-ratio: 1/1;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 0 0 100% 0;
+    transform: translateY(20%) scaleX(0.5) rotate(45deg);
+}
+
+.t1 {
+    --x: calc(var(--unitSize) * -14.8);
+    --y: calc(var(--unitSize) * -18.9);
+    --r: -47deg;
+}
+
+.t2 {
+    --x: calc(var(--unitSize) * -6.9);
+    --y: calc(var(--unitSize) * -22.2);
+    --r: 150deg;
+}
+
+.t3 {
+    --x: calc(var(--unitSize) * -17.9);
+    --y: calc(var(--unitSize) * -13.4);
+    --r: 123deg;
+}
+
+.t4 {
+    --x: calc(var(--unitSize) * -22.3);
+    --y: calc(var(--unitSize) * -7.9);
+    --r: -64deg;
+}
+
+.t5 {
+    --x: calc(var(--unitSize) * -21.9);
+    --y: calc(var(--unitSize) * -1.1);
+    --r: 91deg;
+}
+
+
+.t7 {
+    --x: calc(var(--unitSize) * -22.5);
+    --y: calc(var(--unitSize) * 5.3);
+    --r: -113deg;
+}
+
+
+.t9 {
+    --x: calc(var(--unitSize) * -18.1);
+    --y: calc(var(--unitSize) * 11.8);
+    --r: 64deg;
+}
+
+.t10 {
+    --x: calc(var(--unitSize) * -14.4);
+    --y: calc(var(--unitSize) * 17.7);
+    --r: 222deg;
+}
+
+.t11 {
+    --x: calc(var(--unitSize) * -5.8);
+    --y: calc(var(--unitSize) * 20.3);
+    --r: 20deg;
+}
+
+.t12 {
+    --x: calc(var(--unitSize) * 2);
+    --y: calc(var(--unitSize) * 22.6);
+    --r: 172deg;
+}
+
+
+.t13 {
+    --x: calc(var(--unitSize) * 10.2);
+    --y: calc(var(--unitSize) * 18.8);
+    --r: -15deg;
+}
+
+.t14 {
+    --x: calc(var(--unitSize) * 16.3);
+    --y: calc(var(--unitSize) * 16);
+    --r: 144deg;
+}
+
+.t15 {
+    --x: calc(var(--unitSize) * 20.1);
+    --y: calc(var(--unitSize) * 9.6);
+    --r: -48deg;
+}
+
+.t16 {
+    --x: calc(var(--unitSize) * 23.4);
+    --y: calc(var(--unitSize) * 2.2);
+    --r: 106deg;
+}
+
+.t17 {
+    --x: calc(var(--unitSize) * 21.7);
+    --y: calc(var(--unitSize) * -5.6);
+    --r: -112deg;
+}
+
+.t18 {
+    --x: calc(var(--unitSize) * 19.4);
+    --y: calc(var(--unitSize) * -14);
+    --r: 70deg;
+}
+
+.t19 {
+    --x: calc(var(--unitSize) * 11.8);
+    --y: calc(var(--unitSize) * -19.3);
+    --r: -137deg;
+}
+
+.t20 {
+    --x: calc(var(--unitSize) * 3.7);
+    --y: calc(var(--unitSize) * -23.8);
+    --r: -1deg;
+}
+
+.t21 {
+    --x: calc(var(--unitSize) * 20.1);
+    --y: calc(var(--unitSize) * 9.6);
+    --r: -48deg;
+}
+
+/*.petal, .face, .petalP {*/
+/*    display: none;*/
+/*}*/
+
+/*.ground {*/
+/*    opacity: 0;*/
+/*}*/
+
+body {
+    /*overflow: revert;*/
+}
+
+.petal {
+    animation: flutter1 3s infinite ease-in-out;
+}
+
+.petalAnchor2 .petal {
+    animation: flutter2 3s infinite ease-in-out;
+    /*animation-delay: -0.25s;*/
+}
+
+@keyframes flutter2 {
+    0% {
+        transform: rotate(-80deg);
+    }
+
+    50% {
+        /*transform: scale(0.975, 0.95) rotate(-90deg);*/
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes flutter1 {
+    0% {
+        transform: rotate(-50deg);
+    }
+
+    50% {
+        /*transform: scale(0.95, 1) rotate(-60deg);*/
+        transform: rotate(-65deg);
+    }
+}
+
+.tP1 {
+    --y: calc(var(--unitSize) * 5.7);
+    --x: calc(var(--unitSize) * -3.9);
+    --r: -70deg;
+}
+
+.tP2 {
+    --y: calc(var(--unitSize) * 14.9);
+    --x: calc(var(--unitSize) * 5.5);
+    --r: 31deg;
+}
+
+.tP3 {
+    --y: calc(var(--unitSize) * 13.8);
+    --x: calc(var(--unitSize) * 0.3);
+    --r: -23deg;
+    width: calc(var(--unitSize) * 1.1);
+}
+
+.tP4 {
+    --y: calc(var(--unitSize) * 22.7);
+    --x: calc(var(--unitSize) * 6.7);
+    --r: 45deg;
+}
+
+.tP5 {
+    --y: calc(var(--unitSize) * 16.6);
+    --x: calc(var(--unitSize) * -6.4);
+    --r: -113deg;
+}
+
+.tP6 {
+    --y: calc(var(--unitSize) * 24.7);
+    --x: calc(var(--unitSize) * 0.3);
+    --r: 11deg;
+}
+
+.tP7 {
+    --y: calc(var(--unitSize) * 5.1);
+    --x: calc(var(--unitSize) * 4.8);
+    --r: 25deg;
+}
+
+.tP8 {
+    --y: calc(var(--unitSize) * 16.6);
+    --x: calc(var(--unitSize) * -6.4);
+    --r: -113deg;
+}
+
+.head {
+    transform: translateY(calc(var(--unitSize) * 1)) scale(1.2);
+    animation: floatingHead 3s infinite ease-in-out;
+}
+
+@keyframes floatingHead {
+    0% {
+        transform: translateY(calc(var(--unitSize) * 1)) scale(1.2);
+    }
+
+    50% {
+        transform: translateY(calc(var(--unitSize) * 2)) scale(1.2);
+    }
+}
+
+.leafAnchor {
+    --x: calc(var(--unitSize) * -5);
+    --y: calc(var(--unitSize) * 29.4);
+}
+
+.leaf {
+    width: calc(var(--unitSize) * 15);
+    aspect-ratio: 1/1;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 0 100% 0 100%;
+    transform-origin: 100% 100%;
+    background: var(--green);
+    overflow: hidden;
+    transform: rotate(-5deg);
+    animation: leafFlutter 3s -1.5s ease-in-out infinite;
+}
+
+@keyframes leafFlutter {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.leaf::before {
+    width: calc(var(--unitSize) * 34.2);
+    aspect-ratio: 3/1;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 50%;
+    left: calc(var(--unitSize) * -13);
+    top: calc(var(--unitSize) * 4.9);
+    transform: rotate(45deg);
+}
