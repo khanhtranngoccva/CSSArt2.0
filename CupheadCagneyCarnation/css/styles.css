@@ -400,15 +400,14 @@ body {
 }
 
 .petalOuter {
-    width: 100.5%;
-    height: 100.5%;
+    width: 102.5%;
+    height: 102.5%;
     /* background: red; */
-    border: 3px solid var(--bg);
+    border: 6px solid var(--bg);
     border-radius: 50%;
-    --x: 1px;
-    --y: 0px;
+    --x: -5px;
+    --y: -3px;
     clip-path: polygon(100% 0%, 107.84% 95.62%, 69.7% 58.49%, 50.3% 11%, 14.63% 1.75%);
-
 }
 
 .petalAnchor2 {
