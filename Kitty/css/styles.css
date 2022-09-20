@@ -15,6 +15,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
+    background: #96F8CF;
 }
 
 img {
@@ -47,12 +48,13 @@ img {
     position: absolute;
     z-index: -1;
     opacity: 0.5;
+    display: none;
 }
 
 .canvas {
     width: 1280px;
     height: 720px;
-    outline: 1px solid;
+    /*outline: 1px solid;*/
 }
 
 .canvas * {
@@ -167,7 +169,6 @@ img {
     top: 67%;
     width: 50px;
     height: 50px;
-    outline: 1px solid;
     transform: translateX(-50%);
     content: "";
     border-radius: 50%;
