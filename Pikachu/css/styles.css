@@ -1,0 +1,346 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: #96F8CF;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: scaleX(-1) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.tracedImage {
+    width: 1280px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    /*display: none;*/
+}
+
+.canvas {
+    width: 1280px;
+    height: 720px;
+    /*outline: 1px solid;*/
+}
+
+.canvas * {
+    position: absolute;
+}
+
+.pikachu {
+    --gold: #FFD95A;
+    --rose: #F76E68;
+    --red: #F7423B;
+    --black: black;
+}
+
+.face {
+    width: 349px;
+    height: 269px;
+    border-radius: 50%;
+    outline: 1px solid;
+    --r: 2deg;
+    --y: 96px;
+    --x: -58px;
+    background: var(--gold);
+    /*display: none;*/
+    overflow: hidden;
+}
+
+.cheek {
+    outline: 1px solid;
+    border-radius: 50%;
+    width: 90px;
+    aspect-ratio: 1/1;
+    --y: 160px;
+    --x: 7px;
+    background: var(--rose);
+}
+
+.cheek2 {
+    width: 100px;
+    --x: 247px;
+    --y: 169px;
+}
+
+.eye {
+    width: 55px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    outline: 1px solid;
+    --y: 80px;
+    --x: 77px;
+    background: var(--black);
+}
+
+.eye2 {
+    width: 54px;
+    --x: 213px;
+    --y: 89px;
+}
+
+.eye::before {
+    outline: 1px solid;
+    width: 19px;
+    height: 20px;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    background: white;
+}
+
+.mouthP1 {
+    border-radius: 50%;
+    width: 38px;
+    height: 27px;
+    border: 1px solid;
+    --y: 159px;
+    --x: 136px;
+    background: var(--gold);
+}
+
+.mouthL2 {
+    --x: 173px;
+}
+
+.mouthP2 {
+    width: 37px;
+    height: 65px;
+    border-radius: 50% / 60% 60% 40% 40%;
+    outline: 1px solid;
+    --y: 154px;
+    --x: 154px;
+    --r: -5deg;
+    overflow: hidden;
+    background: var(--rose);
+}
+
+.mouthP2::before {
+    outline: 1px solid;
+    width: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 47px;
+    background: var(--red);
+    left: -2px;
+}
+
+.mouthP3 {
+    width: 33px;
+    height: 50px;
+    background: var(--gold);
+    --r: -78deg;
+    --x: 145px;
+    --y: 130px;
+}
+
+.mouthP3.mouthL2 {
+    --r: 78deg;
+    --x: 168px;
+    --y: 130px;
+}
+
+.ear1 {
+    border-radius: 100% 0 100% 0;
+    height: 218px;
+    aspect-ratio: 1/1;
+    outline: 1px solid;
+    --r: -32deg;
+    --x: 49px;
+    --y: -74px;
+    background: var(--gold);
+    overflow: hidden;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) rotate(-45deg) scaleY(0.8) rotate(45deg);
+}
+
+.ear1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: black;
+    width: 79px;
+    height: 117px;
+    border-radius: 50%;
+    top: -35px;
+    left: 160px;
+    transform: rotate(325deg);
+}
+
+.ear2 {
+    border-radius: 100% 0 100% 0;
+    height: 151px;
+    aspect-ratio: 1/1;
+    outline: 1px solid;
+    --r: -155deg;
+    --x: -268px;
+    --y: -66px;
+    background: var(--gold);
+    overflow: hidden;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) rotate(-45deg) scaleY(0.8) rotate(45deg);
+}
+
+.ear2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: black;
+    width: 79px;
+    height: 117px;
+    border-radius: 50%;
+    top: -49px;
+    left: 97px;
+    transform: rotate(325deg);
+}
+
+.ear3 {
+    border-radius: 20% / 50%;
+    height: 104px;
+    width: 96px;
+    outline: 1px solid;
+    --r: -204deg;
+    --x: -183px;
+    --y: -45px;
+    background: var(--gold);
+    overflow: hidden;
+}
+
+.ear4 {
+    width: 55px;
+    height: 8px;
+    background: var(--gold);
+    /*outline: 1px solid;*/
+    --r: -47deg;
+    --x: -184px;
+    --y: -80px;
+}
+
+.paw {
+    width: 103px;
+    height: 61px;
+    border-radius: 50%;
+    --y: 228px;
+    --x: 47px;
+    --r: -9deg;
+    outline: 1px solid;
+    overflow: hidden;
+    background: var(--gold);
+}
+
+.toeLine {
+    width: 35px;
+    height: 25px;
+    border-radius: 100% 0 0 0 / 100% 0 0 0;
+    border: 1px solid;
+    border-bottom: none;
+    border-right: none;
+    --x: -6px;
+    --y: 18px;
+    --r: -20deg;
+}
+
+.toeLine2 {
+    width: 44px;
+    --y: 27px;
+    --x: -6px;
+    --r: -20deg;
+}
+
+.toeLine3 {
+    width: 44px;
+    --y: 36px;
+    --x: -1px;
+    --r: -20deg;
+}
+
+.body {
+    width: 329px;
+    height: 243px;
+    border-radius: 50%;
+    outline: 1px solid;
+    --r: -14deg;
+    --y: 82px;
+    --x: 114px;
+    /*background: var(--gold);*/
+}
+
+.hindPaw {
+    width: 101px;
+    height: 57px;
+    border-radius: 30% 70% 70% 30% / 50% 50%;
+    --y: 128px;
+    --x: 232px;
+    --r: -69deg;
+    outline: 1px solid;
+    overflow: hidden;
+}
+
+.hindPaw .toeLine {
+    --r: -98deg;
+    --x: 1px;
+    --y: -3px;
+    width: 20px;
+}
+
+.hindPaw .toeLine2 {
+    border-radius: 0;
+    width: 33px;
+    height: 1px;
+    --r: 0deg;
+    --y: 28px;
+    --x: -9px;
+}
+
+
+.hindPaw .toeLine3 {
+    --r: 6deg;
+    --x: -7px;
+    --y: 37px;
+    width: 33px;
+}
+
+.paw2 {
+    width: 92px;
+    --x: -217px;
+    --y: 164px;
+    --r: -17deg;
+}
