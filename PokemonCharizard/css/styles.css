@@ -1,0 +1,220 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #96F8CF;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    transform: scaleX(-1) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.tracedImage {
+    width: 1280px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    /*display: none;*/
+}
+
+.canvas {
+    width: 1280px;
+    height: 720px;
+    /*outline: 1px solid;*/
+}
+
+.canvas *, .canvas *::before, .canvas *::after {
+    position: absolute;
+}
+
+.charizard {
+    --black: black;
+    --orange: #FBA055;
+    --white: white;
+}
+
+.clipBorder {
+    filter: drop-shadow(1px 0 var(--black)) drop-shadow(-1px 0 var(--black)) drop-shadow(0 -1px var(--black)) drop-shadow(0 1px var(--black));
+}
+
+.head {
+    outline: 2px solid;
+    --x: 25px;
+    --y: -89px;
+}
+
+.headAnchor {
+    transform: scale(1.1);
+}
+
+.face {
+    width: 178px;
+    height: 193px;
+    border-radius: 50%;
+    --r: -23deg;
+    --y: -104px;
+    --x: -95px;
+     background: var(--orange);
+    outline: 1px solid;
+    /* opacity: 0.5; */
+}
+
+.ear1 {
+    width: 40px;
+    border-style: solid;
+    border-color: transparent;
+    height: 106px;
+    border-left-width: 20px;
+    border-bottom: 110px solid var(--orange);
+    /* background: var(--orange); */
+    --x: -87px;
+    --y: -178px;
+    --r: -20deg;
+    clip-path: polygon(0px 0px, 100% 0%, 118.39% 87.44%, -22.33% 101.67%);
+}
+
+.ear2 {
+    width: 30px;
+    border-style: solid;
+    border-color: transparent;
+    height: 133px;
+    border-left-width: 11px;
+    border-bottom: 120px solid var(--orange);
+    /* background: var(--orange); */
+    --x: 33px;
+    --y: -194px;
+    --r: 5deg;
+    clip-path: polygon(-13px 15px, 127.44% 4.78%, 149.04% 105.82%, -26.66% 80.65%);
+}
+
+.eye {
+    width: 63px;
+    height: 56px;
+    --x: -71px;
+    --y: -50px;
+    outline: 1px solid;
+    border-radius: 40% 70% 20% 80% / 50% 80% 30% 70%;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.eye::before {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    width: 60px;
+    outline: 1px solid;
+    aspect-ratio: 1/1;
+    top: 12px;
+    left: 16px;
+    background: var(--orange);
+}
+
+.eye::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    width: 46px;
+    outline: 1px solid;
+    aspect-ratio: 1/1;
+    top: 22px;
+    left: 26px;
+    background: var(--black);
+}
+
+.eye2 {
+    --x: -18px;
+    transform: scaleX(-0.9) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+}
+
+.nose {
+    width: 7px;
+    height: 12px;
+    border-radius: 50%;
+    --x: -7px;
+    --y: 18px;
+    background: var(--black);
+}
+
+.nose2 {
+    --x: -11px;
+}
+
+.mouthP1 {
+    width: 20px;
+    height: 35px;
+    --x: -32px;
+    --y: 27px;
+    border: 1px solid;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 100% / 0 0 0 100%;
+    clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
+}
+
+
+.mouthP2 {
+    width: 7px;
+    height: 8px;
+    --x: -16px;
+    --y: 54px;
+    border: 1px solid;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 100% 0;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+.mouthP3 {
+    border-radius: 50% / 0 0 100% 100%;
+    height: 3px;
+    width: 25px;
+    border: 1px solid;
+    border-top: none;
+    --y: 54px;
+    --x: -10px;
+}
+
+.mouthP1_2 {
+    --x: -20px;
+}
+
+.mouthP2_2 {
+    width: 10px;
+    --x: -14px;
+}
