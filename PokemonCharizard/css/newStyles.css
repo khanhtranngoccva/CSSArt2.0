@@ -17,7 +17,7 @@ body {
     align-items: center;
     overflow: hidden;
     background: #96F8CF;
-    --unitSize: 1.2vmin;
+    --unitSize: 1.1vmin;
 }
 
 img {
@@ -59,384 +59,430 @@ img {
     /*outline: calc(var(--unitSize) * 0.1) solid;*/
 }
 
-.canvas * {
+.canvas *, .canvas *::before, .canvas *::after {
     position: absolute;
 }
 
-.pikachu {
-    --gold: #FFD95A;
-    --rose: #F76E68;
-    --red: #F7423B;
+.charizard {
     --black: black;
+    --orange: #FBA055;
+    --tan: #FFD59B;
+    --blue: #02A0D0;
+    --white: white;
+}
+
+.clipBorder {
+    filter: drop-shadow(calc(var(--unitSize) * 0.1) 0 var(--black)) drop-shadow(calc(var(--unitSize) * -0.1) 0 var(--black)) drop-shadow(0 calc(var(--unitSize) * -0.1) var(--black)) drop-shadow(0 calc(var(--unitSize) * 0.1) var(--black));
+}
+
+.head {
+    --x: calc(var(--unitSize) * 2.5);
+    --y: calc(var(--unitSize) * -8.9);
+    z-index: 3;
+}
+
+.headAnchor {
+    transform: scale(1.1);
 }
 
 .face {
-    width: calc(var(--unitSize) * 34.9);
-    height: calc(var(--unitSize) * 26.9);
+    width: calc(var(--unitSize) * 17.8);
+    height: calc(var(--unitSize) * 19.3);
     border-radius: 50%;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --r: 2deg;
-    --y: calc(var(--unitSize) * 9.6);
-    --x: calc(var(--unitSize) * -5.8);
-    background: var(--gold);
-    /*display: none;*/
-    overflow: hidden;
+    --r: -23deg;
+    --y: calc(var(--unitSize) * -10.4);
+    --x: calc(var(--unitSize) * -9.5);
+    background: var(--orange);
+    outline: calc(var(--unitSize) * 0.2) solid;
+    /* opacity: 0.5; */
 }
 
-.cheek {
-    outline: calc(var(--unitSize) * 0.1) solid;
-    border-radius: 50%;
-    width: calc(var(--unitSize) * 9);
-    aspect-ratio: 1/1;
-    --y: calc(var(--unitSize) * 16);
-    --x: calc(var(--unitSize) * 0.7);
-    background: var(--rose);
+.ear1 {
+    width: calc(var(--unitSize) * 4);
+    border-style: solid;
+    border-color: transparent;
+    height: calc(var(--unitSize) * 10.6);
+    border-left-width: calc(var(--unitSize) * 2);
+    border-bottom: calc(var(--unitSize) * 11) solid var(--orange);
+    /* background: var(--orange); */
+    --x: calc(var(--unitSize) * -8.7);
+    --y: calc(var(--unitSize) * -17.8);
+    --r: -20deg;
+    clip-path: polygon(0% 0%, 100% 0%, 118.39% 87.44%, -22.33% 101.67%);
 }
 
-.cheek2 {
-    width: calc(var(--unitSize) * 10);
-    --x: calc(var(--unitSize) * 24.7);
-    --y: calc(var(--unitSize) * 16.9);
+.ear2 {
+    width: calc(var(--unitSize) * 3);
+    border-style: solid;
+    border-color: transparent;
+    height: calc(var(--unitSize) * 13.3);
+    border-left-width: calc(var(--unitSize) * 1.1);
+    border-bottom: calc(var(--unitSize) * 12) solid var(--orange);
+    /* background: var(--orange); */
+    --x: calc(var(--unitSize) * 3.3);
+    --y: calc(var(--unitSize) * -19.4);
+    --r: 5deg;
+    clip-path: polygon(0% 0.00%, 127.44% 4.78%, 149.04% 105.82%, -26.66% 80.65%);
 }
 
 .eye {
-    width: calc(var(--unitSize) * 5.5);
-    aspect-ratio: 1/1;
+    width: calc(var(--unitSize) * 6.3);
+    height: calc(var(--unitSize) * 5.6);
+    --x: calc(var(--unitSize) * -7.1);
+    --y: calc(var(--unitSize) * -5);
+    outline: calc(var(--unitSize) * 0.2) solid;
+    border-radius: 40% 70% 20% 80% / 50% 80% 30% 70%;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.eye::before {
     border-radius: 50%;
+    content: "";
+    display: block;
+    width: calc(var(--unitSize) * 6);
+    outline: calc(var(--unitSize) * 0.2) solid;
+    aspect-ratio: 1/1;
+    top: calc(var(--unitSize) * 1.2);
+    left: calc(var(--unitSize) * 1.6);
+    background: var(--orange);
+}
+
+.eye::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    width: calc(var(--unitSize) * 4.6);
     outline: calc(var(--unitSize) * 0.1) solid;
-    --y: calc(var(--unitSize) * 8);
-    --x: calc(var(--unitSize) * 7.7);
+    aspect-ratio: 1/1;
+    top: calc(var(--unitSize) * 2.2);
+    left: calc(var(--unitSize) * 2.6);
     background: var(--black);
 }
 
 .eye2 {
-    width: calc(var(--unitSize) * 5.4);
-    --x: calc(var(--unitSize) * 21.3);
-    --y: calc(var(--unitSize) * 8.9);
+    --x: calc(var(--unitSize) * -1.8);
+    transform: scaleX(-0.9) translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
 }
 
-.eye::before {
-    outline: calc(var(--unitSize) * 0.1) solid;
-    width: calc(var(--unitSize) * 1.9);
-    height: calc(var(--unitSize) * 2);
+.nose {
+    width: calc(var(--unitSize) * 0.7);
+    height: calc(var(--unitSize) * 1.2);
     border-radius: 50%;
-    content: "";
-    display: block;
-    position: absolute;
-    top: calc(var(--unitSize) * 0.9);
-    left: calc(var(--unitSize) * 2.8);
-    background: white;
+    --x: calc(var(--unitSize) * -0.7);
+    --y: calc(var(--unitSize) * 1.8);
+    background: var(--black);
+}
+
+.nose2 {
+    --x: calc(var(--unitSize) * -1.1);
 }
 
 .mouthP1 {
-    border-radius: 50%;
-    width: calc(var(--unitSize) * 3.8);
-    height: calc(var(--unitSize) * 2.7);
-    border: calc(var(--unitSize) * 0.1) solid;
-    --y: calc(var(--unitSize) * 15.9);
-    --x: calc(var(--unitSize) * 13.6);
-    background: var(--gold);
+    width: calc(var(--unitSize) * 2);
+    height: calc(var(--unitSize) * 3.5);
+    --x: calc(var(--unitSize) * -3.2);
+    --y: calc(var(--unitSize) * 2.7);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 100% / 0 0 0 100%;
+    clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
 }
 
-.mouthL2 {
-    --x: calc(var(--unitSize) * 17.3);
-}
 
 .mouthP2 {
-    width: calc(var(--unitSize) * 3.7);
-    height: calc(var(--unitSize) * 6.5);
-    border-radius: 50% / 60% 60% 40% 40%;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --y: calc(var(--unitSize) * 15.4);
-    --x: calc(var(--unitSize) * 15.4);
-    --r: -5deg;
-    overflow: hidden;
-    background: var(--rose);
-}
-
-.mouthP2::before {
-    outline: calc(var(--unitSize) * 0.1) solid;
-    width: calc(var(--unitSize) * 4);
-    border-radius: 50%;
-    aspect-ratio: 1/1;
-    position: absolute;
-    content: "";
-    display: block;
-    top: calc(var(--unitSize) * 4.7);
-    background: var(--red);
-    left: calc(var(--unitSize) * -0.2);
+    width: calc(var(--unitSize) * 0.7);
+    height: calc(var(--unitSize) * 0.8);
+    --x: calc(var(--unitSize) * -1.6);
+    --y: calc(var(--unitSize) * 5.4);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 100% 0;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%);
 }
 
 .mouthP3 {
-    width: calc(var(--unitSize) * 3.3);
-    height: calc(var(--unitSize) * 5);
-    background: var(--gold);
-    --r: -78deg;
-    --x: calc(var(--unitSize) * 14.5);
-    --y: calc(var(--unitSize) * 13);
+    border-radius: 50% / 0 0 100% 100%;
+    height: calc(var(--unitSize) * 0.3);
+    width: calc(var(--unitSize) * 2.5);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-top: none;
+    --y: calc(var(--unitSize) * 5.4);
+    --x: calc(var(--unitSize) * -1);
 }
 
-.mouthP3.mouthL2 {
-    --r: 78deg;
-    --x: calc(var(--unitSize) * 16.8);
-    --y: calc(var(--unitSize) * 13);
+.mouthP1_2 {
+    --x: calc(var(--unitSize) * -2);
 }
 
-.ear1 {
-    border-radius: 100% 0 100% 0;
-    height: calc(var(--unitSize) * 21.8);
-    aspect-ratio: 1/1;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --r: -32deg;
-    --x: calc(var(--unitSize) * 4.9);
-    --y: calc(var(--unitSize) * -7.4);
-    background: var(--gold);
-    overflow: hidden;
-    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) rotate(-45deg) scaleY(0.8) rotate(45deg);
-}
-
-.ear1::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: black;
-    width: calc(var(--unitSize) * 7.9);
-    height: calc(var(--unitSize) * 11.7);
-    border-radius: 50%;
-    top: calc(var(--unitSize) * -3.5);
-    left: calc(var(--unitSize) * 16);
-    transform: rotate(325deg);
-}
-
-.ear2 {
-    border-radius: 100% 0 100% 0;
-    height: calc(var(--unitSize) * 15.1);
-    aspect-ratio: 1/1;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --r: -155deg;
-    --x: calc(var(--unitSize) * -26.8);
-    --y: calc(var(--unitSize) * -6.6);
-    background: var(--gold);
-    overflow: hidden;
-    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) rotate(-45deg) scaleY(0.8) rotate(45deg);
-}
-
-.ear2::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: black;
-    width: calc(var(--unitSize) * 7.9);
-    height: calc(var(--unitSize) * 11.7);
-    border-radius: 50%;
-    top: calc(var(--unitSize) * -4.9);
-    left: calc(var(--unitSize) * 9.7);
-    transform: rotate(325deg);
-}
-
-.ear3 {
-    border-radius: 20% / 50%;
-    height: calc(var(--unitSize) * 10.4);
-    width: calc(var(--unitSize) * 9.6);
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --r: -204deg;
-    --x: calc(var(--unitSize) * -18.3);
-    --y: calc(var(--unitSize) * -4.5);
-    background: var(--gold);
-    overflow: hidden;
-}
-
-.ear4 {
-    width: calc(var(--unitSize) * 5.5);
-    height: calc(var(--unitSize) * 0.8);
-    background: var(--gold);
-    /*outline: calc(var(--unitSize) * 0.1) solid;*/
-    --r: -47deg;
-    --x: calc(var(--unitSize) * -18.4);
-    --y: calc(var(--unitSize) * -8);
-}
-
-.paw {
-    width: calc(var(--unitSize) * 10.3);
-    height: calc(var(--unitSize) * 6.1);
-    border-radius: 50%;
-    --y: calc(var(--unitSize) * 22.8);
-    --x: calc(var(--unitSize) * 4.7);
-    --r: -9deg;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    overflow: hidden;
-    background: var(--gold);
-}
-
-.toeLine {
-    width: calc(var(--unitSize) * 3.5);
-    height: calc(var(--unitSize) * 2.5);
-    border-radius: 100% 0 0 0 / 100% 0 0 0;
-    border: calc(var(--unitSize) * 0.1) solid;
-    border-bottom: none;
-    border-right: none;
-    --x: calc(var(--unitSize) * -0.6);
-    --y: calc(var(--unitSize) * 1.8);
-    --r: -20deg;
-}
-
-.toeLine2 {
-    width: calc(var(--unitSize) * 4.4);
-    --y: calc(var(--unitSize) * 2.7);
-    --x: calc(var(--unitSize) * -0.6);
-    --r: -20deg;
-}
-
-.toeLine3 {
-    width: calc(var(--unitSize) * 4.4);
-    --y: calc(var(--unitSize) * 3.6);
-    --x: calc(var(--unitSize) * -0.1);
-    --r: -20deg;
+.mouthP2_2 {
+    width: calc(var(--unitSize) * 1);
+    --x: calc(var(--unitSize) * -1.4);
 }
 
 .body {
-    width: calc(var(--unitSize) * 32.9);
-    height: calc(var(--unitSize) * 24.3);
-    border-radius: 50%;
-    outline: calc(var(--unitSize) * 0.1) solid;
-    --r: -14deg;
-    --y: calc(var(--unitSize) * 8.2);
-    --x: calc(var(--unitSize) * 11.4);
-    background: var(--gold);
-}
-
-.hindPaw {
-    width: calc(var(--unitSize) * 10.1);
-    height: calc(var(--unitSize) * 5.7);
-    border-radius: 30% 70% 70% 30% / 50% 50%;
-    --y: calc(var(--unitSize) * 12.8);
-    --x: calc(var(--unitSize) * 23.2);
-    --r: -69deg;
-    outline: calc(var(--unitSize) * 0.1) solid;
+    width: calc(var(--unitSize) * 23.5);
+    height: calc(var(--unitSize) * 29);
+    border-radius: 50% / 60% 60% 40% 40%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    --y: calc(var(--unitSize) * 12.2);
+    --x: calc(var(--unitSize) * 1.2);
+    background: var(--orange);
     overflow: hidden;
-    background: var(--gold);
+    /*opacity: 0.3;*/
+    z-index: 2;
 }
 
-.hindPaw .toeLine {
-    --r: -98deg;
-    --x: calc(var(--unitSize) * 0.1);
-    --y: calc(var(--unitSize) * -0.3);
-    width: calc(var(--unitSize) * 2);
+.body::before {
+    content: "";
+    display: block;
+    width: calc(var(--unitSize) * 16.6);
+    height: calc(var(--unitSize) * 24.7);
+    border-radius: 50%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    top: calc(var(--unitSize) * 5.3);
+    left: calc(var(--unitSize) * 3.6);
+    background: var(--tan);
 }
 
-.hindPaw .toeLine2 {
-    border-radius: 0;
-    width: calc(var(--unitSize) * 3.3);
-    height: calc(var(--unitSize) * 0.1);
-    --r: 0deg;
-    --y: calc(var(--unitSize) * 2.8);
-    --x: calc(var(--unitSize) * -0.9);
+.leg {
+    --y: calc(var(--unitSize) * 26.1);
+    --x: calc(var(--unitSize) * -3.4);
+    --r: 20deg;
+    z-index: 1;
 }
 
-
-.hindPaw .toeLine3 {
-    --r: 6deg;
-    --x: calc(var(--unitSize) * -0.7);
-    --y: calc(var(--unitSize) * 3.7);
-    width: calc(var(--unitSize) * 3.3);
+.foot {
+    border-radius: 50% / 60% 60% 40% 40%;
+    outline: calc(var(--unitSize) * 0.2) solid;
+    width: calc(var(--unitSize) * 4.6);
+    background: var(--orange);
+    height: calc(var(--unitSize) * 5);
 }
 
-.paw2 {
-    width: calc(var(--unitSize) * 9.2);
-    --x: calc(var(--unitSize) * -21.7);
-    --y: calc(var(--unitSize) * 16.4);
-    --r: -17deg;
-}
-
-.hindPawP2 {
-    background: var(--gold);
-    width: calc(var(--unitSize) * 4.5);
-    height: calc(var(--unitSize) * 3.6);
-    --x: calc(var(--unitSize) * 24.5);
-    --y: calc(var(--unitSize) * 9.4);
-    --r: 17deg;
-}
-
-.bodyP2 {
-    width: calc(var(--unitSize) * 9.6);
-    height: calc(var(--unitSize) * 5.6);
-    background: var(--gold);
-    border-bottom: calc(var(--unitSize) * 0.1) solid;
-    border-radius: 0 0 50% 50% / 0 0 0% 10%;
+.toenail {
+    outline: calc(var(--unitSize) * 0.2) solid;
+    aspect-ratio: 1/1;
+    border-radius: 100% 0 100% 0;
+    width: calc(var(--unitSize) * 1.5);
+    --y: calc(var(--unitSize) * 2.2);
+    --x: calc(var(--unitSize) * -1.2);
     --r: -37deg;
-    --y: calc(var(--unitSize) * 20.3);
-    --x: calc(var(--unitSize) * 10.1);
+    z-index: -1;
+    background: white;
+}
+
+
+.toenail2 {
+    --y: calc(var(--unitSize) * 2.5);
+    --x: calc(var(--unitSize) * 0.2);
+    --r: -48deg;
+}
+
+.toenail3 {
+    --y: calc(var(--unitSize) * 2.1);
+    --x: calc(var(--unitSize) * 1.5);
+    --r: -67deg;
+}
+
+.leg2 {
+    --x: calc(var(--unitSize) * -5.5);
+}
+
+.wing {
+    outline: calc(var(--unitSize) * 0.2) solid red;
+    z-index: 1;
+    --y: calc(var(--unitSize) * 8);
+    --x: calc(var(--unitSize) * -8);
+}
+
+
+
+.wingP1 {
+    --y: calc(var(--unitSize) * -50.2);
+    --x: calc(var(--unitSize) * -15.4);
+    z-index: 1;
+}
+
+.wingP1_ {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.wingP1_1 {
+    border: calc(var(--unitSize) * 2.3) solid var(--orange);
+    clip-path: polygon(10% 89.2%, 9.80% calc(var(--unitSize) * 35.4), 37% 88.2%, 32.8% 98%);
+    width: calc(var(--unitSize) * 50);
+}
+
+.wingP1_2 {
+    border: calc(var(--unitSize) * 2.6) solid var(--orange);
+    clip-path: polygon(56.58% 91.05%, 87.63% calc(var(--unitSize) * 40.4), 92.64% 99.29%, 63.67% 101.14%);
+    width: calc(var(--unitSize) * 54);
+    --x: calc(var(--unitSize) * -42.5);
+    --y: calc(var(--unitSize) * -4.9);
+    aspect-ratio: 1/1.006;
+}
+
+.wingP1_3 {
+    border: calc(var(--unitSize) * 2.8) solid var(--orange);
+    clip-path: polygon(83.91% 79.87%, 95.1% calc(var(--unitSize) * 28.7), 104.84% 51.5%, 99.19% 73.19%);
+    width: calc(var(--unitSize) * 54.9);
+    --x: calc(var(--unitSize) * -62.8);
+    --y: calc(var(--unitSize) * 18);
+    aspect-ratio: 1/1.01;
+}
+
+.wingP2_ {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.wingP2_1 {
+    border: calc(var(--unitSize) * 20) solid var(--blue);
+    clip-path: polygon(37.17% 27.50%, 43.07% calc(var(--unitSize) * 10.2), 60.45% 0.83%, 55.52% 25.9%);
+    width: calc(var(--unitSize) * 79.9);
+    --x: calc(var(--unitSize) * -58.5);
+    --y: calc(var(--unitSize) * -12.1);
+    aspect-ratio: 1/1.01;
+}
+
+.wingP2_2 {
+    border: calc(var(--unitSize) * 20) solid var(--blue);
+    clip-path: polygon(34.18% 30.23%, 39.06% calc(var(--unitSize) * 4.2), 53.94% 16.32%, 50.89% 26.65%);
+    width: calc(var(--unitSize) * 79.9);
+    --x: calc(var(--unitSize) * -41.5);
+    --y: calc(var(--unitSize) * -16);
+    aspect-ratio: 1/1.01;
+}
+
+.wingP2_3 {
+    height: calc(var(--unitSize) * 20);
+    border-radius: 0 100% 100% 0 / 50%;
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-left: none;
+    width: calc(var(--unitSize) * 0.7);
+    --y: calc(var(--unitSize) * -11.4);
+    --x: calc(var(--unitSize) * -12.2);
+    --r: 10deg;
+}
+
+.wing2 {
+    --x: calc(var(--unitSize) * -9.1);
+    --r: 3deg;
+    --y: calc(var(--unitSize) * 8);
 }
 
 .tail {
-    --y: calc(var(--unitSize) * -42.9);
-    --x: calc(var(--unitSize) * -27.7);
-
-}
-
-.clipBorderLayer {
-    filter: drop-shadow(calc(var(--unitSize) * 0.1) 0 var(--black)) drop-shadow(calc(var(--unitSize) * -0.1) 0 var(--black)) drop-shadow(0 calc(var(--unitSize) * -0.1) var(--black)) drop-shadow(0 calc(var(--unitSize) * 0.1) var(--black));
+    /*z-index: 4;*/
+    z-index: 0;
+    /*outline: calc(var(--unitSize) * 0.2) solid red;*/
+    --y: calc(var(--unitSize) * 18.9);
+    --x: calc(var(--unitSize) * -5);
 }
 
 .tailP1 {
     border-radius: 50%;
-    border: calc(var(--unitSize) * 4) solid var(--gold);
-    width: calc(var(--unitSize) * 52.4);
-    aspect-ratio: 1/1;
-    clip-path: polygon(103.62% 47.06%, 99.81% 80.92%, 87.02% 79.97%, 84.55% 78.44%, 74.24% 64.51%);
+    border: calc(var(--unitSize) * 4) solid var(--tan);
+    width: calc(var(--unitSize) * 38.3);
+    height: calc(var(--unitSize) * 29.1);
+    --x: calc(var(--unitSize) * -24.7);
+    --y: calc(var(--unitSize) * -24.8);
+    --r: -43deg;
+    border-top-width: calc(var(--unitSize) * 7.8);
+    border-left-width: calc(var(--unitSize) * 6.3);
+}
+
+.tailP1Anchor {
+    width: calc(var(--unitSize) * 5);
+    height: calc(var(--unitSize) * 5);
+    clip-path: polygon(-475.82% -109.77%, -368.94% calc(var(--unitSize) * 7.5), -8.06% 108.32%, -153.11% -127.35%);
 }
 
 .tailP2 {
     border-radius: 50%;
-    border: calc(var(--unitSize) * 2.5) solid var(--gold);
-    width: calc(var(--unitSize) * 52.4);
-    aspect-ratio: 1/1;
-    --x: calc(var(--unitSize) * 24);
-    --y: calc(var(--unitSize) * 25.6);
-    clip-path: polygon(54.38% -0.08%, 52.11% 5.15%, 46.94% 4.97%, 37.22% 6.49%, 39.13% 0%);
+    border: calc(var(--unitSize) * 2) solid var(--orange);
+    width: calc(var(--unitSize) * 27);
+    height: calc(var(--unitSize) * 17.9);
+    --x: calc(var(--unitSize) * -17.2);
+    --y: calc(var(--unitSize) * -17.6);
+    --r: -30deg;
+    border-top-width: calc(var(--unitSize) * 4.2);
+    border-left-width: calc(var(--unitSize) * 4.3);
+}
+
+.tailP2Anchor {
+    width: calc(var(--unitSize) * 5);
+    height: calc(var(--unitSize) * 5);
+    clip-path: polygon(-475.82% -109.77%, -368.94% calc(var(--unitSize) * 7.5), -16.06% 94.32%, -157.11% -145.35%);
 }
 
 .tailP3 {
     border-radius: 50%;
-    border: calc(var(--unitSize) * 3.8) solid var(--gold);
-    width: calc(var(--unitSize) * 52.4);
-    aspect-ratio: 1/1;
-    --x: calc(var(--unitSize) * 41.9);
-    --y: calc(var(--unitSize) * 11);
-    clip-path: polygon(29.57% 7.94%, 47.72% 8.39%, 17.55% 25.01%, 2.68% 34.73%, 5.74% 10.5%);
+    border-right: calc(var(--unitSize) * 4) solid var(--tan);
+    width: calc(var(--unitSize) * 18.8);
+    height: calc(var(--unitSize) * 22.9);
+    --x: calc(var(--unitSize) * -32);
+    --y: calc(var(--unitSize) * -40);
+    --r: 1deg;
+    /* border-top-width: calc(var(--unitSize) * 7.8); */
+    /* border-left-width: calc(var(--unitSize) * 6.3); */
 }
 
 .tailP4 {
     border-radius: 50%;
-    border: calc(var(--unitSize) * 4) solid var(--black);
-    width: calc(var(--unitSize) * 52.4);
+    border: solid var(--orange);
+    border-right-width: calc(var(--unitSize) * 4.7);
+    width: calc(var(--unitSize) * 30.3);
+    height: calc(var(--unitSize) * 30.6);
+    --x: calc(var(--unitSize) * -39.4);
+    --y: calc(var(--unitSize) * -41.8);
+    --r: -2deg;
+    /* border-top-width: calc(var(--unitSize) * 7.8); */
+    /* border-left-width: calc(var(--unitSize) * 6.3); */
+    border-block-width: calc(var(--unitSize) * 1.4);
+}
+
+.tailP4Anchor {
+    width: calc(var(--unitSize) * 5);
+    height: calc(var(--unitSize) * 5);
+    clip-path: polygon(-449.82% -685.77%, -196.94% calc(var(--unitSize) * -17.8), -112.06% -821.68%, -447.11% -861.35%);
+}
+
+.fire {
+    border-radius: 0% 80% 60% 80%;
     aspect-ratio: 1/1;
-    clip-path: polygon(97.71% 72.44%, 89.89% 80.35%, 87.02% 79.97%, 84.54% 78.63%, 83.02% 76.33%, 86.83% 67.55%, 90.46% 66.98%, 92.57% 67.37%, 94.47% 68.51%);
+    background: gold;
+    width: calc(var(--unitSize) * 6);
+    padding: calc(var(--unitSize) * 1.2);
+    --y: calc(var(--unitSize) * -43.6);
+    --x: calc(var(--unitSize) * -25.8);
+    --r: -25deg;
+    border: calc(var(--unitSize) * 0.2) solid;
+    z-index: 1;
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) rotate(-45deg) scaleX(0.85) rotate(45deg);
 }
 
-.ear5 {
-    width: calc(var(--unitSize) * 8.1);
-    height: calc(var(--unitSize) * 2);
-    background: var(--gold);
-    --r: -31deg;
-    --y: calc(var(--unitSize) * -1);
-    --x: calc(var(--unitSize) * -16.5);
+.fire::before {
+    width: 70%;
+    height: 70%;
+    content: "";
+    position: absolute;
+    border-radius: 0% 80% 60% 80%;
+    background: #ffea7b;
+    /*border: calc(var(--unitSize) * 0.1) solid;*/
 }
 
-.ear6 {
-    width: calc(var(--unitSize) * 8.9);
-    height: calc(var(--unitSize) * 2);
-    background: var(--gold);
-    --r: 28deg;
-    --y: calc(var(--unitSize) * -1.2);
-    --x: calc(var(--unitSize) * 3.2);
-}
-
-.nose {
-    width: calc(var(--unitSize) * 1.6);
-    height: calc(var(--unitSize) * 1);
-    border-radius: 50%;
-    background: var(--black);
-    --y: calc(var(--unitSize) * 15);
-    --x: calc(var(--unitSize) * 16.5);
+.arm {
+    height: calc(var(--unitSize) * 11);
+    width: calc(var(--unitSize) * 3);
+    border-radius: 0 0 calc(var(--unitSize) * 5) calc(var(--unitSize) * 5);
+    background: var(--orange);
+    border: calc(var(--unitSize) * 0.2) solid;
+    border-top: none;
+    transform-origin: 50% 0;
+    --x: calc(var(--unitSize) * -9.2);
+    --r: -20deg;
 }
