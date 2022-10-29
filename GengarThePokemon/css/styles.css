@@ -1,0 +1,310 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #26032B;
+    --unitSize: 1.6vmin;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: 1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: -1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.flipHorizontal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: -1;
+    transform: scaleY(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.tracedImage {
+    position: absolute;
+    height: 800px;
+    width: unset;
+    /*z-index: 1;*/
+    opacity: 0.5;
+    --x: 4px;
+    display: none;
+}
+
+.canvas {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    /*border: calc(var(--unitSize) * 0.1) solid;*/
+    /*opacity: 0.4;*/
+}
+
+.canvas *, .canvas *::before, .canvas *::after {
+    position: absolute;
+}
+
+.gengar {
+    --accent1: #5D4A6A;
+    --accent2: #473952;
+    --accent3: #a05059;
+    --red1: #ED395C;
+    --red2: #A30E2C;
+    --red3: #860C23;
+    --red4: #6B0A1D;
+    --red5: #4C0815;
+    --eye: #F95CB3;
+    --black: #000000;
+}
+
+.body {
+    width: 420px;
+    height: 390px;
+    border-radius: 50% / 60% 60% 40% 40%;
+    background: var(--accent1);
+    --y: 55px;
+    overflow: hidden;
+    /*opacity: 0.6;*/
+}
+
+.eye {
+    width: 100px;
+    height: 44px;
+    background: var(--eye);
+    border-radius: 50% / 100% 100% 0 0;
+    --r: -142deg;
+    --x: -71px;
+    --y: -94px;
+    box-shadow: 0 0 15px 5px var(--eye);
+}
+
+.eye::before, .eye::after {
+    position: absolute;
+    content: "";
+    display: block;
+}
+
+.eye::after {
+    width: 125px;
+    height: 30px;
+    border-top: 5px solid var(--black);
+    background: var(--accent1);
+    bottom: -30px;
+}
+
+.eye::before {
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    transform: rotate(-40deg);
+    left: 21px;
+    top: 24px;
+    background: #fff;
+    /*border: 8px solid white;*/
+}
+
+.ear {
+    width: 217px;
+    background: var(--accent2);
+    aspect-ratio: 1/1;
+    border-radius: 100% 0;
+    --y: -117px;
+    --r: -69deg;
+    --x: -130px;
+}
+
+.hair {
+    width: 50px;
+    height: 38px;
+    background: var(--accent2);
+    border-radius: 5px;
+    --y: -126px;
+    --s: 27deg;
+    --x: -35px;
+    --r: 38deg;
+}
+
+.hair2 {
+    --y: -131px;
+    --s: 27deg;
+    --x: -25px;
+    --r: 57deg;
+}
+
+.hair3 {
+    height: 50px;
+    --y: -130px;
+    --s: 0deg;
+    --x: 0px;
+    --r: 0;
+    /*--r: 57deg;*/
+    transform: scaleY(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) scaleY(2) rotate(45deg) skew(var(--s));
+}
+
+.mouth {
+    width: 320px;
+    height: 320px;
+    background: repeating-conic-gradient(at 50% 200%, black 0%, transparent 0.05%, transparent 2.35%, black 2.4%, black 2.5%) white;
+    border-radius: 50% / 80% 80% 25% 25%;
+    overflow: hidden;
+
+}
+
+
+.mouthAnchor2 {
+    --y: 10px;
+}
+
+.mouthClip1 {
+    overflow: hidden;
+    width: 340px;
+    height: 345px;
+    background: radial-gradient(ellipse at 50% 78%,
+    var(--red5) 0px,
+    var(--red5) 61px,
+    var(--red4) 0px,
+    var(--red4) 94px,
+    var(--red3) 0px,
+    var(--red3) 134px,
+    var(--red2) 0px,
+    var(--red2) 170px,
+    var(--red1) 0px
+    ) no-repeat 0 100%;
+    background-size: 100% 60%;
+    border-radius: 50% / 80% 80% 25% 25%;
+    --y: -20px;
+}
+
+.mouthClip2 {
+    width: 320px;
+    height: 320px;
+    --y: -160px;
+    background: repeating-conic-gradient(at 50% 2%, black 0%, transparent 0.05%, transparent 2.35%, black 2.4%, black 2.5%) white;
+    border-radius: 50% / 80% 80% 25% 25%;
+    overflow: hidden;
+}
+
+.mouthClip3 {
+    width: 320px;
+    height: 330px;
+    --y: -204px;
+    background: var(--accent1);
+    border-radius: 50% / 80% 80% 25% 25%;
+    overflow: hidden;
+}
+
+.paw {
+    width: 80px;
+    height: 100px;
+    transform-origin: 50% 100%;
+    border-radius: 20% 20% 20% 20% / 50%;
+    background: var(--accent3);
+    --y: 192px;
+    --x: -170px;
+    --s: -0deg;
+}
+
+.finger {
+    border-radius: 95% 10%;
+    aspect-ratio: 1/1;
+    width: 55px;
+    background: var(--accent3);
+}
+
+.finger1 {
+    --r: -79deg;
+    --x: -16px;
+    --y: -29px;
+}
+
+.finger2 {
+    --r: -39deg;
+    --x: 15px;
+    --y: -40px;
+}
+
+.finger3 {
+    --r: -3deg;
+    --x: 44px;
+    --y: -28px;
+}
+
+.mouthP1 {
+    background: var(--red4);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    --y: 90px;
+}
+
+.mouthP1_1 {
+    width: 9px;
+    height: 24px;
+    border-radius: 0 100% 100% 0 / 50%;
+    border: 5px solid var(--red4);
+    border-left: none;
+    --y: -15px;
+    --r: 170deg;
+    --x: 4px;
+}
+
+.laughOn .mouthAnchor {
+    transform: translateY(-5px);
+}
+
+.laughOn .eye::before {
+    opacity: 0.6;
+}
+
+.tongue {
+    width: 100%;
+    background: #a8286d;
+    height: 200px;
+    --y: 230px;
+    border-radius: 50%;
+}
+
+.tongue::before {
+    content: "";
+    display: block;
+    top: 5px;
+    width: 2px;
+    height: 30px;
+    background: var(--black);
+}
