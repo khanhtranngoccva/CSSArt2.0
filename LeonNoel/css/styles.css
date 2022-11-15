@@ -1,0 +1,1272 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    --background: white;
+    background: var(--background);
+    --unitSize: 1.6vmin;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: 1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: -1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.flipHorizontal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --_scale: -1;
+    transform: scaleY(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s));
+}
+
+.tracedImage {
+    position: absolute;
+    height: 800px;
+    width: unset;
+    opacity: 0.5;
+    /*z-index: 1;*/
+    display: none;
+}
+
+.canvas {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    /*border: calc(var(--unitSize) * 0.1) solid;*/
+    /*opacity: 0.4;*/
+}
+
+.canvas *, .canvas *::before, .canvas *::after {
+    position: absolute;
+}
+
+.pseudo::before, .pseudo::after {
+    content: "";
+    display: block;
+}
+
+.leon {
+    --color: black;
+    animation: hueCycle 10s linear infinite;
+}
+
+@keyframes hueCycle {
+    0% {
+        filter: hue-rotate(0);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.g1 {
+    width: 97px;
+    height: 10px;
+    background: var(--color);
+    --x: -75px;
+    --y: -56px;
+}
+
+.g2 {
+    width: 75px;
+    height: 16px;
+    background: var(--color);
+    border-radius: 5px 40px 0 0 / 10px 10px 0 0;
+    --y: -65px;
+    --x: -80px;
+    --r: -5deg;
+}
+
+.g3 {
+    width: 108px;
+    height: 18px;
+    border: 10px solid var(--color);
+    border-top: none;
+    border-radius: 50% / 0 0 100% 100%;
+    --y: -60px;
+}
+
+.g4 {
+    width: 28px;
+    height: 14px;
+    background: var(--color);
+    border-top: none;
+    --y: -43px;
+    --x: -133px;
+    --r: -66deg;
+}
+
+
+.g5 {
+    width: 20px;
+    height: 10px;
+    background: var(--color);
+    border-top: none;
+    --y: -56px;
+    --x: -123px;
+    --r: -10deg;
+}
+
+
+.g6 {
+    width: 50px;
+    height: 17px;
+    background: var(--color);
+    border-top: none;
+    --y: -14px;
+    --x: -127px;
+    --r: 65deg;
+}
+
+
+.g7 {
+    width: 92px;
+    height: 15px;
+    background: var(--color);
+    /*border: 10px solid var(--color;*/
+    border-top: none;
+    border-radius: 50% / 0 0 20% 20%;
+    --y: 8px;
+    --x: -78px;
+}
+
+.g8 {
+    width: 50px;
+    height: 17px;
+    background: var(--color);
+    border-top: none;
+    --y: -13px;
+    --x: -26px;
+    --r: -59deg;
+}
+
+.g9 {
+    width: 30px;
+    height: 15px;
+    background: var(--color);
+    border-top: none;
+    --y: -43px;
+    --x: -19px;
+    --r: 60deg;
+}
+
+.g10 {
+    width: 40px;
+    height: 15px;
+    border: 10px solid var(--color);
+    border-bottom: none;
+    border-radius: 50% / 100% 100% 0 0;
+    --y: -33px;
+}
+
+.g11 {
+    width: 40px;
+    height: 15px;
+    background: var(--color);
+    --y: -45px;
+}
+
+.e1 {
+    width: 53px;
+    background: var(--color);
+    height: 6px;
+    --x: -64px;
+    --y: -39px;
+    --r: 6deg;
+    border-radius: 50% / 60% 50% 0 0;
+}
+
+.e2 {
+    width: 14px;
+    background: var(--color);
+    height: 2px;
+    --x: -35px;
+    --y: -30px;
+    --r: 63deg;
+    border-radius: 9999px 9999px 9999px 0;
+}
+
+.e3 {
+    width: 30px;
+    height: 18px;
+    --x: -94px;
+    --y: -34px;
+    border-radius: 100% 0 0 0;
+    border-top: 5px solid var(--color);
+    border-left: 3px solid var(--color);
+}
+
+.e4 {
+    width: 18px;
+    height: 5px;
+    background: var(--color);
+    border-top: none;
+    border-radius: 50% / 20% 15% 20% 20%;
+    --y: -19px;
+    --x: -103px;
+    --r: -120deg;
+}
+
+.e5 {
+    width: 20px;
+    height: 3px;
+    background: var(--color);
+    border-radius: 0 10% 10% 30% / 0 50% 50% 100%;
+    --r: -1deg;
+    --y: -11px;
+    --x: -91px;
+}
+
+.e6 {
+    width: 23px;
+    height: 2px;
+    background: var(--color);
+    border-radius: 1000px;
+    --r: -10deg;
+    --y: -10px;
+    --x: -47px;
+}
+
+.e7 {
+    width: 37px;
+    height: 30px;
+    background: var(--color);
+    border-radius: 50%;
+    --r: -5deg;
+    --y: -27px;
+    --x: -69px;
+}
+
+.e8 {
+    width: 15px;
+    height: 13px;
+    background: white;
+    border-radius: 50%;
+    --r: -5deg;
+    --y: -32px;
+    --x: -65px;
+}
+
+.n1 {
+    width: 5px;
+    height: 22px;
+    border-radius: 0 0 0 9999px;
+    border-left: 2px solid var(--color);
+    border-bottom: 1px solid var(--color);
+    --r: 9deg;
+    --y: 35px;
+    --x: -30px;
+}
+
+
+.n2 {
+    width: 37px;
+    height: 25px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 3px solid var(--color);
+    border-inline: 2px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 46px;
+}
+
+.n3 {
+    width: 5px;
+    height: 2px;
+    border-radius: 20% 50% 0 20% / 50% 100% 0 50%;
+    background: var(--color);
+    --r: -12deg;
+    --y: 45px;
+    --x: -17px;
+}
+
+.b1 {
+    border-radius: 30px;
+    width: 100px;
+    height: 50px;
+    --s: -16deg;
+    --r: 20deg;
+    --y: 87px;
+    --x: -43px;
+    background: var(--color);
+    /*opacity: 0.2;*/
+}
+
+.b2 {
+    width: 80px;
+    height: 21px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 5px solid var(--color);
+    border-inline: 2px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 66px;
+}
+
+.b3 {
+    border-radius: 50% / 0 0 100% 100%;
+    background: var(--color);
+    width: 300px;
+    height: 200px;
+    --y: 120px;
+    --vClip: 26%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    /*opacity: 0.3;*/
+}
+
+.b4 {
+    background: white;
+    border-radius: 0 0 18px 0;
+    width: 55px;
+    height: 35px;
+    --s: -5deg;
+    --y: 58px;
+    --r: 25deg;
+    --x: -112px;
+}
+
+.b5 {
+    border-radius: 50% / 100% 100% 0 0;
+    width: 88px;
+    height: 40px;
+    border-top: 35px solid var(--color);
+    --y: 75px;
+    --r: -52deg;
+    --x: -124px;
+    --hClip: 60%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+}
+
+
+.b6 {
+    border-radius: 50% / 100% 100% 0 0;
+    width: 96px;
+    height: 48px;
+    border-top: 40px solid var(--color);
+    --y: 118px;
+    --r: -68deg;
+    --x: -108px;
+    --hClip: 60%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+}
+
+
+.b7 {
+    border-radius: 50% / 0 0 100% 100%;
+    width: 125px;
+    height: 66px;
+    background: white;
+    --y: 115px;
+    /*--x: -108px;*/
+}
+
+.b8 {
+    border-radius: 50% / 100% 100% 0 0;
+    width: 79px;
+    height: 41px;
+    border-top: 36px solid white;
+    --y: 82px;
+    --r: -25deg;
+    --x: -39px;
+    --hClip: 23%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+}
+
+.b9 {
+    border-radius: 50% / 100% 100% 0 0;
+    width: 88px;
+    height: 48px;
+    border-top: 42px solid white;
+    --y: 107px;
+    --r: -86deg;
+    --x: -38px;
+    --hClip: 52%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+}
+
+
+.b10 {
+    width: 140px;
+    height: 13px;
+    --y: 82px;
+    background: var(--color);
+    border-radius: 50% / 0% 0% 80% 80%;
+}
+
+.beard {
+    /*opacity: 0.5;*/
+}
+
+.m1 {
+    border-radius: 50% / 0 0 100% 100%;
+    background: var(--color);
+    overflow: hidden;
+    border: 2px solid var(--color);
+    width: 100px;
+    height: 40px;
+    --y: 120px;
+}
+
+.m2 {
+    border-radius: 50% / 0 0 100% 100%;
+    background: white;
+    border: 2px solid var(--color);
+    width: 120px;
+    height: 12px;
+    --y: 99px;
+    --vClip: 26%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    /*opacity: 0.3;*/
+}
+
+.m3 {
+    border-radius: 50%;
+    width: 80px;
+    height: 50px;
+    background: white;
+    --y: 25px;
+}
+
+.h1 {
+    width: 95px;
+    background: var(--color);
+    height: 91px;
+    border-radius: 20px;
+    --s: -12deg;
+    --x: -191px;
+    --y: -63px;
+    --r: -28deg;
+}
+
+.h2 {
+    width: 75px;
+    background: var(--color);
+    height: 55px;
+    border-radius: 8px;
+    --s: -20deg;
+    --x: -208px;
+    --y: -30px;
+    --r: -35deg;
+}
+
+.h3 {
+    width: 81px;
+    background: var(--color);
+    height: 50px;
+    border-radius: 8px;
+    --s: -7deg;
+    --x: -178px;
+    --y: -147px;
+    --r: 4deg;
+}
+
+.h4 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 20px;
+    --s: 16deg;
+    --x: -180px;
+    --y: -97px;
+    --r: -20deg;
+}
+
+.h5 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -139px;
+    --y: -166px;
+    --r: 7deg;
+}
+
+.h6 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -95px;
+    --y: -207px;
+    --r: 7deg;
+}
+
+.h7 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 12px;
+    --s: 12deg;
+    --x: -26px;
+    --y: -226px;
+    --r: 24deg;
+}
+
+.h8 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 17px;
+    --y: -232px;
+    --r: 56deg;
+}
+
+.h9 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 21px;
+    --s: 6deg;
+    --x: 81px;
+    --y: -214px;
+    --r: 108deg;
+}
+
+
+.h10 {
+    width: 81px;
+    background: var(--color);
+    height: 92px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 140px;
+    --y: -163px;
+    --r: 92deg;
+}
+
+.h11 {
+    width: 96px;
+    background: var(--color);
+    height: 90px;
+    border-radius: 7px;
+    --s: -26deg;
+    --x: 179px;
+    --y: -112px;
+    --r: 88deg;
+}
+
+.h12 {
+    width: 61px;
+    background: var(--color);
+    height: 72px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 194px;
+    --y: -3px;
+    --r: 128deg;
+}
+
+.h13 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 201px;
+    --y: -41px;
+    --r: 129deg;
+}
+
+.h14 {
+    width: 41px;
+    background: var(--color);
+    height: 60px;
+    border-radius: 7px;
+    --s: -19deg;
+    --x: 176px;
+    --y: 54px;
+    --r: 209deg;
+}
+
+.h15 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -155px;
+    --y: -160px;
+    --r: 86deg;
+}
+
+.h16 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -13deg;
+    --x: -116px;
+    --y: -197px;
+    --r: 92deg;
+}
+
+.h17 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: 12deg;
+    --x: -68px;
+    --y: -240px;
+    --r: 102deg;
+}
+
+.h18 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -24deg;
+    --x: 8px;
+    --y: -242px;
+    --r: -67deg;
+}
+
+.h19 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: 2deg;
+    --x: 57px;
+    --y: -232px;
+    --r: -13deg;
+}
+
+.h20 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: 9deg;
+    --x: 127px;
+    --y: -188px;
+    --r: 182deg;
+}
+
+.h21 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -16deg;
+    --x: 172px;
+    --y: -141px;
+    --r: 87deg;
+}
+
+.h22 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 198px;
+    --y: -78px;
+    --r: 129deg;
+}
+
+.h23 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 27px;
+    --y: -162px;
+    --r: 129deg;
+}
+
+.h24 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 9px;
+    --s: -4deg;
+    --x: 162px;
+    --y: -83px;
+    --r: 111deg;
+}
+
+.h25 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 6px;
+    --s: -18deg;
+    --x: 142px;
+    --y: -110px;
+    --r: 84deg;
+}
+
+.h25 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 6px;
+    --s: -18deg;
+    --x: 142px;
+    --y: -110px;
+    --r: 84deg;
+}
+
+.h26 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: 1deg;
+    --x: 167px;
+    --y: -57px;
+    --r: 156deg;
+}
+
+.h27 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -29deg;
+    --x: 171px;
+    --y: -1px;
+    --r: 122deg;
+}
+
+.h28 {
+    width: 55px;
+    background: var(--color);
+    height: 64px;
+    border-radius: 12px;
+    --s: -16deg;
+    --x: 174px;
+    --y: 24px;
+    --r: 111deg;
+}
+
+.h29 {
+    width: 41px;
+    background: var(--color);
+    height: 45px;
+    border-radius: 5px;
+    --s: -9deg;
+    --x: 171px;
+    --y: 43px;
+    --r: 213deg;
+}
+
+.h30 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 6px;
+    --s: -9deg;
+    --x: 118px;
+    --y: -139px;
+    --r: 164deg;
+}
+
+.h31 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 7px;
+    --s: -9deg;
+    --x: 100px;
+    --y: -156px;
+    --r: 158deg;
+}
+
+.h32 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 79px;
+    --y: -159px;
+    --r: 158deg;
+}
+
+.h33 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: 31px;
+    --y: -160px;
+    --r: 107deg;
+}
+
+.h34 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 7px;
+    --s: -9deg;
+    --x: -14px;
+    --y: -164px;
+    --r: 129deg;
+}
+
+.h35 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -18deg;
+    --x: 14px;
+    --y: -163px;
+    --r: 133deg;
+}
+
+.h36 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 5px;
+    --s: -9deg;
+    --x: -34px;
+    --y: -164px;
+    --r: 129deg;
+}
+
+.h37 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 13px;
+    --s: -9deg;
+    --x: -53px;
+    --y: -151px;
+    --r: 30deg;
+}
+
+.h38 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 14px;
+    --s: -9deg;
+    --x: -97px;
+    --y: -140px;
+    --r: 182deg;
+}
+
+.h39 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -126px;
+    --y: -124px;
+    --r: 180deg;
+}
+
+.h40 {
+    width: 52px;
+    background: var(--color);
+    height: 64px;
+    border-radius: 7px;
+    --s: -9deg;
+    --x: -175px;
+    --y: 34px;
+    --r: 143deg;
+}
+
+.h41 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -153px;
+    --y: -74px;
+    --r: 179deg;
+}
+
+.h42 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -172px;
+    --y: -27px;
+    --r: 162deg;
+}
+
+.h43 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -14deg;
+    --x: -201px;
+    --y: 4px;
+    --r: 189deg;
+}
+
+
+.h44 {
+    width: 62px;
+    background: var(--color);
+    height: 70px;
+    border-radius: 12px;
+    --s: -9deg;
+    --x: -170px;
+    --y: 13px;
+    --r: 129deg;
+}
+
+
+
+.h45 {
+    width: 34px;
+    background: var(--color);
+    height: 33px;
+    border-radius: 4px;
+    --s: -9deg;
+    --x: -155px;
+    --y: 58px;
+    --r: 157deg;
+}
+
+.h46 {
+    width: 47px;
+    background: var(--color);
+    height: 35px;
+    border-radius: 6px;
+    --s: 28deg;
+    --x: -179px;
+    --y: 44px;
+    --r: 114deg;
+}
+
+.h47 {
+    width: 52px;
+    background: var(--color);
+    height: 45px;
+    border-radius: 7px;
+    --s: 28deg;
+    --x: -182px;
+    --y: 41px;
+    --r: 141deg;
+}
+
+/*.head {*/
+/*    opacity: 0.5;*/
+/*}*/
+
+.s1 {
+    width: 235px;
+    height: 127px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 9px solid var(--color);
+    border-inline: 2px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 171px;
+}
+
+.s2 {
+    width: 61px;
+    height: 5px;
+    background: var(--color);
+    --y: 192px;
+    --r: 68deg;
+    --x: -92px;
+}
+
+.s3 {
+    width: 27px;
+    height: 5px;
+    background: var(--color);
+    --y: 241px;
+    --r: 90deg;
+}
+
+.s4 {
+    width: 76px;
+    height: 55px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 5px solid var(--color);
+    border-right: 3px solid var(--color);
+    border-left: 7px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 120px;
+    --r: 137deg;
+    --x: -165px;
+}
+
+.s5 {
+    width: 126px;
+    height: 24px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 4px solid var(--color);
+    border-right: 8px solid var(--color);
+    border-left: 4px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 174px;
+    --r: 37deg;
+    --x: -146px;
+}
+
+.s6 {
+    width: 118px;
+    height: 44px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 4px solid var(--color);
+    border-right: 6px solid var(--color);
+    border-left: 4px solid var(--color);
+    --vClip: 45%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 247px;
+    --r: 244deg;
+    --x: -88px;
+}
+
+.s7 {
+    width: 118px;
+    height: 52px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 4px solid var(--color);
+    border-right: 6px solid var(--color);
+    border-left: 4px solid var(--color);
+    --vClip: 65%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 264px;
+    --r: 232deg;
+    --x: -100px;
+}
+
+.s8 {
+    width: 156px;
+    height: 28px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 4px solid var(--color);
+    border-right: 6px solid var(--color);
+    border-left: 4px solid var(--color);
+    --vClip: 65%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 202px;
+    --r: 384deg;
+    --x: -156px;
+}
+
+.s9 {
+    width: 93px;
+    height: 41px;
+    border-radius: 0 0 60% 40%/ 0 0 100% 100%;
+    border-bottom: 3px solid var(--color);
+    border-right: 4px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 54%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 151px;
+    --r: 452deg;
+    --x: -202px;
+}
+
+.s10 {
+    width: 81px;
+    height: 54px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 5px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 52%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 117px;
+    --r: 510deg;
+    --x: -176px;
+}
+
+.s11 {
+    width: 45px;
+    height: 5px;
+    background: var(--color);
+    --y: 267px;
+    --r: -34deg;
+    --x: -18px;
+}
+
+.s12 {
+    width: 40px;
+    height: 4px;
+    background: var(--color);
+    --y: 267px;
+    --r: 42deg;
+    --x: -50px;
+}
+
+.s13 {
+    width: 35px;
+    height: 13px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 5px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 52%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 244px;
+    --r: 687deg;
+    --x: -105px;
+}
+
+.s14 {
+    width: 57px;
+    height: 20px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 5px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 54%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 273px;
+    --r: -105deg;
+    --x: -110px;
+}
+
+
+.s15 {
+    width: 96px;
+    height: 25px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 10px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 23%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 295px;
+    --r: -95deg;
+    --x: -183px;
+}
+
+.s16 {
+    width: 42px;
+    height: 14px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 10px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --hClip: 60%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+    --y: 198px;
+    --r: -150deg;
+    --x: -225px;
+}
+
+.s17 {
+    width: 178px;
+    height: 14px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 7px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 23%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 271px;
+    --r: -67deg;
+    --x: -257px;
+}
+
+.s18 {
+    width: 27px;
+    height: 11px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 7px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 23%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 191px;
+    --r: -24deg;
+    --x: -216px;
+}
+
+.s19 {
+    width: 67px;
+    height: 11px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 7px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --vClip: 23%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 100%, 0% 100%);
+    --y: 373px;
+    --r: 64deg;
+    --x: -280px;
+}
+
+.s20 {
+    width: 58px;
+    height: 23px;
+    border-radius: 50% / 0 0 100% 100%;
+    border-bottom: 19px solid var(--color);
+    border-right: 2px solid var(--color);
+    border-left: 1px solid var(--color);
+    --hClip: 60%;
+    clip-path: polygon(0% 0%, var(--hClip) 0%, var(--hClip) 100%, 0% 100%);
+    --y: 359px;
+    --r: -211deg;
+    --x: 204px;
+}
+
+.laptop {
+    width: 413px;
+    height: 330px;
+    border-radius: 50% / 10% 10% 90% 90%;
+    background: var(--color);
+    --vClip: 34%;
+    clip-path: polygon(0% var(--vClip), 100% var(--vClip), 100% 0%, 0% 0%);
+    --y: 451px;
+}
