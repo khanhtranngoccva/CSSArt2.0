@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    --unitSize: 1.6vmin;
+    --unitSize: 0.9vmin;
     background: #276223;
 }
 
@@ -80,7 +80,7 @@ img {
     /*opacity: 0.4;*/
     --brown: #93654A;
     --darkBrown: #78594B;
-    --gray: #DBDBDB;
+    --gray: #cbcbcb;
 }
 
 .canvas *, .canvas *::before, .canvas *::after {
@@ -1463,12 +1463,12 @@ img {
 
 .tableSeg3 {
     width: 100vw;
-    height: 1200px;
-    --c1: #306530;
-    background: var(--c1);
+    height: 100vh;
+    --c1: #3a7a1c;
+    background: repeating-linear-gradient(120deg, transparent 0, transparent 200px, white 200px, white 205px) var(--c1);
     --sy: 24.7deg;
-    --y: 922px;
-    opacity: 0.5;
+    --y: calc(50vh + 320px);
+    /*opacity: 0.5;*/
 }
 
 .rouletteBoard {
@@ -1924,7 +1924,6 @@ img {
 }
 
 
-
 .spade2 {
     transform: translate(-27px, 124px) rotate(169deg) scale(0.4);
 }
@@ -2259,11 +2258,14 @@ img {
 .cuphead .head {
     width: 135px;
     height: 113px;
-    border-radius: 50% / 70% 70% 30% 30%;
-    background: #fffae6;
-    --r: 132deg;
+    padding: 6px;
+    border-radius: 50% / 30% 30% 70% 70%;
+    background: #f8f3dd;
+    --r: 312deg;
     --x: -129.2px;
     --y: -115px;
+    /*opacity: 0.8;*/
+    overflow: hidden;
 }
 
 .cuphead .body {
@@ -2285,6 +2287,17 @@ img {
     --r: 55deg;
     --y: -74px;
     --x: 4px;
+}
+
+.cuphead .arm2 {
+    border-radius: 10% 20% 50% 50% / 50%;
+    background: black;
+    width: 19px;
+    height: 46px;
+    --r: -11deg;
+    --y: -3px;
+    --x: -41px;
+    outline: none;
 }
 
 .pantsP1 {
@@ -2326,4 +2339,431 @@ img {
     --r: -15deg;
     --y: 81px;
     --x: 13px;
+}
+
+.pantsP5 {
+    border-radius: 50%;
+    background: var(--red);
+    width: 17px;
+    height: 8px;
+    --r: -93deg;
+    --y: 62px;
+    --x: 3px;
+}
+
+.pantsP6 {
+    border-radius: 10% / 50%;
+    background: var(--red);
+    width: 30px;
+    height: 20px;
+    --r: -208deg;
+    --s: -23deg;
+    --y: 43px;
+    --x: 54px;
+}
+
+.pantsP7 {
+    border-radius: 50%;
+    background: var(--red);
+    width: 26px;
+    height: 7px;
+    --r: -213deg;
+    /* --s: -23deg; */
+    --y: 60px;
+    --x: 57px;
+}
+.cuphead .head::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    top: 0;
+    background: #f1e3cf;
+    z-index: 1;
+}
+
+.cuphead .head::after {
+    content: "";
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: 50px;
+    background: white;
+    z-index: 1;
+}
+
+.cuphead .eye {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    --x: 66px;
+    --y: 11px;
+    background: white;
+    outline: 2px solid var(--gray);
+    overflow: hidden;
+}
+
+.cuphead .eye::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 18px;
+    height: 23px;
+    top: 46px;
+    left: 36px;
+    background: black;
+}
+
+.cuphead .eye::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 6px;
+    top: 56px;
+    left: 30px;
+    background: white;
+    transform: rotate(10deg) skew(-60deg);
+}
+
+.cuphead .mouth {
+    width: 95px;
+    border-radius: 20% 70% 70% 20% / 50%;
+    border: 2px var(--gray) solid;
+    background: white;
+    height: 32px;
+    --r: 11deg;
+    --x: 58px;
+    --y: 80px;
+    /*overflow: visible;*/
+}
+
+.cuphead .mouthP1 {
+    width: 102px;
+    border-radius: 50% / 100% 100% 0 0;
+    border: 1px var(--gray) solid;
+    border-bottom: 0;
+    background: none;
+    height: 35px;
+    --r: 186deg;
+    --x: -31px;
+    --y: -19px;
+}
+
+.cuphead .mouthP2 {
+    width: 73px;
+    background: var(--gray);
+    border-radius: 0;
+    height: 1px;
+    --r: 284deg;
+    --x: -25px;
+    --y: 35px;
+}
+
+.cuphead .mouthP3 {
+    width: 73px;
+    background: var(--gray);
+    border-radius: 0;
+    height: 1px;
+    --r: 274deg;
+    --x: -3px;
+    --y: 15px;
+}
+
+.cuphead .straw {
+    width: 500px;
+    aspect-ratio: 1/1;
+    /* background: red; */
+    border-radius: 50%;
+    background: radial-gradient(transparent 64%, #f0f0f0 64%);
+    /* border-image: 3 repeating-radial-gradient(at 200px 200px, white 0px, white 3px, red 3px, red 5px); */
+    --y: -524px;
+    --x: -271px;
+    clip-path: polygon(24% 97.2%, 17.2% 61%, 34.80% 92.00%, 34.6% 94.8%, 33.8% 96%, 32.8% 96.6%);
+    /* overflow: hidden; */
+}
+
+.cuphead .strawP2 {
+    width: 143px;
+    aspect-ratio: 1/1;
+    /* background: red; */
+    border-radius: 50%;
+    background: radial-gradient(transparent 46%, #f0f0f0 46%);
+    /* border-image: 3 repeating-radial-gradient(at 200px 200px, white 0px, white 3px, red 3px, red 5px); */
+    --y: -182px;
+    --x: -281px;
+    clip-path: polygon(30.99% 83.21%, 44.07% 73.1%, 83.05% 59.93%, 108.53% 116.68%, 30.30% 99.50%, 28.6% 90.3%);
+    /* overflow: hidden; */
+}
+
+
+.cuphead .strawP3 {
+    width: 43px;
+    height: 20px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-top: 12px solid var(--red);
+    border-bottom: 0;
+    --vClip: 20%;
+    clip-path: polygon(var(--vClip) 0%, var(--vClip) 100%, calc(100% - var(--vClip)) 100%, calc(100% - var(--vClip)) 0);
+    /* clip-path: polygon(-68.55% -304.99%, 10.17% 76.22%, 221.33% 136.23%, 600.01% -28.94%); */
+    --x: -233px;
+    --y: -61px;
+    --r: 451deg;
+}
+
+.cuphead .strawP4 {
+    width: 43px;
+    height: 27px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-top: 12px solid var(--red);
+    border-bottom: 0;
+    --vClip: 20%;
+    clip-path: polygon(var(--vClip) 0%, var(--vClip) 100%, calc(100% - var(--vClip)) 100%, calc(100% - var(--vClip)) 0);
+    /* clip-path: polygon(-68.55% -304.99%, 10.17% 76.22%, 221.33% 136.23%, 600.01% -28.94%); */
+    --x: -202px;
+    --y: -72px;
+    --r: 416deg;
+}
+
+.cuphead .strawP5 {
+    width: 43px;
+    height: 27px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-top: 12px solid var(--red);
+    border-bottom: 0;
+    --vClip: 20%;
+    clip-path: polygon(var(--vClip) 0%, var(--vClip) 100%, calc(100% - var(--vClip)) 100%, calc(100% - var(--vClip)) 0);
+    /* clip-path: polygon(-68.55% -304.99%, 10.17% 76.22%, 221.33% 136.23%, 600.01% -28.94%); */
+    --x: -167px;
+    --y: -84px;
+    --r: 471deg;
+}
+
+.cuphead .strawP6 {
+    width: 43px;
+    height: 27px;
+    border-radius: 50% / 100% 100% 0 0;
+    border-top: 12px solid var(--red);
+    border-bottom: 0;
+    --vClip: 20%;
+    clip-path: polygon(var(--vClip) 0%, var(--vClip) 100%, calc(100% - var(--vClip)) 100%, calc(100% - var(--vClip)) 0);
+    /* clip-path: polygon(-68.55% -304.99%, 10.17% 76.22%, 221.33% 136.23%, 600.01% -28.94%); */
+    --x: -141px;
+    --y: -72px;
+    --r: 478deg;
+}
+
+.cuphead .strawP2 {
+    width: 143px;
+    aspect-ratio: 1/1;
+    /* background: red; */
+    border-radius: 50%;
+    background: radial-gradient(transparent 46%, #f0f0f0 46%);
+    /* border-image: 3 repeating-radial-gradient(at 200px 200px, white 0px, white 3px, red 3px, red 5px); */
+    --y: -182px;
+    --x: -281px;
+    clip-path: polygon(30.99% 83.21%, 44.07% 73.1%, 83.05% 59.93%, 108.53% 116.68%, 30.30% 99.50%, 28.6% 90.3%);
+    /* overflow: hidden; */
+}
+
+.hand1P1 {
+    border-radius: 30% 30% 50% 50% / 50%;
+    border: 2px solid var(--gray);
+    background: var(--gray);
+    width: 20px;
+    height: 15px;
+    border-top: none;
+    --r: 52deg;
+    --y: -68px;
+    --x: 24px;
+    overflow: hidden;
+}
+
+.hand1P1::before {
+    border-radius: 50%;
+    background: white;
+    width: 100%;
+    height: 11px;
+    content: "";
+
+}
+
+.hand1P2 {
+    border-radius: 50% / 30% 30% 70% 70%;
+    border: px solid var(--gray);
+    background: white;
+    width: 22px;
+    height: 21px;
+    border-bottom: none;
+    /* border-top: none; */
+    --r: 52deg;
+    --y: -78px;
+    --x: 34px;
+}
+
+.hand1P3 {
+    border-radius: 50%;
+    background: white;
+    width: 9px;
+    height: 25px;
+    /* border-top: none; */
+    --r: 63deg;
+    --y: -91px;
+    --x: 54px;
+}
+
+.hand1P6 {
+    border-radius: 50%;
+    --orange: #ffba3e;
+    background: var(--orange);
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-top: none;
+    --r: 52deg;
+    --y: -90px;
+    --x: 66px;
+    overflow: hidden;
+    box-shadow: 0 0 30px 20px  var(--orange), 0 0 15px 10px  var(--orange);
+}
+
+.hand1P6::before {
+    background: var(--orange);
+    aspect-ratio: 1/1;
+    height: 12px;
+    border-radius: 50%;
+    content: "";
+    display: block;
+}
+
+.hand2P1 {
+    border-radius: 50%;
+    background: var(--gray);
+    width: 17px;
+    height: 9px;
+    --r: 28deg;
+    --y: 36px;
+    --x: -39px;
+    overflow: hidden;
+}
+
+.hand2P2 {
+    border-radius: 50%;
+    background: white;
+    width: 20px;
+    height: 9px;
+    --r: 134deg;
+    --y: 42px;
+    --x: -50px;
+    overflow: hidden;
+}
+
+.hand2P3 {
+    border-radius: 50%;
+    background: white;
+    width: 23px;
+    height: 10px;
+    --r: 123deg;
+    --y: 44px;
+    --x: -48px;
+    overflow: hidden;
+}
+
+.hand2P4 {
+    border-radius: 50%;
+    background: white;
+    width: 19px;
+    height: 9px;
+    --r: 109deg;
+    --y: 48px;
+    --x: -43px;
+    overflow: hidden;
+}
+
+.hand2P5 {
+    border-radius: 50%;
+    background: white;
+    width: 18px;
+    height: 10px;
+    --r: 93deg;
+    --y: 48px;
+    --x: -38px;
+    overflow: hidden;
+}
+
+.leg {
+    /*outline: 5px solid;*/
+    --y: 105px;
+    --x: 22px;
+}
+
+.legP1 {
+    width: 48px;
+    height: 20px;
+    border-top: 15px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: 50% / 100% 100% 0 0;
+    --x: -21px;
+    --y: -22px;
+    --hClip: 80%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% var(--hClip), 0% var(--hClip));
+    --r: 113deg;
+}
+
+.legP2 {
+    width: 8px;
+    height: 20px;
+    background: saddlebrown;
+    border-radius: 50%;
+    --x: -8px;
+    --y: -7px;
+    /* --hClip: 80%; */
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% var(--hClip), 0% var(--hClip)); */
+    --r: 128deg;
+    /*overflow: hidden;*/
+}
+
+.legP2::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 13px;
+    background: white;
+    border-radius: 50%;
+    left: -2px;
+    top: 3px;
+    --r: 128deg;
+}
+
+.legP3 {
+    width: 28px;
+    height: 36px;
+    background: #e3bb3a;
+    border-radius: 50%;
+    --x: -15px;
+    --y: 5px;
+    --r: 122deg;
+}
+
+.legP4 {
+    width: 24px;
+    height: 35px;
+    background: #e3bb3a;
+    border-radius: 30% / 50%;
+    --x: -20px;
+    --y: 1px;
+    --r: 149deg;
+}
+
+.leg2 {
+    --r: -16deg;
+    --y: 84px;
+    --x: 68px;
+}
+
+.blur {
+    filter: blur(1px);
 }

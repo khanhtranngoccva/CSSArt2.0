@@ -15,4 +15,3 @@ function handleMe(err, data) {
     fs.writeFile(path.join(__dirname, "css", "newStyles.css"), newString, () => {
     });
 }
-c
