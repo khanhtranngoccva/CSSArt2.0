@@ -1,0 +1,161 @@
+.canvas {
+    width: 600px;
+    height: 800px;
+    /*background: white;*/
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sy: 0;
+    --sx: 0;
+    --_scale: 1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
+}
+
+.tree {
+    --green: green;
+    --brown: #804823;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --baseH: 70px;
+    --baseW: 5px;
+    position: relative;
+}
+
+.trunk {
+    position: absolute;
+    /*width: 0px;*/
+    border-inline: 60px solid transparent;
+    border-bottom: 800px solid var(--brown);
+    box-sizing: content-box;
+}
+
+.trunkShade {
+    position: absolute;
+    /*width: 0px;*/
+    border-inline: 60px solid transparent;
+    border-bottom: 800px solid #79431d;
+    box-sizing: content-box;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.branchFrame {
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    /*background: #f002;*/
+    top: 0;
+    transform-origin: 0 0;
+    --x: 100px;
+    --y: 58px;
+    --r: 90deg;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    filter: saturate(2.5);
+}
+
+.branchFrameAxis {
+    top: 0;
+    position: absolute;
+}
+
+.branchFrameReflect {
+    top: 0;
+    position: absolute;
+    filter: brightness(0.83);
+    transform: scaleX(-1);
+}
+
+
+.branch {
+    width: calc(4 * var(--baseW));
+    border-inline: calc(1.5 * var(--baseW)) solid transparent;
+    border-bottom: calc(var(--baseH)) solid var(--green);
+    display: flex;
+    justify-content: center;
+    transform-origin: 50% 100%;
+}
+
+.branch0 {
+    --x: 5%;
+    --y: -82%;
+    --r: 8deg;
+}
+
+.branch1 {
+    --x: 1%;
+    --y: 17%;
+    --r: 17deg;
+}
+
+.branch2 {
+    --x: -99%;
+    --y: 109%;
+    --r: 28deg;
+}
+
+.branch3 {
+    --x: -32%;
+    --y: 49%;
+    --r: -37deg;
+}
+
+
+.branch4 {
+    --x: 8%;
+    --y: -33%;
+    --r: -15deg;
+}
+
+
+.branch5 {
+    --x: -52%;
+    --y: 98%;
+    --r: -66deg;
+}
+
+.branch6 {
+    --x: -66%;
+    --y: 115%;
+    --r: -83deg;
+}
+
+.green0 {
+    --green: #075222;
+}
+
+.green1 {
+    --green: #226939;
+}
+
+.green2 {
+    --green: #407a52;
+}
+
+.green3 {
+    --green: #638b72;
+}
+
+.star {
+    position: absolute;
+    aspect-ratio: 1/1;
+    filter: drop-shadow(0 0 10px #ffe25f);
+    width: 159px;
+    top: -33px;
+    z-index: 1;
+}
+
+.starInner {
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(gold 0, gold 36deg, #ffe25f 36deg, #ffe25f 72deg);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
