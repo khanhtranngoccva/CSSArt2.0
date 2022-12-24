@@ -14,9 +14,18 @@ function Tree() {
         leftBranches.push(<RecursiveBranch baseW={baseW} baseH={baseH} branchesLeft={branchesLeft} lum={0.25}/>);
         rightBranches.push(<RecursiveBranch baseW={baseW} baseH={baseH} branchesLeft={branchesLeft}/>);
     }
+    let balls = [];
+    for (let i = 0; i <= 7; i++) {
+        balls.push(<Ball className={classes["ball"+i]}></Ball>)
+    }
+    let giftBoxes = [];
+    for (let i = 0; i < 3; i++) {
+        giftBoxes.push(<GiftBox className={classes["giftBox" + i]}/>)
+    }
     return <div className={classes.tree}>
         <div className={classes.trunk}></div>
         <div className={classes.trunkShade}></div>
+        {giftBoxes}
         <div className={classes.star}>
             <div className={classes.starInner}></div>
         </div>
@@ -31,7 +40,16 @@ function Tree() {
             </div>
         </div>
 
+        {balls}
     </div>
+}
+
+function GiftBox(props) {
+    return <div className={`${classes.giftBox} ${classes.transform} ${props.className || ""}`}></div>
+}
+
+function Ball(props) {
+    return <div className={`${classes.ball} ${classes.transform} ${props.className || ""}`}></div>
 }
 
 function RecursiveBranch(props) {
@@ -39,10 +57,13 @@ function RecursiveBranch(props) {
     const nestLevel = props.nestLevel ?? 0;
     if (props.branchesLeft >= 1) {
         for (let i = 0; i < 6; i++) {
-            miniBranches.push(<RecursiveBranch absolute={true} baseW={props.baseW * 0.5} baseH={props.baseH * 1/2} branchesLeft={props.branchesLeft - 1}
-                                               lum={props.lum * 3/4}
-                                               nestLevel={nestLevel + 1}
-            className={`${classes.transform} ${classes["branch" + i] || ""}`}/>);
+            if (props.branchesLeft > 1 || Math.random() > 0.3) {
+                miniBranches.push(<RecursiveBranch absolute={true} baseW={props.baseW * 0.5} baseH={props.baseH * 1 / 2}
+                                                   branchesLeft={props.branchesLeft - 1}
+                                                   lum={props.lum * 3 / 4}
+                                                   nestLevel={nestLevel + 1}
+                                                   className={`${classes.transform} ${classes["branch" + i] || ""}`}/>);
+            }
         }
     }
     return <div style={{

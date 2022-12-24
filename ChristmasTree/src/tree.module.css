@@ -59,7 +59,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 12px;
-    filter: saturate(2.5);
+    filter: saturate(3);
 }
 
 .branchFrameAxis {
@@ -147,7 +147,7 @@
 .star {
     position: absolute;
     aspect-ratio: 1/1;
-    filter: drop-shadow(0 0 10px #ffe25f);
+    filter: drop-shadow(0 0 20px #ffe25f);
     width: 159px;
     top: -33px;
     z-index: 1;
@@ -158,4 +158,112 @@
     height: 100%;
     background: repeating-conic-gradient(gold 0, gold 36deg, #ffe25f 36deg, #ffe25f 72deg);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.ball {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    --primary: #ffdf4b;
+    background: linear-gradient(transparent 20%, #00000008 20%, #00000008 40%, #0001 40%, #0001 60%, #00000018 60%, #00000018 80%, #0002 80%), var(--primary);
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball::before, .ball::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200%;
+    height: 400%;
+    background: radial-gradient(#0001 20%, #00000008 20%, #00000008 40%, #00000000 40%);
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+}
+
+.ball::after {
+    clip-path: polygon(100% 0%, 50% 0%, 50% 100%, 100% 100%);
+    background: radial-gradient(#00000018 20%, #0002 20%, #0002 40%, #00000028 40%);
+}
+
+.ball0 {
+    --x: -77px;
+    --y: -147px;
+}
+
+.ball1 {
+    --x: 103px;
+    --y: -45px;
+    --primary: #ff5b5b;
+    width: 40px;
+}
+
+.ball2 {
+    --x: -138px;
+    --y: 64px;
+    --primary: #f6f6f6;
+    width: 40px;
+}
+
+.ball3 {
+    --x: -54px;
+    --y: 169px;
+    --primary: #ffc940;
+    width: 40px;
+}
+
+.ball4 {
+    --x: 105px;
+    --y: 122px;
+    --primary: #fff7e2;
+    width: 60px;
+}
+
+.ball5 {
+    --x: 49px;
+    --y: -204px;
+    --primary: #fff7e2;
+    width: 38px;
+}
+
+
+.ball6 {
+    --x: -199px;
+    --y: 222px;
+    --primary: cyan;
+    width: 51px;
+}
+
+.giftBox {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    --ribbon: #ff4242;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px) gold;
+    bottom: 0;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+.giftBox::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px), #efac10;
+    width: 500%;
+    transform: translateX(-64px) skewX(65deg);
+    top: 0;
+    height: 7px;
+}
+
+
+
+.giftBox1 {
+    --x: -90px;
+}
+
+.giftBox2 {
+    --x: 90px;
 }
