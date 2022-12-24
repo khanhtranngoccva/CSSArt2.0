@@ -31,47 +31,47 @@
 .tree {
     --green: green;
     --brown: #804823;
-    width: 600px;
-    height: 800px;
+    width: calc(var(--unitSize) * 60);
+    height: calc(var(--unitSize) * 80);
     display: flex;
     justify-content: center;
     align-items: center;
-    --baseH: 70px;
-    --baseW: 5px;
+    --baseH: calc(var(--unitSize) * 7);
+    --baseW: calc(var(--unitSize) * 0.5);
     position: relative;
 }
 
 .trunk {
     position: absolute;
-    /*width: 0px;*/
-    border-inline: 60px solid transparent;
-    border-bottom: 800px solid var(--brown);
+    /*width: calc(var(--unitSize) * 0);*/
+    border-inline: calc(var(--unitSize) * 6) solid transparent;
+    border-bottom: calc(var(--unitSize) * 80) solid var(--brown);
     box-sizing: content-box;
 }
 
 .trunkShade {
     position: absolute;
-    /*width: 0px;*/
-    border-inline: 60px solid transparent;
-    border-bottom: 800px solid #79431d;
+    /*width: calc(var(--unitSize) * 0);*/
+    border-inline: calc(var(--unitSize) * 6) solid transparent;
+    border-bottom: calc(var(--unitSize) * 80) solid #79431d;
     box-sizing: content-box;
     clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
 }
 
 .branchFrame {
     position: absolute;
-    width: 560px;
-    height: 100px;
+    width: calc(var(--unitSize) * 56);
+    height: calc(var(--unitSize) * 10);
     /*background: #f002;*/
     top: 0;
     transform-origin: 0 0;
-    --x: 100px;
-    --y: 58px;
+    --x: calc(var(--unitSize) * 10);
+    --y: calc(var(--unitSize) * 5.8);
     --r: 90deg;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 12px;
+    gap: calc(var(--unitSize) * 1.2);
     filter: saturate(3);
 }
 
@@ -160,9 +160,9 @@
 .star {
     position: absolute;
     aspect-ratio: 1/1;
-    filter: drop-shadow(0 0 20px #ffe25f);
-    width: 140px;
-    top: -25px;
+    filter: drop-shadow(0 0 calc(var(--unitSize) * 2) #ffe25f);
+    width: calc(var(--unitSize) * 14);
+    top: calc(var(--unitSize) * -2.5);
     z-index: 1;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .ball {
-    width: 50px;
+    width: calc(var(--unitSize) * 5);
     aspect-ratio: 1/1;
     border-radius: 50%;
     --primary: #ffdf4b;
@@ -204,63 +204,63 @@
 }
 
 .ball0 {
-    --x: -77px;
-    --y: -141px;
+    --x: calc(var(--unitSize) * -7.7);
+    --y: calc(var(--unitSize) * -14.1);
 }
 
 .ball1 {
-    --x: 103px;
-    --y: -45px;
+    --x: calc(var(--unitSize) * 10.3);
+    --y: calc(var(--unitSize) * -4.5);
     --primary: #ff5b5b;
-    width: 40px;
+    width: calc(var(--unitSize) * 4);
 }
 
 .ball2 {
-    --x: -138px;
-    --y: 64px;
+    --x: calc(var(--unitSize) * -13.8);
+    --y: calc(var(--unitSize) * 6.4);
     --primary: #f6f6f6;
-    width: 40px;
+    width: calc(var(--unitSize) * 4);
 }
 
 .ball3 {
-    --x: -54px;
-    --y: 169px;
+    --x: calc(var(--unitSize) * -5.4);
+    --y: calc(var(--unitSize) * 16.9);
     --primary: #ffc940;
-    width: 40px;
+    width: calc(var(--unitSize) * 4);
 }
 
 .ball4 {
-    --x: 105px;
-    --y: 129px;
+    --x: calc(var(--unitSize) * 10.5);
+    --y: calc(var(--unitSize) * 12.9);
     --primary: #fff7e2;
-    width: 60px;
+    width: calc(var(--unitSize) * 6);
 }
 
 .ball5 {
-    --x: 49px;
-    --y: -204px;
+    --x: calc(var(--unitSize) * 4.9);
+    --y: calc(var(--unitSize) * -20.4);
     --primary: #fff7e2;
-    width: 38px;
+    width: calc(var(--unitSize) * 3.8);
 }
 
 
 .ball6 {
-    --x: -199px;
-    --y: 237px;
+    --x: calc(var(--unitSize) * -19.9);
+    --y: calc(var(--unitSize) * 23.7);
     --primary: cyan;
-    width: 51px;
+    width: calc(var(--unitSize) * 5.1);
 }
 
 .giftBox1 {
-    --y: -20px;
+    --y: calc(var(--unitSize) * -2);
     position: absolute;
-    width: 80px;
-    height: 120px;
+    width: calc(var(--unitSize) * 8);
+    height: calc(var(--unitSize) * 12);
     --ribbon: #ff4d4d;
     bottom: 0;
-    border-radius: 5px;
+    border-radius: calc(var(--unitSize) * 0.5);
     overflow: hidden;
-    --x: -60px;
+    --x: calc(var(--unitSize) * -6);
 }
 
 .giftBox1Overlay1 {
@@ -276,7 +276,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px);
+    background: repeating-linear-gradient(45deg, transparent 0, transparent calc(var(--unitSize) * 3), var(--ribbon) calc(var(--unitSize) * 3), var(--ribbon) calc(var(--unitSize) * 4));
 }
 
 .bowtie1 {
@@ -286,26 +286,26 @@
     justify-content: center;
     align-items: center;
     --r: 52deg;
-    --x: 23px;
-    --y: 37px;
+    --x: calc(var(--unitSize) * 2.3);
+    --y: calc(var(--unitSize) * 3.7);
 }
 
 .bowtie1P2 {
     position: absolute;
     background: #ce4e4e;
-    width: 20px;
+    width: calc(var(--unitSize) * 2);
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
 .bowtie1P1 {
-    width: 20px;
-    height: 25px;
+    width: calc(var(--unitSize) * 2);
+    height: calc(var(--unitSize) * 2.5);
     z-index: 0;
     position: absolute;
     border-radius: 45% 55% 55% 45% / 50% 20% 20% 50%;
     background: #c44040;
-    --x: -15px;
+    --x: calc(var(--unitSize) * -1.5);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -315,22 +315,22 @@
     content: "";
     position: absolute;
     width: 70%;
-    height: 5px;
+    height: calc(var(--unitSize) * 0.5);
     background: #c02e2e;
     border-radius: 45% 55% 55% 45% / 50%;
-    margin-top: 2px;
+    margin-top: calc(var(--unitSize) * 0.2);
     transform: rotate(10deg);
-    left: 5px;
+    left: calc(var(--unitSize) * 0.5);
 }
 
 .giftBox2 {
     position: absolute;
-    width: 150px;
-    height: 90px;
+    width: calc(var(--unitSize) * 15);
+    height: calc(var(--unitSize) * 9);
     --ribbon: #ffffff;
     bottom: 0;
-    --x: 40px;
-    --y: -10px;
+    --x: calc(var(--unitSize) * 4);
+    --y: calc(var(--unitSize) * -1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -341,7 +341,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    border-radius: 5px 5px;
+    border-radius: calc(var(--unitSize) * 0.5) calc(var(--unitSize) * 0.5);
     filter: contrast(3);
     z-index: 1;
 }
@@ -352,7 +352,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    border-radius: 5px 5px 0 0;
+    border-radius: calc(var(--unitSize) * 0.5) calc(var(--unitSize) * 0.5) 0 0;
     filter: contrast(3);
     z-index: 1;
 }
@@ -363,8 +363,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    --x: -23px;
-    --y: -5px;
+    --x: calc(var(--unitSize) * -2.3);
+    --y: calc(var(--unitSize) * -0.5);
     bottom: 100%;
     /*z-index: 2;*/
 }
@@ -372,19 +372,19 @@
 .bowtie2P2 {
     position: absolute;
     background: #fafafa;
-    width: 20px;
+    width: calc(var(--unitSize) * 2);
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
 .bowtie2P1 {
-    width: 20px;
-    height: 25px;
+    width: calc(var(--unitSize) * 2);
+    height: calc(var(--unitSize) * 2.5);
     z-index: 0;
     position: absolute;
     border-radius: 45% 55% 55% 45% / 50% 20% 20% 50%;
     background: #ddd;
-    --x: -15px;
+    --x: calc(var(--unitSize) * -1.5);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -396,10 +396,9 @@
     height: 100%;
 }
 
-
 .ground {
     position: absolute;
     background: #ffffff;
     width: 100%;
-    height: 50px;
+    height: calc(var(--unitSize) * 5);
 }
