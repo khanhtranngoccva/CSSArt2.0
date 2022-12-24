@@ -109,7 +109,7 @@ function SnowflakeCanvas() {
             function resize() {
                 currentElement.width = currentElement.parentElement.offsetWidth;
                 currentElement.height = currentElement.parentElement.offsetHeight;
-                maxElements = Math.min(currentElement.height * currentElement.width / 6000, 2000);
+                maxElements = Math.min(currentElement.height * currentElement.width / 6000, 4000);
             }
             resize();
 
@@ -179,7 +179,7 @@ function SnowflakeCanvas() {
                 if (circleCount < maxElements) {
                     new Circle();
                 }
-            }, 10);
+            }, 50);
 
             fillSnowflake();
 
