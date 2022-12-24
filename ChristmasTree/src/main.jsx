@@ -6,8 +6,8 @@ import classes from "./tree.module.css";
 function Tree() {
     let leftBranches = [];
     let rightBranches = [];
-    let branchesLeft = 3;
-    for (let i = 0; i < 6; i += 0.5) {
+    let branchesLeft = 4;
+    for (let i = 0; i < 5.5; i += 0.5) {
         let baseW = 5;
         let baseH = 60 * (0.3 + 0.60 * i);
         if (baseH < 20) baseH = 20;
@@ -18,14 +18,11 @@ function Tree() {
     for (let i = 0; i <= 7; i++) {
         balls.push(<Ball className={classes["ball"+i]}></Ball>)
     }
-    let giftBoxes = [];
-    for (let i = 0; i < 3; i++) {
-        giftBoxes.push(<GiftBox className={classes["giftBox" + i]}/>)
-    }
     return <div className={classes.tree}>
         <div className={classes.trunk}></div>
         <div className={classes.trunkShade}></div>
-        {giftBoxes}
+        <GiftBox2/>
+        <GiftBox1/>
         <div className={classes.star}>
             <div className={classes.starInner}></div>
         </div>
@@ -39,25 +36,42 @@ function Tree() {
                 {rightBranches}
             </div>
         </div>
-
         {balls}
     </div>
 }
 
-function GiftBox(props) {
-    return <div className={`${classes.giftBox} ${classes.transform} ${props.className || ""}`}></div>
+function GiftBox1(props) {
+    return <div className={`${classes.giftBox1} ${classes.transform} ${props.className || ""}`}>
+        <div className={`${classes.giftBox1Overlay1}`}></div>
+        <div className={`${classes.giftBox1Overlay2}`}></div>
+        <div className={`${classes.bowtie1} ${classes.transform}`}>
+            <div className={`${classes.bowtie1P1} ${classes.transform}`}></div>
+            <div className={`${classes.bowtie1P1} ${classes.flipVertical}`}></div>
+            <div className={`${classes.bowtie1P2} ${classes.transform}`}></div>
+        </div>
+    </div>
+}
+function GiftBox2(props) {
+    return <div className={`${classes.giftBox2} ${classes.transform} ${props.className || ""}`}>
+        <div className={`${classes.giftBox2Overlay1}`}></div>
+        <div className={`${classes.giftBox2Overlay2}`}></div>
+        <div className={`${classes.bowtie2} ${classes.transform}`}>
+            <div className={`${classes.bowtie2P1} ${classes.transform}`}></div>
+            <div className={`${classes.bowtie2P1} ${classes.flipVertical}`}></div>
+            <div className={`${classes.bowtie2P2} ${classes.transform}`}></div>
+        </div>
+    </div>
 }
 
 function Ball(props) {
     return <div className={`${classes.ball} ${classes.transform} ${props.className || ""}`}></div>
 }
-
 function RecursiveBranch(props) {
     const miniBranches = [];
     const nestLevel = props.nestLevel ?? 0;
     if (props.branchesLeft >= 1) {
         for (let i = 0; i < 6; i++) {
-            if (props.branchesLeft > 1 || Math.random() > 0.3) {
+            if (props.branchesLeft > 1 || Math.random() > 0.2   ) {
                 miniBranches.push(<RecursiveBranch absolute={true} baseW={props.baseW * 0.5} baseH={props.baseH * 1 / 2}
                                                    branchesLeft={props.branchesLeft - 1}
                                                    lum={props.lum * 3 / 4}

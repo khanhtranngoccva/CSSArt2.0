@@ -15,6 +15,17 @@
     transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
 }
 
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sy: 0;
+    --sx: 0;
+    --_scale: -1;
+    transform: scaleX(var(--_scale)) translateX(var(--x)) translateY(var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
+}
+
 .tree {
     --green: green;
     --brown: #804823;
@@ -47,7 +58,7 @@
 
 .branchFrame {
     position: absolute;
-    width: 600px;
+    width: 560px;
     height: 100px;
     /*background: #f002;*/
     top: 0;
@@ -148,15 +159,16 @@
     position: absolute;
     aspect-ratio: 1/1;
     filter: drop-shadow(0 0 20px #ffe25f);
-    width: 159px;
-    top: -33px;
+    width: 140px;
+    top: -25px;
     z-index: 1;
 }
 
 .starInner {
     width: 100%;
     height: 100%;
-    background: repeating-conic-gradient(gold 0, gold 36deg, #ffe25f 36deg, #ffe25f 72deg);
+    --lightGold: #ffdd41;
+    background: repeating-conic-gradient(gold 0, gold 36deg, var(--lightGold) 36deg, var(--lightGold) 72deg);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
@@ -165,7 +177,7 @@
     aspect-ratio: 1/1;
     border-radius: 50%;
     --primary: #ffdf4b;
-    background: linear-gradient(transparent 20%, #00000008 20%, #00000008 40%, #0001 40%, #0001 60%, #00000018 60%, #00000018 80%, #0002 80%), var(--primary);
+    background: linear-gradient(transparent 20%, #0001 20%, #0001 40%, #0002 40%, #0002 60%, #0003 60%, #0003 80%, #0004 80%), var(--primary);
     position: absolute;
     overflow: hidden;
     display: flex;
@@ -179,18 +191,19 @@
     position: absolute;
     width: 200%;
     height: 400%;
-    background: radial-gradient(#0001 20%, #00000008 20%, #00000008 40%, #00000000 40%);
+    background: radial-gradient(#0003 20%, #0004 20%, #0004 40%, #0005 40%);
+
     clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
 }
 
 .ball::after {
+    background: radial-gradient(#0002 20%, #0001 20%, #0001 40%, #00000000 40%);
     clip-path: polygon(100% 0%, 50% 0%, 50% 100%, 100% 100%);
-    background: radial-gradient(#00000018 20%, #0002 20%, #0002 40%, #00000028 40%);
 }
 
 .ball0 {
     --x: -77px;
-    --y: -147px;
+    --y: -141px;
 }
 
 .ball1 {
@@ -216,7 +229,7 @@
 
 .ball4 {
     --x: 105px;
-    --y: 122px;
+    --y: 129px;
     --primary: #fff7e2;
     width: 60px;
 }
@@ -231,39 +244,146 @@
 
 .ball6 {
     --x: -199px;
-    --y: 222px;
+    --y: 237px;
     --primary: cyan;
     width: 51px;
 }
 
-.giftBox {
+.giftBox1 {
+
     position: absolute;
     width: 80px;
     height: 120px;
-    --ribbon: #ff4242;
-    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px) gold;
+    --ribbon: #ff4d4d;
     bottom: 0;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
+    --x: -60px;
 }
 
-.giftBox::before {
-    content: "";
-    display: block;
+.giftBox1Overlay1 {
+    background: url("./assets/noise.svg"), #ff9900;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px), #efac10;
-    width: 500%;
-    transform: translateX(-64px) skewX(65deg);
-    top: 0;
-    height: 7px;
+    filter: contrast(2);
 }
 
+.giftBox1Overlay2 {
+    /*background: #ffcb55;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 30px, var(--ribbon) 30px, var(--ribbon) 40px);
+}
 
+.bowtie1 {
+    position: absolute;
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --r: 52deg;
+    --x: 23px;
+    --y: 37px;
+}
 
-.giftBox1 {
-    --x: -90px;
+.bowtie1P2 {
+    position: absolute;
+    background: #ce4e4e;
+    width: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.bowtie1P1 {
+    width: 20px;
+    height: 25px;
+    z-index: 0;
+    position: absolute;
+    border-radius: 45% 55% 55% 45% / 50% 20% 20% 50%;
+    background: #c44040;
+    --x: -15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bowtie1P1::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 5px;
+    background: #c02e2e;
+    border-radius: 45% 55% 55% 45% / 50%;
+    margin-top: 2px;
+    transform: rotate(10deg);
+    left: 5px;
 }
 
 .giftBox2 {
-    --x: 90px;
+    position: absolute;
+    width: 150px;
+    height: 90px;
+    --ribbon: #ffffff;
+    bottom: 0;
+    --x: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.giftBox2Overlay1 {
+    background: url("./assets/noise.svg"), #910000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px 5px 0 0;
+    filter: contrast(3);
+    z-index: 1;
+}
+
+.giftBox2Overlay2 {
+    background: linear-gradient(90deg, transparent 30%, var(--ribbon) 30%, var(--ribbon) 40%, transparent 40%),
+    linear-gradient(transparent 30%, var(--ribbon) 30%, var(--ribbon) 45%, transparent 45%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px 5px 0 0;
+    filter: contrast(3);
+    z-index: 1;
+}
+
+.bowtie2 {
+    position: absolute;
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --r: 52deg;
+    --x: -23px;
+    /*--y: 37px;*/
+    bottom: 100%;
+    /*z-index: 2;*/
+}
+
+.bowtie2P2 {
+    position: absolute;
+    background: white;
+    width: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.bowtie1P1 {
+    width: 20px;
+    height: 25px;
+    z-index: 0;
+    position: absolute;
+    border-radius: 45% 55% 55% 45% / 50% 20% 20% 50%;
+    background: #c44040;
+    --x: -15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
