@@ -1,0 +1,177 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    --background: #022854;
+    background: var(--background);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.templateImage {
+    position: absolute;
+    height: 800px;
+    opacity: 0.5;
+    display: none;
+    pointer-events: none;
+}
+
+.canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 800px;
+    outline: 5px solid white;
+}
+
+.canvas * {
+    position: absolute;
+}
+
+.pseudo::before, .pseudo::after {
+    content: "";
+    display: block;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: 1;
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: -1;
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
+}
+
+.flipHorizontal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: 1;
+    transform: scaleX(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy));
+}
+
+.bed {
+    --cyan1: #92BEFF;
+    --cyan2: #637da2;
+    --cyan3: #CEE2FF;
+    --blue1: #286397;
+    --blue2: #2D70AB;
+    --white: white;
+    --border: #0004;
+}
+
+.bedP1 {
+    background: var(--white);
+    width: 642px;
+    height: 432px;
+    --x: 207px;
+    --s: 0, 12.5deg;
+    --y: -79px;
+    border: 7px solid var(--border);
+    padding: 32px;
+    border-radius: 5px;
+}
+
+.bedP1::before {
+    background: var(--cyan1);
+    width: 100%;
+    height: 100%;
+    border: 7px solid var(--border);
+    border-radius: 5px;
+}
+
+.bedP2 {
+    background: var(--cyan3);
+    /*background: red;*/
+    width: 203px;
+    height: 83px;
+    --x: 451px;
+    --sy: -48deg;
+    --y: 330px;
+    border: 7px solid var(--border);
+    border-radius: 5px;
+}
+
+
+.bedP3 {
+    background: var(--cyan3);
+    /* background: red; */
+    width: 30px;
+    height: 656px;
+    --x: 538px;
+    --y: 89px;
+    --sy: -48deg;
+    border: 7px solid var(--border);
+    border-block-width: 12px;
+    border-radius: 5px;
+}
+
+.bedP4 {
+    background: var(--cyan2);
+    width: 644px;
+    height: 235px;
+    --x: 207px;
+    --sy: 12.5deg;
+    --y: 242px;
+    padding: 32px;
+    border-radius: 5px;
+    border: 7px solid var(--border);
+}
+
+
+.bedP5 {
+    background: var(--blue1);
+    width: 239px;
+    height: 147px;
+    --x: 402px;
+    --sy: -48deg;
+    --y: 276px;
+    padding: 32px;
+    border-radius: 5px;
+    border: 7px solid var(--border);
+    border-block-width: 10px;
+}
+
+.bedP6 {
+    background: var(--blue2);
+    width: 672px;
+    height: 576px;
+    --x: -19px;
+    --sx: 29.9deg;
+    --y: 246px;
+    --r: -47.9deg;
+    padding: 32px;
+    border-radius: 20px;
+    border: 7px solid var(--border);
+}
