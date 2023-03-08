@@ -18,7 +18,7 @@ html, body {
 .templateImage {
     position: absolute;
     height: 800px;
-    opacity: 0.5;
+    opacity: 0.3;
     display: none;
     pointer-events: none;
 }
@@ -28,8 +28,9 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    width: 1500px;
     height: 800px;
+    overflow: hidden;
     outline: 5px solid white;
 }
 
@@ -152,11 +153,11 @@ html, body {
 
 .bedP5 {
     background: var(--blue1);
-    width: 239px;
+    width: 297px;
     height: 147px;
-    --x: 402px;
+    --x: 372px;
     --sy: -48deg;
-    --y: 276px;
+    --y: 307px;
     padding: 32px;
     border-radius: 5px;
     border: 7px solid var(--border);
@@ -165,13 +166,275 @@ html, body {
 
 .bedP6 {
     background: var(--blue2);
-    width: 672px;
-    height: 576px;
-    --x: -19px;
-    --sx: 29.9deg;
-    --y: 246px;
+    width: 712px;
+    height: 618px;
+    --x: -30px;
+    --sx: 27.9deg;
+    --y: 230px;
     --r: -47.9deg;
     padding: 32px;
-    border-radius: 20px;
+    border-radius: 56px;
     border: 7px solid var(--border);
+}
+
+.pillow {
+    --border: #0005;
+}
+
+.pillowP1 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 462px;
+    height: 49px;
+    --x: 204px;
+    --y: -133px;
+    --r: 17deg;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border-bottom: none;
+}
+
+.pillowP2 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 222px;
+    height: 29px;
+    --x: -80px;
+    --y: -100px;
+    --r: -55deg;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border-bottom: none;
+}
+
+.pillowP3 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 217px;
+    height: 29px;
+    --x: 404px;
+    --y: 53px;
+    --r: 113deg;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border-bottom: none;
+}
+
+.pillowP4 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 489px;
+    height: 52px;
+    --x: 89px;
+    --y: 89px;
+    --r: 198deg;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border-bottom: none;
+}
+
+
+.pillowP5 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 80px;
+    height: 85px;
+    --x: -7px;
+    --y: -174px;
+    --r: 210deg;
+    border-radius: 10% 90% 10% 90%;
+}
+
+.pillowP6 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 66px;
+    height: 102px;
+    --x: 419px;
+    --y: -55px;
+    --r: 267deg;
+    border-radius: 10% 90% 10% 90%;
+}
+
+.pillowP7 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 56px;
+    height: 102px;
+    --x: 334px;
+    --y: 137px;
+    --r: 372deg;
+    border-radius: 10% 90% 10% 90%;
+}
+
+.pillowP8 {
+    background: white;
+    border: 5px solid var(--border);
+    width: 68px;
+    height: 91px;
+    --x: -119px;
+    --y: -6px;
+    --r: 454deg;
+    border-radius: 10% 90% 10% 90%;
+}
+
+.pillowP9 {
+    background: white;
+    width: 207px;
+    height: 476px;
+    --x: 150px;
+    --y: -22px;
+    --sy: 13deg;
+    --r: 468deg;
+}
+
+.pillowP10 {
+    background: white;
+    width: 53px;
+    height: 62px;
+    --x: -105px;
+    --y: -7px;
+    /* --sy: 13deg; */
+    --r: 475deg;
+}
+.pillowP11 {
+    background: white;
+    width: 134px;
+    height: 123px;
+    --x: 363px;
+    --y: -9px;
+    /* --sy: 13deg; */
+    --r: 468deg;
+}
+
+.pillowP12 {
+    background: white;
+    width: 73px;
+    height: 100px;
+    --x: 340px;
+    --y: 88px;
+    /* --sy: 13deg; */
+    --r: 562deg;
+    border-radius: 10px;
+}
+
+.pillowP13 {
+    background: white;
+    width: 73px;
+    height: 100px;
+    --x: 325px;
+    --y: 94px;
+    /* --sy: 13deg; */
+    --r: 525deg;
+    border-radius: 10px;
+}
+
+.pillowP15 {
+    background: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: 5px solid var(--border);
+    border-bottom: none;
+    width: 49px;
+    height: 10px;
+    --x: 18px;
+    --y: -132px;
+    /* --sy: 13deg; */
+    --r: 64deg;
+}
+
+.pillowP16 {
+    background: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: 5px solid var(--border);
+    border-bottom: none;
+    width: 65px;
+    height: 9px;
+    --x: 294px;
+    --y: -48px;
+    /* --sy: 13deg; */
+    --r: -25deg;
+}
+
+
+.pillowP17 {
+    background: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: 5px solid var(--border);
+    border-bottom: none;
+    width: 65px;
+    height: 9px;
+    --x: 315px;
+    --y: 76px;
+    /* --sy: 13deg; */
+    --r: 41deg;
+}
+
+.pillowP18 {
+    background: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border: 5px solid var(--border);
+    border-bottom: none;
+    width: 65px;
+    height: 9px;
+    --x: -73px;
+    --y: -39px;
+    /* --sy: 13deg; */
+    --r: -6deg;
+}
+
+.pillowP14 {
+    background: white;
+    width: 73px;
+    height: 100px;
+    --x: 20px;
+    --y: -130px;
+    /* --sy: 13deg; */
+    --r: 569deg;
+    border-radius: 10px;
+}
+
+.blob {
+    --border: #0003;
+    --gold: #ffc162;
+    --orange: orange;
+    --x: 87px;
+    --y: 93px;
+}
+
+.blobP1 {
+    border-radius: 50%;
+    width: 441px;
+    height: 475px;
+    background: var(--gold);
+    --r: 47deg;
+
+    border: 5px solid var(--border);
+}
+
+.blobFace {
+    --x: 3px;
+    --y: -122px;
+}
+
+.blobEye {
+    border: 4px solid black;
+    border-bottom: none;
+    border-radius: 60% 40% 0 0 / 100% 100% 0 0;
+    width: 63px;
+    height: 18px;
+    --r: 196deg;
+    --x: -39px;
+    --y: -32px;
+}
+
+.blobEye2 {
+    --x: 73px;
+    --y: -1px;
+}
+
+.blobMouth {
+    border-radius: 50% / 75% 75% 25% 25%;
+    background: var(--orange);
+    border: 5px solid var(--border);
+    --x: -12px;
+    --y: 38px;
+    --r: 16deg;
+    width: 80px;
+    height: 43px;
 }
