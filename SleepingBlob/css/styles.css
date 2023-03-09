@@ -990,9 +990,9 @@ html, body {
 .blobHand2 {
     width: 127px;
     height: 117px;
-    --x: 217px;
-    --y: 186px;
-    --r: -148deg;
+    --x: 224px;
+    --y: 177px;
+    --r: -152deg;
     --sx: 2deg;
     border: 5px solid var(--border);
     background: var(--gold);
