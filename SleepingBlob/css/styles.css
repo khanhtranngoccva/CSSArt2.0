@@ -24,6 +24,7 @@ html, body {
 }
 
 .canvas {
+    --duration: 2s;
     position: relative;
     display: flex;
     justify-content: center;
@@ -60,7 +61,7 @@ html, body {
     --_scale: 1;
     --scaleX: 1;
     --scaleY: 1;
-    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r))  skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
 }
 
 .flipVertical {
@@ -73,7 +74,7 @@ html, body {
     --_scale: -1;
     --scaleX: 1;
     --scaleY: 1;
-    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy))  scaleX(var(--scaleX)) scaleY(var(--scaleY));
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
 }
 
 .flipHorizontal {
@@ -326,6 +327,7 @@ html, body {
     /* --sy: 13deg; */
     --r: 475deg;
 }
+
 .pillowP11 {
     background: white;
     width: 134px;
@@ -431,11 +433,11 @@ html, body {
 }
 
 .blobP1 {
+    --r: 48deg;
     border-radius: 50%;
     width: 441px;
     height: 475px;
     background: var(--gold);
-    --r: 48deg;
     border: 5px solid var(--border);
 }
 
@@ -445,11 +447,11 @@ html, body {
 }
 
 .blobEye {
-    border: 4px solid black;
+    border: 5px solid black;
     border-bottom: none;
     border-radius: 60% 40% 0 0 / 100% 100% 0 0;
     width: 63px;
-    height: 18px;
+    height: 25px;
     --r: 196deg;
     --x: -39px;
     --y: -32px;
@@ -461,14 +463,9 @@ html, body {
 }
 
 .blobMouth {
-    border-radius: 50% / 75% 75% 25% 25%;
-    background: var(--orange);
-    border: 5px solid var(--border);
     --x: -12px;
     --y: 38px;
     --r: 16deg;
-    width: 80px;
-    height: 43px;
 }
 
 
@@ -527,7 +524,7 @@ html, body {
 }
 
 .blanketP4 {
-     background: var(--white);
+    background: var(--white);
     /*background: red;*/
     width: 417px;
     height: 158px;
@@ -998,4 +995,208 @@ html, body {
     background: var(--gold);
     border-radius: 60% 40% 10% 6% / 70% 60% 40% 30%;
     border-bottom: none;
+}
+
+
+.cabinet {
+    --lightBrown: #AF6D50;
+    --brown: #9C6147;
+    --darkBrown: #80503B;
+    --border: #0004;
+    --gold: #ffc550;
+    outline: 5px solid;
+    --x: -349px;
+    --y: -103px;
+}
+
+.cabinetP1 {
+    background: var(--brown);
+    width: 170px;
+    height: 239px;
+    /* --x: -30px; */
+    --sx: 27.9deg;
+    /* --y: 230px; */
+    --r: -47.9deg;
+    padding: 32px;
+    border: 5px solid var(--border);
+}
+
+.cabinetP2 {
+    background: var(--darkBrown);
+    /* background: red; */
+    width: 116px;
+    height: 118px;
+    --x: 130px;
+    --y: 90px;
+    --sy: -48deg;
+    border: 5px solid var(--border);
+    border-block-width: 7px;
+    border-radius: 5px;
+}
+
+.cabinetP3 {
+    background: var(--lightBrown);
+    width: 263px;
+    height: 285px;
+    --x: -56px;
+    --sy: 14.5deg;
+    --y: 202px;
+    border: 5px solid var(--border);
+    padding-inline: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.drawer {
+    position: relative;
+    background: var(--brown);
+    border: 5px solid var(--border);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawer::before {
+    background: var(--gold);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 35px;
+    border: 5px solid var(--border);
+}
+
+.lamp {
+    --x: -344px;
+    --y: -192px;
+    --blue: #245894;
+    --gold: #FFB352;
+    --brightGold: #ffd19c;
+    --border: #0004;
+}
+
+.lampBody {
+    background: var(--blue);
+    border-radius: 20% / 50%;
+    border: 4px solid var(--border);
+    border-bottom: none;
+    width: 150px;
+    height: 200px;
+}
+
+.lampBase {
+    background: var(--blue);
+    border-radius: 50%;
+    border: 4px solid var(--border);
+    width: 120px;
+    height: 54px;
+    --y: 86px;
+}
+
+.lampCone {
+    background: var(--gold);
+    width: 259px;
+    height: 166px;
+    border: 5px solid var(--border);
+    border-radius: 20% 20% 50% 50% / 80% 80% 20% 20%;
+    --y: -81px;
+}
+
+
+.lampConeTop {
+    background: var(--brightGold);
+    width: 192px;
+    height: 50px;
+    border: 5px solid var(--border);
+    border-radius: 50%;
+    --y: -153px;
+}
+
+.wall {
+    background: #02020252;
+    width: 500px;
+    height: 5px;
+    --x: -628px;
+    --y: 307px;
+    --r: -48deg;
+}
+
+.wall2 {
+    background: #0202026b;
+    width: 500px;
+    height: 5px;
+    --x: -420px;
+    --y: -242px;
+    --r: 90deg;
+}
+
+.canvas {
+    filter: brightness(0.8);
+}
+
+.mouthSnore {
+    border-radius: 50% / 75% 75% 25% 25%;
+    background: var(--orange);
+    border: 5px solid var(--border);
+    width: 80px;
+    height: 43px;
+    animation: snore var(--duration) ease-out infinite;
+}
+
+.mouthSnore::before {
+    bottom: -17px;
+    right: -16px;
+    background: lightskyblue;
+    border: 4px solid var(--border);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 10% 60% 50% 50% / 10% 50% 50% 60%;
+    transform-origin: 0 0;
+    transform: scale(0.9, 1.2) rotate(45deg);
+}
+
+@keyframes snore {
+    50% {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        transform: translate(-10px, 0px);
+    }
+}
+
+@keyframes faceSnore {
+    50% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.blobFaceAnimation {
+    animation: faceSnore var(--duration) ease-out infinite;
+    transform: translate(5px, -5px);
+}
+
+.blobBody {
+    animation: breathe var(--duration) ease-out infinite;
+    transform: scaleY(1.05);
+}
+
+@keyframes breathe {
+    50% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+.hatAnimation {
+    animation: hatMove var(--duration) ease-out infinite;
+    transform: translate(10px, -5px) rotate(2deg);
+
+}
+
+@keyframes hatMove {
+    50% {
+        transform: none;
+    }
 }

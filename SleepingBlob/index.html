@@ -10,6 +10,20 @@
 </head>
 <body>
 <div class="canvas symmetry">
+    <div class="wall transform"></div>
+    <div class="wall2 transform"></div>
+    <div class="cabinet symmetry transform">
+        <div class="cabinetP1 transform"></div>
+        <div class="cabinetP2 transform"></div>
+        <div class="cabinetP3 transform">
+            <div class="drawer pseudo symmetry"></div>
+            <div class="drawer pseudo symmetry"></div>
+            <div class="drawer pseudo symmetry"></div>
+        </div>
+        <div class="cabinetP4 transform"></div>
+        <div class="cabinetP5 transform"></div>
+        <div class="cabinetP6 transform"></div>
+    </div>
     <div class="bed symmetry">
         <div class="bedP4 symmetry transform"></div>
         <div class="bedP1 symmetry transform pseudo"></div>
@@ -40,11 +54,17 @@
         <div class="pillowP18 transform"></div>
     </div>
     <div class="blob symmetry transform">
-        <div class="blobP1 transform"></div>
+        <div class="blobBody symmetry transform">
+            <div class="blobP1 transform"></div>
+        </div>
         <div class="blobFace symmetry transform">
-            <div class="blobEye transform"></div>
-            <div class="blobEye blobEye2 transform"></div>
-            <div class="blobMouth transform"></div>
+            <div class="blobFaceAnimation symmetry">
+                <div class="blobEye transform"></div>
+                <div class="blobEye blobEye2 transform"></div>
+                <div class="blobMouth symmetry transform">
+                    <div class="mouthSnore pseudo"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="blanket symmetry transform">
@@ -144,31 +164,39 @@
         </div>
     </div>
     <div class="hat symmetry transform">
-        <div class="hatP19 transform"></div>
-        <div class="hatP20 transform"></div>
-        <div class="hatP21 transform"></div>
-        <div class="hatP16 transform"></div>
-        <div class="hatP17 transform"></div>
-        <div class="hatP18 transform"></div>
-        <div class="hatBase hatP8 transform"></div>
-        <div class="hatBase hatP9 transform"></div>
-        <div class="hatBase hatP6 transform"></div>
-        <div class="hatBase hatP5 transform"></div>
-        <div class="hatBase hatP2 transform"></div>
-        <div class="hatBase hatP3 transform"></div>
-        <div class="hatBase hatP1 transform"></div>
-        <div class="hatBase hatP4 transform"></div>
-        <div class="hatBase hatP7 transform"></div>
-        <div class="hatBase2 hatP10 transform"></div>
-        <div class="hatBase2 hatP11 transform"></div>
-        <div class="hatBase2 hatP12 transform"></div>
-        <div class="hatBase2 hatP13 transform"></div>
-        <div class="hatBase2 hatP14 transform"></div>
-        <div class="hatP22 transform"></div>
+        <div class="hatAnimation symmetry">
+            <div class="hatP19 transform"></div>
+            <div class="hatP20 transform"></div>
+            <div class="hatP21 transform"></div>
+            <div class="hatP16 transform"></div>
+            <div class="hatP17 transform"></div>
+            <div class="hatP18 transform"></div>
+            <div class="hatBase hatP8 transform"></div>
+            <div class="hatBase hatP9 transform"></div>
+            <div class="hatBase hatP6 transform"></div>
+            <div class="hatBase hatP5 transform"></div>
+            <div class="hatBase hatP2 transform"></div>
+            <div class="hatBase hatP3 transform"></div>
+            <div class="hatBase hatP1 transform"></div>
+            <div class="hatBase hatP4 transform"></div>
+            <div class="hatBase hatP7 transform"></div>
+            <div class="hatBase2 hatP10 transform"></div>
+            <div class="hatBase2 hatP11 transform"></div>
+            <div class="hatBase2 hatP12 transform"></div>
+            <div class="hatBase2 hatP13 transform"></div>
+            <div class="hatBase2 hatP14 transform"></div>
+            <div class="hatP22 transform"></div>
+        </div>
     </div>
     <div class="blobHands symmetry transform">
         <div class="blobHand transform"></div>
         <div class="blobHand2 transform"></div>
+    </div>
+    <div class="lamp symmetry transform">
+        <div class="lampBase transform"></div>
+        <div class="lampBody transform"></div>
+        <div class="lampCone transform"></div>
+        <div class="lampConeTop transform"></div>
     </div>
 </div>
 <img src="blob.png" alt="Traced template for CSS Sleeping Blob." class="templateImage">
