@@ -1,0 +1,121 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    --background: #5384bd;
+    background: var(--background);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.templateImage {
+    position: absolute;
+    height: 800px;
+    opacity: 0.3;
+    /*display: none;*/
+    pointer-events: none;
+}
+
+.canvas {
+    --duration: 2s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    height: 800px;
+    overflow: hidden;
+    /*background: #022854;*/
+    outline: 5px solid white;
+}
+
+.canvas * {
+    position: absolute;
+}
+
+.pseudo::before, .pseudo::after {
+    content: "";
+    display: block;
+}
+
+.symmetry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transform {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: 1;
+    --scaleX: 1;
+    --scaleY: 1;
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
+}
+
+.flipVertical {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: -1;
+    --scaleX: 1;
+    --scaleY: 1;
+    transform: scaleY(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
+}
+
+.flipHorizontal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: -1;
+    --scaleX: 1;
+    --scaleY: 1;
+    transform: scaleX(var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
+}
+
+.flipDiagonal {
+    --x: 0;
+    --y: 0;
+    --r: 0;
+    --s: 0;
+    --sx: 0;
+    --sy: 0;
+    --_scale: -1;
+    --scaleX: 1;
+    --scaleY: 1;
+    transform: scale(var(--_scale), var(--_scale)) translate(var(--x), var(--y)) rotate(var(--r)) skew(var(--s)) skewX(var(--sx)) skewY(var(--sy)) scaleX(var(--scaleX)) scaleY(var(--scaleY));
+}
+
+.scooter {
+    outline: 5px solid;
+    --y: 110px;
+    --pink: #E85764;
+    --border: #0005;
+}
+
+.scooterHandle {
+    width: 107px;
+    height: 20px;
+    border-radius: 8px / 50%;
+    background: var(--pink);
+    border: 4px solid var(--border);
+    --x: -79px;
+    --y: -112px;
+}
