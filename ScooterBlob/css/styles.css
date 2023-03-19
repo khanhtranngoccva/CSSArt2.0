@@ -104,18 +104,193 @@ html, body {
 }
 
 .scooter {
-    outline: 5px solid;
     --y: 110px;
     --pink: #E85764;
     --border: #0005;
+    --black: #222;
+    --darkGray: #313131;
+    --gray: #3f3f3f;
 }
 
 .scooterHandle {
     width: 107px;
-    height: 20px;
+    height: 22px;
     border-radius: 8px / 50%;
     background: var(--pink);
-    border: 4px solid var(--border);
+    border: 3px solid var(--border);
     --x: -79px;
     --y: -112px;
+    overflow: hidden;
+}
+
+.scooterHandle::before {
+    position: absolute;
+    height: 22px;
+    border: 3px solid var(--border);
+    width: 16px;
+    left: -3px;
+    border-radius: 50%;
+    background: var(--pink);
+}
+
+.scooterHandle2 {
+    --x: 150px;
+}
+
+.scooterCenter {
+    outline: 5px solid;
+    --y: -50px;
+    --x: 35.5px;
+
+}
+
+.scooterRailP1 {
+    border-radius: 0 100% 0 0 / 0 60% 0 0;
+    border: 3px solid var(--black);
+    width: 56px;
+    height: 111px;
+    --x: -36px;
+    --y: -2px;
+    --r: -2deg;
+    border-bottom: none;
+    border-left: none;
+}
+
+.scooterRailP2 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    border-right-width: 2px;
+    width: 54px;
+    height: 7px;
+    --x: -45px;
+    --y: -64px;
+    --r: 17deg;
+    border-bottom: none;
+    --sx: 25deg;
+}
+
+.scooterRailP3 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    border-inline-width: 2px;
+    width: 46.9px;
+    height: 7px;
+    /* --x: -41px; */
+    --y: -53px;
+    --r: 180deg;
+    border-bottom: none;
+}
+
+.scooterRailP4 {
+    border-radius: 0 100% 0 0 / 0 60% 0 0;
+    border: 17px solid var(--gray);
+    width: 70px;
+    height: 124px;
+    --x: -29px;
+    --y: -9px;
+    --r: -2deg;
+    border-bottom: none;
+    border-left: none;
+}
+
+.scooterRailP5 {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: var(--gray);
+    width: 54px;
+    height: 54px;
+    --y: -25px;
+}
+
+
+.scooterRailP6 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    background: var(--gray);
+    width: 17.6px;
+    height: 7px;
+    --x: 69px;
+    --y: -62.5px;
+    --r: 90deg;
+    border-bottom: none;
+}
+
+.scooterRailP7 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    background: var(--gray);
+    width: 18px;
+    height: 5px;
+    --y: 54px;
+    --r: 180deg;
+    border-bottom: none;
+}
+
+.scooterCylinder {
+    width: 34px;
+    height: 32px;
+    border-radius: 50% / 8px;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+    --y: 62px;
+    overflow: hidden;
+}
+
+
+.scooterCylinder::before {
+    position: absolute;
+    top: -5px;
+    width: 34px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+}
+
+.scooterCylinder2 {
+    width: 25px;
+    height: 75px;
+    border-radius: 50% / 6px;
+    background: var(--pink);
+    border: 3px solid var(--border);
+    --y: 92px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P1 {
+    width: 7px;
+    height: 8px;
+    border-radius: 0 0 4px 0;
+    border: 3px solid var(--black);
+    --r: -20deg;
+    border-top: 0;
+    border-left: 0;
+    /* background: var(--darkGray); */
+    --y: 132px;
+    --x: -15px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P2 {
+    width: 6px;
+    height: 5px;
+    border-radius: 0 0 4px 0;
+    border: 3px solid var(--black);
+    --r: -211deg;
+    border-top: 0;
+    border-left: 0;
+    /* background: var(--darkGray); */
+    --y: 128px;
+    --x: -13px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P3 {
+    width: 37px;
+    height: 7px;
+    border-radius: 50% / 0 0 100% 100%;
+    border: 3px solid var(--black);
+    border-top: 0;
+    /* background: var(--darkGray); */
+    --y: 138px;
+    overflow: hidden;
 }
