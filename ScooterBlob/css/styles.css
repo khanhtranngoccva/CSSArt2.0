@@ -19,7 +19,7 @@ html, body {
     position: absolute;
     height: 800px;
     opacity: 0.1;
-    /*display: none;*/
+    display: none;
     pointer-events: none;
 }
 
@@ -32,8 +32,10 @@ html, body {
     width: 1500px;
     height: 800px;
     overflow: hidden;
+    --border: #0005;
+
     /*background: #022854;*/
-    outline: 5px solid white;
+    outline: 5px solid #0005;
 }
 
 .canvas * {
@@ -108,7 +110,6 @@ html, body {
     --pink: #E95966;
     --darkerPink: #E85764;
     --darkPink: #C34E59;
-    --border: #0005;
     --black: #222;
     --darkGray: #313131;
     --gray: #3f3f3f;
@@ -516,10 +517,10 @@ html, body {
     background: var(--yellow);
     border-radius: 50%;
     border: 3px solid var(--border);
-    width: 234px;
-    height: 326px;
-    --y: 72px;
-    --x: -11px;
+    width: 233px;
+    height: 321px;
+    --y: 71px;
+    --x: -8px;
     --r: 105deg;
     border-left: none;
     border-bottom: none;
@@ -527,7 +528,7 @@ html, body {
 
 
 .blobP4 {
-     background: var(--yellow);
+    background: var(--yellow);
     /* background: red; */
     border-radius: 50%;
     /* border: 3px solid var(--border); */
@@ -538,4 +539,202 @@ html, body {
     --r: 175deg;
     border-left: none;
     border-bottom: none;
+}
+
+.blobP5 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid #b39433;
+    border-bottom: none;
+    width: 131px;
+    height: 42px;
+    --y: 74px;
+    --x: -186px;
+    --r: 100deg;
+    --vClip: 28%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.blobP6 {
+     background: var(--yellow);
+    /* background: red; */
+    border-radius: 20% 20% 50% 50% / 60% 60% 40% 40%;
+    border: 3px solid #b39433;
+    width: 122px;
+    height: 95px;
+    --y: 159px;
+    --x: -141px;
+    --r: 386deg;
+    border-top: 0;
+}
+
+.blobP7 {
+    background: var(--yellow);
+    width: 17px;
+    height: 33px;
+    --y: 141px;
+    --x: -81px;
+    --r: 363deg;
+}
+
+.blobP8 {
+    background: var(--yellow);
+    width: 23px;
+    height: 89px;
+    --y: 88px;
+    --x: -158px;
+    --r: 380deg;
+}
+
+.eye {
+    background: black;
+    width: 30px;
+    height: 46px;
+    border-radius: 50%;
+    --y: -89px;
+    --x: -38px;
+    --r: -5deg;
+}
+
+.eye2 {
+    --y: -91px;
+    --x: 60px;
+    --r: -5deg;
+}
+
+.mouthP1 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 53px;
+    height: 33px;
+    --y: -49px;
+    --x: -1px;
+    --r: 180deg;
+    --vClip: 28%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.mouthP2 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 35px;
+    height: 20px;
+    --y: -35px;
+    --x: 17px;
+    --r: 350deg;
+    --vClip: 35%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+.mouthP3 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 45px;
+    height: 28px;
+    --y: -49px;
+    --x: 33px;
+    --r: 530deg;
+    --vClip: 36%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.mouthP4 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 9999px 9999px 0 0;
+    background: black;
+    width: 6px;
+    height: 8px;
+    --y: -42px;
+    --x: -15.6px;
+    --r: 670deg;
+}
+
+.mouthP5 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 9999px 9999px 0 0;
+    background: black;
+    width: 6px;
+    height: 8px;
+    --y: -48px;
+    --x: 47.4px;
+    --r: 750deg;
+}
+
+.arms {
+    --yellow: #ffd33f;
+    --y: -120px;
+}
+
+.arm1 {
+    border-radius: 60% 35% 10% 5% / 70% 50% 50% 30%;
+    height: 80px;
+    width: 155px;
+    background: var(--yellow);
+    border: 3px solid var(--border);
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-bottom: none;
+    --r: 182deg;
+    --sx: 40deg;
+    --x: -90px;
+    --y: 8px;
+}
+
+.arm2 {
+    border-radius: 65% 35% 10% 5% / 70% 50% 50% 30%;
+    height: 91px;
+    width: 125px;
+    background: var(--yellow);
+    border: 3px solid var(--border);
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-bottom: none;
+    --r: 169deg;
+    --sx: 36deg;
+    --x: 142px;
+    --y: 5px;
+}
+
+body {
+    background: #87d787;
+}
+
+.road {
+    width: 940px;
+    height: 100%;
+    background: gray;
+    --sx: 37deg;
+    --x: 32px;
+    border-inline: 8px solid var(--border);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.roadLines {
+    display: flex;
+    padding-top: 25px;
+    gap: 80px;
+    flex-direction: column;
+}
+
+.line {
+    position: static;
+    width: 50px;
+    height: 150px;
+    --gold: gold;
+    background: var(--gold);
+    border: 5px solid var(--border);
 }
