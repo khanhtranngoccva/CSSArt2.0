@@ -18,8 +18,8 @@ html, body {
 .templateImage {
     position: absolute;
     height: 800px;
-    opacity: 0.3;
-    /*display: none;*/
+    opacity: 0.1;
+    display: none;
     pointer-events: none;
 }
 
@@ -32,8 +32,10 @@ html, body {
     width: 1500px;
     height: 800px;
     overflow: hidden;
+    --border: #0005;
+
     /*background: #022854;*/
-    outline: 5px solid white;
+    outline: 5px solid #0005;
 }
 
 .canvas * {
@@ -104,18 +106,635 @@ html, body {
 }
 
 .scooter {
-    outline: 5px solid;
     --y: 110px;
-    --pink: #E85764;
-    --border: #0005;
+    --pink: #E95966;
+    --darkerPink: #E85764;
+    --darkPink: #C34E59;
+    --black: #222;
+    --darkGray: #313131;
+    --gray: #3f3f3f;
+    --lightGray: #555;
 }
 
 .scooterHandle {
     width: 107px;
-    height: 20px;
+    height: 22px;
     border-radius: 8px / 50%;
-    background: var(--pink);
-    border: 4px solid var(--border);
+    background: var(--darkerPink);
+    border: 3px solid var(--border);
     --x: -79px;
     --y: -112px;
+    overflow: hidden;
+}
+
+.scooterHandle::before {
+    position: absolute;
+    height: 22px;
+    border: 3px solid var(--border);
+    width: 16px;
+    left: -3px;
+    border-radius: 50%;
+    background: var(--darkerPink);
+}
+
+.scooterHandle2 {
+    --x: 150px;
+}
+
+.scooterCenter {
+    outline: 5px solid;
+    --y: -50px;
+    --x: 35.5px;
+
+}
+
+.scooterRailP1 {
+    border-radius: 0 100% 0 0 / 0 60% 0 0;
+    border: 3px solid var(--black);
+    width: 56px;
+    height: 111px;
+    --x: -36px;
+    --y: -2px;
+    --r: -2deg;
+    border-bottom: none;
+    border-left: none;
+}
+
+.scooterRailP2 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    border-right-width: 2px;
+    width: 54px;
+    height: 7px;
+    --x: -45px;
+    --y: -64px;
+    --r: 17deg;
+    border-bottom: none;
+    --sx: 25deg;
+}
+
+.scooterRailP3 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    border-inline-width: 2px;
+    width: 46.9px;
+    height: 7px;
+    /* --x: -41px; */
+    --y: -53px;
+    --r: 180deg;
+    border-bottom: none;
+}
+
+.scooterRailP4 {
+    border-radius: 0 100% 0 0 / 0 60% 0 0;
+    border: 17px solid var(--gray);
+    width: 70px;
+    height: 124px;
+    --x: -29px;
+    --y: -9px;
+    --r: -2deg;
+    border-bottom: none;
+    border-left: none;
+}
+
+.scooterRailP5 {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: var(--gray);
+    width: 54px;
+    height: 54px;
+    --y: -25px;
+}
+
+
+.scooterRailP6 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    background: var(--gray);
+    width: 17.6px;
+    height: 7px;
+    --x: 69px;
+    --y: -62.5px;
+    --r: 90deg;
+    border-bottom: none;
+}
+
+.scooterRailP7 {
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid var(--black);
+    background: var(--gray);
+    width: 18px;
+    height: 5px;
+    --y: 54px;
+    --r: 180deg;
+    border-bottom: none;
+}
+
+.scooterCylinder {
+    width: 34px;
+    height: 32px;
+    border-radius: 50% / 8px;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+    --y: 62px;
+    overflow: hidden;
+}
+
+
+.scooterCylinder::before {
+    position: absolute;
+    top: -5px;
+    width: 34px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+}
+
+.scooterCylinder2 {
+    width: 25px;
+    height: 75px;
+    border-radius: 50% / 6px;
+    background: var(--pink);
+    border: 3px solid var(--border);
+    --y: 92px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P1 {
+    width: 7px;
+    height: 8px;
+    border-radius: 0 0 4px 0;
+    border: 3px solid var(--black);
+    --r: -20deg;
+    border-top: 0;
+    border-left: 0;
+    /* background: var(--darkGray); */
+    --y: 132px;
+    --x: -15px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P2 {
+    width: 6px;
+    height: 5px;
+    border-radius: 0 0 4px 0;
+    border: 3px solid var(--black);
+    --r: -211deg;
+    border-top: 0;
+    border-left: 0;
+    /* background: var(--darkGray); */
+    --y: 128px;
+    --x: -13px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P3 {
+    width: 37px;
+    height: 7px;
+    border-radius: 50% / 0 0 100% 100%;
+    border: 3px solid var(--black);
+    border-top: 0;
+    /* background: var(--darkGray); */
+    --y: 138px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P4 {
+    width: 27px;
+    height: 10px;
+    /* border-radius: 50% / 0 0 100% 100%; */
+    /* border: 3px solid var(--black); */
+    border-top: 0;
+    background: var(--gray);
+    --y: 131px;
+    overflow: hidden;
+}
+
+.scooterCylinder3P5 {
+    width: 34px;
+    height: 6px;
+    border-radius: 50% / 0 0 100% 100%;
+    /* border: 3px solid var(--black); */
+    border-top: 0;
+    background: var(--gray);
+    --y: 138px;
+    overflow: hidden;
+}
+
+.scooterCylinder4 {
+    width: 38px;
+    height: 28px;
+    border-radius: 50% / 6px;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+    --y: 145px;
+    overflow: hidden;
+}
+
+.scooterCylinder5 {
+    width: 13px;
+    height: 62px;
+    border-radius: 50% / 6px;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+    --y: 174px;
+    --x: -12.5px;
+    overflow: hidden;
+}
+
+.scooterCylinder6 {
+    width: 14px;
+    height: 61px;
+    border-radius: 50% / 6px;
+    background: var(--darkGray);
+    border: 3px solid var(--border);
+    --y: 169px;
+    --x: 12px;
+    overflow: hidden;
+}
+
+.scooterCylinder7 {
+    width: 6px;
+    height: 30px;
+    background: var(--darkGray);
+    --y: 149px;
+    --x: -13.5px;
+    overflow: hidden;
+}
+
+.scooterCylinder8 {
+    width: 8px;
+    height: 20px;
+    background: var(--darkGray);
+    --y: 150px;
+    --x: 12.5px;
+    overflow: hidden;
+}
+
+.scooterTire {
+    width: 63px;
+    height: 87px;
+    background: var(--gray);
+    border: 3px solid var(--border);
+    border-radius: 50%;
+    --y: 202px;
+    --x: 0px;
+    --r: -10deg;
+    --scaleY: 1.1;
+    --scaleX: 1.025;
+    --sy: 5deg;
+    overflow: hidden;
+}
+
+.scooterTire1 {
+    border-radius: 50%;
+    width: 53px;
+    height: 82px;
+    background: var(--lightGray);
+    border: 3px solid var(--border);
+    --r: -6deg;
+    --x: -8px;
+    --y: 1px;
+}
+
+.scooterTire1::before {
+    border: 3px solid var(--border);
+    background: #aaa;
+    border-radius: 50%;
+    width: 33px;
+    height: 57px;
+    position: absolute;
+    left: 8px;
+}
+
+.scooterBase {
+    /*outline: 5px solid;*/
+    --y: 20px;
+    --x: -35px;
+}
+
+.scooterBase1 {
+    width: 200px;
+    height: 141px;
+    border-inline: 3px solid var(--border);
+    background: var(--black);
+    /*--y: 5px;*/
+}
+
+.scooterBase2 {
+    width: 65px;
+    height: 60px;
+    border-top: 3px solid var(--border);
+    background: var(--black);
+    --y: -57px;
+    --r: -25deg;
+    --x: -57px;
+}
+
+
+.scooterBase3 {
+    width: 84px;
+    height: 197px;
+    background: var(--darkerPink);
+    border: 3px solid var(--border);
+}
+
+.scooterBaseTopFace {
+    --s: 35deg;
+}
+
+.scooterSide1 {
+    background: var(--darkPink);
+    height: 15px;
+    width: 98px;
+    --sy: 55deg;
+    border: 3px solid var(--border);
+    border-block-width: 4px;
+    --x: -100px;
+    --y: 7px;
+}
+
+.scooterSide2 {
+    background: var(--darkPink);
+    height: 15px;
+    width: 78px;
+    --sy: 19deg;
+    border: 3px solid var(--border);
+    --x: -13px;
+    --y: 90px;
+}
+
+.scooterSide3 {
+    background: var(--darkPink);
+    height: 15px;
+    width: 87px;
+    /* --sy: 19deg; */
+    border: 3px solid var(--border);
+    --x: 67px;
+    --y: 103px;
+}
+
+.scooterSide4 {
+    background: var(--darkPink);
+    height: 15px;
+    width: 39px;
+    --sy: -35deg;
+    border: 3px solid var(--border);
+    --x: 129px;
+    --y: 90px;
+}
+
+.blob {
+    --yellow: #ffd33f;
+    --x: -20px;
+    --y: -150px;
+}
+
+.blobP1 {
+    background: var(--yellow);
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    width: 354px;
+    height: 349px;
+    --y: -27px;
+    --x: -5px;
+}
+
+.blobP2 {
+    background: var(--yellow);
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    border-bottom: none;
+    border-right: none;
+    width: 318px;
+    height: 370px;
+    --y: 7px;
+    --x: 23px;
+    --r: 175deg;
+}
+
+.blobP3 {
+    background: var(--yellow);
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    width: 233px;
+    height: 321px;
+    --y: 71px;
+    --x: -8px;
+    --r: 105deg;
+    border-left: none;
+    border-bottom: none;
+}
+
+
+.blobP4 {
+    background: var(--yellow);
+    /* background: red; */
+    border-radius: 50%;
+    /* border: 3px solid var(--border); */
+    width: 300px;
+    height: 378px;
+    --y: 0px;
+    --x: 27px;
+    --r: 175deg;
+    border-left: none;
+    border-bottom: none;
+}
+
+.blobP5 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 3px solid #b39433;
+    border-bottom: none;
+    width: 131px;
+    height: 42px;
+    --y: 74px;
+    --x: -186px;
+    --r: 100deg;
+    --vClip: 28%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.blobP6 {
+     background: var(--yellow);
+    /* background: red; */
+    border-radius: 20% 20% 50% 50% / 60% 60% 40% 40%;
+    border: 3px solid #b39433;
+    width: 122px;
+    height: 95px;
+    --y: 159px;
+    --x: -141px;
+    --r: 386deg;
+    border-top: 0;
+}
+
+.blobP7 {
+    background: var(--yellow);
+    width: 17px;
+    height: 33px;
+    --y: 141px;
+    --x: -81px;
+    --r: 363deg;
+}
+
+.blobP8 {
+    background: var(--yellow);
+    width: 23px;
+    height: 89px;
+    --y: 88px;
+    --x: -158px;
+    --r: 380deg;
+}
+
+.eye {
+    background: black;
+    width: 30px;
+    height: 46px;
+    border-radius: 50%;
+    --y: -89px;
+    --x: -38px;
+    --r: -5deg;
+}
+
+.eye2 {
+    --y: -91px;
+    --x: 60px;
+    --r: -5deg;
+}
+
+.mouthP1 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 53px;
+    height: 33px;
+    --y: -49px;
+    --x: -1px;
+    --r: 180deg;
+    --vClip: 28%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.mouthP2 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 35px;
+    height: 20px;
+    --y: -35px;
+    --x: 17px;
+    --r: 350deg;
+    --vClip: 35%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+.mouthP3 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 50% / 100% 100% 0 0;
+    border: 6px solid black;
+    border-bottom: none;
+    width: 45px;
+    height: 28px;
+    --y: -49px;
+    --x: 33px;
+    --r: 530deg;
+    --vClip: 36%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--vClip), 0 var(--vClip));
+}
+
+.mouthP4 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 9999px 9999px 0 0;
+    background: black;
+    width: 6px;
+    height: 8px;
+    --y: -42px;
+    --x: -15.6px;
+    --r: 670deg;
+}
+
+.mouthP5 {
+    /* background: var(--yellow); */
+    /* background: red; */
+    border-radius: 9999px 9999px 0 0;
+    background: black;
+    width: 6px;
+    height: 8px;
+    --y: -48px;
+    --x: 47.4px;
+    --r: 750deg;
+}
+
+.arms {
+    --yellow: #ffd33f;
+    --y: -120px;
+}
+
+.arm1 {
+    border-radius: 60% 35% 10% 5% / 70% 50% 50% 30%;
+    height: 80px;
+    width: 155px;
+    background: var(--yellow);
+    border: 3px solid var(--border);
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-bottom: none;
+    --r: 182deg;
+    --sx: 40deg;
+    --x: -90px;
+    --y: 8px;
+}
+
+.arm2 {
+    border-radius: 65% 35% 10% 5% / 70% 50% 50% 30%;
+    height: 91px;
+    width: 125px;
+    background: var(--yellow);
+    border: 3px solid var(--border);
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-bottom: none;
+    --r: 169deg;
+    --sx: 36deg;
+    --x: 142px;
+    --y: 5px;
+}
+
+body {
+    background: #87d787;
+}
+
+.road {
+    width: 940px;
+    height: 100%;
+    background: gray;
+    --sx: 37deg;
+    --x: 32px;
+    border-inline: 8px solid var(--border);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.roadLines {
+    display: flex;
+    padding-top: 25px;
+    gap: 80px;
+    flex-direction: column;
+}
+
+.line {
+    position: static;
+    width: 50px;
+    height: 150px;
+    --gold: gold;
+    background: var(--gold);
+    border: 5px solid var(--border);
 }

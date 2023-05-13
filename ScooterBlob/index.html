@@ -5,15 +5,96 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/newStyles.css">
     <title>Scooter Blob</title>
 </head>
 <body>
-<img class="templateImage" src="scooterBlob__blobHidden.png" alt="">
 <div class="canvas symmetry transform">
+    <div class="road transform">
+        <div class="roadLines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
     <div class="scooter symmetry transform">
-        <div class="scooterHandle transform"></div>
+
+
+        <div class="scooterBase symmetry transform">
+            <div class="scooterBaseTopFace symmetry transform">
+                <div class="scooterBase1 transform"></div>
+                <div class="scooterBase2 transform"></div>
+                <div class="scooterBase2 flipVertical"></div>
+                <div class="scooterBase2 flipHorizontal"></div>
+                <div class="scooterBase2 flipDiagonal"></div>
+                <div class="scooterBase2 transform"></div>
+                <div class="scooterBase3 transform"></div>
+            </div>
+            <div class="scooterSide1 transform"></div>
+            <div class="scooterSide2 transform"></div>
+            <div class="scooterSide3 transform"></div>
+            <div class="scooterSide4 transform"></div>
+        </div>
+        <div class="blob symmetry transform">
+            <div class="blobP1 symmetry transform"></div>
+            <div class="blobP2 symmetry transform"></div>
+            <div class="blobP3 symmetry transform"></div>
+            <div class="blobP4 symmetry transform"></div>
+            <div class="blobP6 symmetry transform"></div>
+            <div class="blobP7 symmetry transform"></div>
+            <div class="blobP8 symmetry transform"></div>
+            <div class="blobP5 symmetry transform"></div>
+            <div class="eye transform"></div>
+            <div class="eye eye2 transform"></div>
+            <div class="mouthP1 transform"></div>
+            <div class="mouthP2 transform"></div>
+            <div class="mouthP3 transform"></div>
+            <div class="mouthP4 transform"></div>
+            <div class="mouthP5 transform"></div>
+
+        </div>
+        <div class="scooterHandle pseudo symmetry transform scooterHandle2"></div>
+        <div class="scooterHandle pseudo symmetry transform scooterHandle2"></div>
+        <div class="scooterCenter symmetry transform">
+            <div class="scooterCylinder6 pseudo symmetry transform"></div>
+            <div class="scooterTire symmetry transform">
+                <div class="scooterTire1 transform symmetry pseudo"></div>
+            </div>
+            <div class="scooterCylinder5 pseudo symmetry transform"></div>
+            <div class="scooterCylinder4 pseudo symmetry transform"></div>
+            <div class="scooterCylinder7 pseudo symmetry transform"></div>
+            <div class="scooterCylinder8 pseudo symmetry transform"></div>
+            <div class="scooterCylinder3P5 pseudo symmetry transform"></div>
+            <div class="scooterCylinder3P4 pseudo symmetry transform"></div>
+            <div class="scooterCylinder3P1 pseudo symmetry transform"></div>
+            <div class="scooterCylinder3P1 pseudo symmetry flipHorizontal"></div>
+            <div class="scooterCylinder3P2 pseudo symmetry transform"></div>
+            <div class="scooterCylinder3P2 pseudo symmetry flipHorizontal"></div>
+            <div class="scooterCylinder3P3 pseudo symmetry transform"></div>
+            <div class="scooterCylinder2 pseudo symmetry transform"></div>
+            <div class="scooterCylinder pseudo symmetry transform"></div>
+
+            <div class="scooterRailP5 transform"></div>
+            <div class="scooterRailP4 transform"></div>
+            <div class="scooterRailP4 flipHorizontal"></div>
+            <div class="scooterRailP1 transform"></div>
+            <div class="scooterRailP1 flipHorizontal"></div>
+            <div class="scooterRailP2 transform"></div>
+            <div class="scooterRailP2 flipHorizontal"></div>
+            <div class="scooterRailP3 transform"></div>
+            <div class="scooterRailP6 transform"></div>
+            <div class="scooterRailP7 transform"></div>
+        </div>
+        <div class="scooterHandle pseudo symmetry transform"></div>
+        <div class="arms transform symmetry">
+            <div class="arm1 transform"></div>
+            <div class="arm2 transform"></div>
+        </div>
     </div>
 </div>
+<img class="templateImage" src="scooterBlob.png" alt="">
+<script src="responsiveLoader.js"></script>
 </body>
 </html>
