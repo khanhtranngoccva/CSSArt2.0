@@ -1,0 +1,253 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #307ab9;
+  position: relative;
+}
+
+.canvas {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.template {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  opacity: 0.4;
+  display: none;
+  transform: translate(-350px);
+}
+
+$transparent: #0000;
+$white: #FFFFFF;
+$green1: #2F9E47;
+$darkGreen1: #2F9147;
+$brown: #8D523C;
+$darkBrown: #83523C;
+$darkerBrown: #906947;
+$_debug: #FF0000;
+$skinTone1: #DCBE97;
+$darkSkinTone1: #BEA88B;
+$skinTone2: #ffd6a2;
+$darkSkinTone2: #D8BA93;
+$earTone1: #d8aa6c;
+$darkEarTone1: #A38053;
+$earTone2: #ffc06c;
+$darkEarTone2: #bf8f57;
+$eyebrow: #C8791B;
+$hair: #ff9935;
+$darkHair: #D88C33;
+$darkHairHighlight: #BE731C;
+$hairHighlight: #DA741D;
+$yellow: #f3cc2a;
+$darkYellow: #cfb32a;
+$green2: #31a048;
+$darkGreen2: #319247;
+$blue: #265E9E;
+$deepBlue: #0E2436;
+$black: #0007;
+
+.canvas {
+  background: // Hat
+          linear-gradient(to bottom, $darkGreen2 50%, $darkGreen2 50%) 236px 142px/38px 37px,
+          linear-gradient(to bottom, $darkGreen2 50%, $darkGreen2 50%) 189px 89px/71px 46px,
+          linear-gradient(to bottom, $darkGreen2 50%, $darkGreen2 50%) 152px 107px/109px 46px,
+          linear-gradient(to bottom left, $transparent 50%, $darkGreen2 50%) 256px 84px/74px 89px,
+          linear-gradient(to bottom right, $transparent 50%, $darkGreen2 50%) 189px 84px/69px 6px,
+          linear-gradient(to bottom right, $transparent 50%, $darkGreen2 50%) 151px 89px/39px 18px,
+          linear-gradient(to top, $darkGreen2 50%, $darkGreen2 50%) 244px 284px/26px 33px,
+          linear-gradient(to top, $darkGreen2 50%, $darkGreen2 50%) 244px 172px/87px 115px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen2 50%) 306px 286px/28px 6px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen2 50%) 269px 282px/54px 36px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen2 50%) 244px 317px/28px 6px,
+          linear-gradient(to top left, $transparent 50%, $green2 50%) 330px 255px/155px 31px,
+          linear-gradient(to top right, $transparent 50%, $green2 50%) 432px 262px/114px 22px,
+          linear-gradient(to top right, $transparent 50%, $green2 50%) 432px 262px/114px 22px,
+          conic-gradient(from -53deg at 100% 100%, $green2 38deg, $transparent 38deg) 534px 281px/55px 42px,
+          linear-gradient(to bottom right, $transparent 50%, $green2 50%) 152px 64px/88px 44px,
+          linear-gradient(to bottom right, $transparent 50%, $green2 50%) 238px 41px/136px 24px,
+          linear-gradient(to bottom left, $transparent 50%, $green2 50%) 545px 135px/34px 156px,
+          linear-gradient(to bottom left, $transparent 50%, $green2 50%) 374px 42px/173px 96px,
+          conic-gradient(from 39deg at 0 100%, $darkGreen2 22deg, $transparent 22deg) 77px 108px/75px 93px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen2 50%) 147px 148px/111px 12px,
+          linear-gradient(to top right, $transparent 50%, $darkGreen2 50%) 205px 153px/40px 71px,
+          linear-gradient(to bottom right, $transparent 50%, $darkGreen2 50%) 230px 215px/15px 108px,
+          linear-gradient(to top, $green2 50%, $green2 50%) 239px 64px/166px 119px,
+          linear-gradient(to top, $green2 50%, $green2 50%) 330px 137px/215px 126px,
+          linear-gradient(to top, $green2 50%, $green2 50%) 151px 107px/95px 46px,
+          conic-gradient(from 5deg at 0 100%, $yellow 75deg, $transparent 75deg) 329px 284px/72px 23px,
+          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) 314px 298px/73px 13px,
+          conic-gradient(from 10deg at 0 100%, $darkYellow 71deg, $transparent 71deg) 227px 317px/40px 27px,
+          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) 266px 285px/98px 52px,
+          linear-gradient(to top left, $transparent 50%, $yellow 50%) 314px 267px/220px 44px,
+          linear-gradient(to top right, $transparent 50%, $yellow 50%) 346px 261px/218px 52px,
+          conic-gradient(from -50deg at 100% 100%, $yellow 34deg, $transparent 34deg) 534px 280px/64px 74px,
+            // Hair - Layer 2
+          radial-gradient(180% 180% at -80% 180%, $transparent 96%, $hairHighlight 96%, $hairHighlight 100%, $transparent 100%) 495px 309px/30px 25px,
+          radial-gradient(180% 180% at 180% -80%, $transparent 96%, $hairHighlight 96%, $hairHighlight 100%, $transparent 100%) 512px 333px/26px 25px,
+          radial-gradient(140% 90% at -40% 30%, $transparent 87%, $hairHighlight 87%, $hairHighlight 100%, $transparent 100%) 441px 286px/7px 30px,
+          radial-gradient(140% 130% at -40% -30%, $transparent 96%, $darkHairHighlight 96%, $darkHairHighlight 100%, $transparent 100%) 228px 324px/30px 62px,
+          radial-gradient(140% 130% at -40% -30%, $transparent 96%, $darkHairHighlight 96%, $darkHairHighlight 100%, $transparent 100%) 294px 299px/22px 34px,
+          radial-gradient(140% 160% at 140% -60%, $transparent 93%, $hairHighlight 93%, $hairHighlight 100%, $transparent 100%) 570px 327px/14px 34px,
+          radial-gradient(140% 130% at 140% 130%, $transparent 96%, $hairHighlight 96%, $hairHighlight 100%, $transparent 100%) 361px 294px/24px 33px,
+          radial-gradient(140% 130% at 140% -30%, $transparent 96%, $hairHighlight 96%, $hairHighlight 100%, $transparent 100%) 461px 315px/17px 31px,
+          radial-gradient(140% 130% at -40% -30%, $transparent 96%, $darkHairHighlight 96%, $darkHairHighlight 100%, $transparent 100%) 276px 347px/25px 31px,
+          radial-gradient(140% 130% at -40% -30%, $transparent 96%, $hairHighlight 96%, $hairHighlight 100%, $transparent 100%) 353px 332px/28px 31px,
+            //Hair - Layer 1(hardest layer!!!)
+          linear-gradient(to bottom, $hair 50%, $hair 50%) 436px 262px/48px 51px,
+          linear-gradient(to bottom left, $transparent 50%, $hair 50%) 492px 340px/8px 20px,
+          radial-gradient(100% 110% at 100% -10%, $transparent 30%, $hair 30%, $hair 100%, $transparent 100%) 443px 303px/51px 56px,
+          radial-gradient(100% 100% at 100% 0%, $transparent 30%, $hair 30%, $hair 100%, $transparent 100%) 483px 303px/71px 65px,
+          radial-gradient(100% 100% at 0% 100%, $transparent 55%, $hair 55%, $hair 100%, $transparent 100%) 483px 251px/122px 123px,
+          radial-gradient(77% 180% at 77% -80%, $transparent 92%, $hair 92%, $hair 100%, $transparent 100%) 483px 338px/122px 39px,
+          radial-gradient(90% 180% at 90% -80%, $transparent 95%, $hair 95%, $hair 108%, $transparent 108%) 493px 339px/11px 20px,
+          radial-gradient(90% 180% at 90% -80%, $transparent 97%, $hair 97%, $hair 100%, $transparent 100%) 437px 313px/67px 48px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 423px 272px/18px 51px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 373px 274px/37px 58px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 407px 275px/18px 69px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 438px 313px/5px 13px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 424px 323px/16px 20px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 408px 342px/17px 12px,
+          linear-gradient(to bottom right, $transparent 50%, $hair 50%) 403px 325px/5px 20px,
+          linear-gradient(to bottom right, $transparent 50%, $hair 50%) 399px 334px/9px 20px,
+          radial-gradient(110% 180% at -10% -80%, $transparent 97%, $hair 97%, $hair 100%, $transparent 100%) 398px 313px/53px 44px,
+          radial-gradient(170% 170% at -70% -70%, $transparent 98%, $hair 98%, $hair 103%, $transparent 103%) 398px 332px/9px 27px,
+          linear-gradient(to top left, $transparent 50%, $darkHair 50%) 306px 290px/30px 79px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 307px 277px/56px 76px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 355px 275px/29px 76px,
+          linear-gradient(to top, $hair 50%, $hair 50%) 334px 288px/25px 76px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 382px 332px/23px 21px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 358px 351px/28px 15px,
+          linear-gradient(to bottom right, $transparent 50%, $hair 50%) 319px 328px/16px 37px,
+          linear-gradient(to top left, $transparent 50%, $hair 50%) 320px 364px/44px 11px,
+          linear-gradient(to bottom right, $transparent 50%, $hair 50%) 310px 363px/10px 13px,
+          radial-gradient(120% 150% at -20% -50%, $transparent 100%, $hair 100%, $hair 103%, $transparent 103%) 310px 332px/99px 44px,
+          radial-gradient(170% 170% at -70% -70%, $transparent 98%, $hair 98%, $hair 103%, $transparent 103%) 310px 352px/17px 27px,
+          radial-gradient(100% 170% at -70% -90%, $hair 100%, $transparent 100%) 307px 352px/120px 55px,
+          linear-gradient(to bottom, $darkHair 50%, $darkHair 50%) 233px 307px/74px 60px,
+          linear-gradient(to bottom, $darkHair 50%, $darkHair 50%) 233px 307px/74px 60px,
+          linear-gradient(to bottom right, $transparent 50%, $darkHair 50%) 219px 335px/15px 32px,
+          linear-gradient(to bottom right, $transparent 50%, $darkHair 50%) 187px 369px/31px 32px,
+          radial-gradient(170% 170% at -70% -70%, $transparent 100%, $darkHair 100%, $darkHair 102%, $transparent 102%) 184px 343px/52px 67px,
+          radial-gradient(100% 170% at 0 -90%, $darkHair 100%, $transparent 100%) 216px 367px/109px 49px,
+          radial-gradient(100% 100% at top right, $darkHair 100%, $transparent 100%) 184px 400px/32px 6px,
+            //Right Ear
+          linear-gradient(to top, $darkEarTone1 50%, $darkEarTone1 50%) 223px 404px/41px 36px,
+          linear-gradient(to top right, $transparent 50%, $darkEarTone1 50%) 132px 437px/132px 7px,
+          linear-gradient(to bottom left, $transparent 50%, $darkEarTone1 50%) 264px 401px/4px 43px,
+          linear-gradient(to bottom left, $transparent 50%, $darkEarTone1 50%) 223px 399px/41px 5px,
+          linear-gradient(to bottom right, $transparent 50%, $darkEarTone1 50%) 131px 399px/92px 38px,
+          linear-gradient(to bottom, $earTone1 50%, $earTone1 50%) 220px 389px/45px 20px,
+          linear-gradient(to bottom left, $transparent 50%, $earTone1 50%) 264px 385px/5px 59px,
+          linear-gradient(to bottom left, $transparent 50%, $earTone1 50%) 220px 373px/47px 18px,
+          linear-gradient(to bottom right, $transparent 50%, $earTone1 50%) 132px 373px/88px 63px,
+            // Face - nose, mouth layers
+          radial-gradient(50% 50% at center, $darkerBrown 100%, $transparent 100%) 438px 489px/12px 6px,
+          radial-gradient(50% 50% at center, $darkerBrown 100%, $transparent 100%) 422.5px 489px/12px 6px,
+          linear-gradient(to top right, $transparent calc(50% - 0.5px), $darkerBrown calc(50% - 0.5px), $darkerBrown calc(50% + 1.5px), $transparent calc(50% + 1px)) 448.5px 476px/6px 10px,
+          radial-gradient(100% 55% at -30% 40%, $transparent 70%, $darkerBrown 70%, $darkerBrown 100%, $transparent 100%) 453px 483.5px/5px 13px,
+          radial-gradient(130% 170% at -30% -70%, $transparent 89%, $darkerBrown 89%, $darkerBrown 100%, $transparent 100%) 419px 478px/8px 11px,
+          radial-gradient(100% 55% at 100% 50%, $transparent 58%, $darkerBrown 58%, $darkerBrown 100%, $transparent 100%) 418px 486.5px/2px 10px,
+          linear-gradient(to top left, $transparent calc(50% - 0.5px), $darkerBrown calc(50% - 0.5px), $darkerBrown calc(50% + 0.5px), $transparent calc(50% + 1px)) 424.5px 458px/8px 23px,
+          radial-gradient(53% 140% at 50% -40%, $transparent 90%, $black 90%, $black 100%, $transparent 100%) 391px 545px/62px 8px,
+          linear-gradient(to top left, $transparent calc(50% - 1px), $black calc(50% - 1px), $black calc(50% + 1px), $transparent calc(50% + 1px)) 358px 508px/10px 10px,
+          linear-gradient(to top right, $transparent calc(50% - 1px), $black calc(50% - 1px), $black calc(50% + 1px), $transparent calc(50% + 1px)) 487px 508px/10px 10px,
+          radial-gradient(53% 140% at 50% -40%, $transparent 97%, $black 97%, $black 100%, $transparent 100%) 362px 512px/130px 24px,
+            // Face - Eye, eyebrow
+
+          radial-gradient(55% 160% at 50% 160%, $skinTone2 100%, $transparent 100%) 458px 364px/121px 19px,
+          radial-gradient(65% 160% at 63% 160%, $transparent 80%, $eyebrow 80%, $eyebrow 100%, $transparent 100%) 451px 356px/113px 26px,
+          radial-gradient(55% 160% at 50% 160%, $skinTone2 100%, $transparent 100%) 301px 368px/120px 20px,
+          radial-gradient(65% 160% at 47% 160%, $transparent 80%, $eyebrow 80%, $eyebrow 100%, $transparent 100%) 308px 360px/105px 26px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 451px 380px/7px 20px,
+          radial-gradient(98% 95% at 100% 5%, $transparent 100%, $skinTone2 100%) 451px 449px/59px 8px,
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) 452px 399px/4px 73px,
+          radial-gradient(98% 95% at 0% 5%, $transparent 100%, $skinTone2 100%) 481px 402px/83px 55px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 475px 368px/47px 14px,
+          radial-gradient(90% 100% at 10% 100%, $transparent 100%, $skinTone2 100%) 483px 380px/82px 37px,
+          radial-gradient(100% 100% at 100% 100%, $transparent 100%, $skinTone2 100%) 455px 381px/63px 38px,
+          radial-gradient(50% 50% at center, $white 100%, $transparent 100%) 485px 404px/10px 15px,
+          radial-gradient(50% 50% at center, $deepBlue 100%, $transparent 100%) 477px 381px/38px 57px,
+          radial-gradient(50% 50% at center, $blue 100%, $transparent 100%) 468px 374px/58px 75px,
+          radial-gradient(98% 95% at 0% 5%, $transparent 100%, $skinTone2 100%) 356px 449px/61px 8px,
+          linear-gradient(to bottom, $white 50%, $white 50%) 453px 382px/111px 75px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 412px 383px/7px 28px,
+          linear-gradient(to top right, $transparent 50%, $skinTone2 50%) 411px 409px/6px 54px,
+          radial-gradient(98% 95% at 100% 5%, $transparent 100%, $skinTone2 100%) 315px 409px/77px 47px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 339px 374px/61px 14px,
+          radial-gradient(90% 100% at 10% 100%, $transparent 100%, $skinTone2 100%) 337px 387px/76px 37px,
+          radial-gradient(100% 100% at 100% 100%, $transparent 100%, $skinTone2 100%) 314px 386px/49px 36px,
+          radial-gradient(50% 50% at center, $white 100%, $transparent 100%) 374px 404px/10px 15px,
+          radial-gradient(50% 50% at center, $deepBlue 100%, $transparent 100%) 353px 381px/38px 57px,
+          radial-gradient(50% 50% at center, $blue 100%, $transparent 100%) 341px 374px/58px 75px,
+          linear-gradient(to bottom, $white 50%, $white 50%) 316px 387px/100px 69px,
+            // Face - Layer 1
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 376px 304px/125px 148px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 434px 510px/69px 59px,
+          linear-gradient(to bottom, $skinTone2 50%, $skinTone2 50%) 435px 347px/127px 167px,
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) 562px 368px/26px 146px,
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) 502px 513px/61px 56px,
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) 415px 569px/88px 23px,
+          linear-gradient(to top right, $transparent 22.5%, $skinTone2 22.5%) 308px 346px/131px 231px,
+          linear-gradient(to top right, $transparent 50%, $skinTone2 50%) 368px 576px/47px 16px,
+          linear-gradient(to top right, $transparent 50%, $skinTone2 50%) 308px 475px/60px 101px,
+          linear-gradient(to top right, $transparent 50%, $skinTone2 50%) 301px 363px/7px 110px,
+          linear-gradient(to bottom, $darkSkinTone2 50%, $darkSkinTone2 50%) 263px 369px/45px 116px,
+          linear-gradient(to top right, $transparent 50%, $darkSkinTone2 50%) 254px 382px/9px 105px,
+          linear-gradient(to top right, $transparent 50%, $darkSkinTone2 50%) 338px 566px/52px 19px,
+          linear-gradient(to top right, $transparent 30%, $darkSkinTone2 30%) 263px 434px/127px 132px,
+            // Left Ear
+          linear-gradient(to top left, $transparent 50%, $darkEarTone2 50%) 574px 422px/94px 22px,
+          linear-gradient(to bottom left, $transparent 50%, $darkEarTone2 50%) 578px 389px/90px 33px,
+          linear-gradient(to bottom left, $transparent 50%, $earTone2 50%) 578px 366px/90px 56px,
+            // Neck
+          linear-gradient(to bottom right, $transparent 50%, $skinTone1 50%) 374px 550px/18px 75px,
+          linear-gradient(to top right, $transparent 50%, $skinTone1 50%) 374px 624px/32px 21px,
+          linear-gradient(to top right, $transparent 50%, $darkSkinTone1 50%) 355px 612px/32px 21px,
+          linear-gradient(to bottom right, $transparent 50%, $darkSkinTone1 50%) 355px 520px/32px 92px,
+          linear-gradient(to bottom, $skinTone1 50%, $skinTone1 50%) 379px 567px/90px 51px,
+          linear-gradient(to bottom left, $transparent 50%, $skinTone1 50%) 469px 566px/14px 45px,
+          linear-gradient(to top left, $transparent 50%, $skinTone1 50%) 421px 611px/62px 45px,
+          linear-gradient(to top right, $transparent 50%, $skinTone1 50%) 355px 611px/66px 45px,
+            // Shirt - Layer 3
+          conic-gradient(from -45deg at 40% 30%, $transparent 0, $darkBrown 0, $darkBrown 113deg, $transparent 25deg) 335px 616px/52px 67px,
+          linear-gradient(to bottom right, $transparent 50%, $darkBrown 50%) 335px 599px/70px 17px,
+          linear-gradient(to bottom left, $transparent 50%, $brown 50%) 434px 597px/70px 17px,
+          linear-gradient(to top left, $transparent 50%, $brown 50%) 423px 614px/80px 86px,
+          linear-gradient(to top right, $transparent 50%, $brown 50%) 335px 616px/88px 84px,
+            // Shirt - Layer 2
+          linear-gradient(to bottom left, $transparent 20%, $darkGreen1 20%) 341px 614px/33px 15px,
+          linear-gradient(to top left, $transparent 20%, $darkGreen1 20%) 232px 640px/54px 48px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen1 50%) 286px 628px/88px 41px,
+          linear-gradient(to top left, $transparent 50%, $darkGreen1 50%) 267px 665px/20px 46px,
+          linear-gradient(to bottom right, $transparent 50%, $darkGreen1 50%) 232px 614px/109px 26px,
+          linear-gradient(to bottom right, $transparent 50%, $darkGreen1 50%) 215px 639px/18px 47px,
+          linear-gradient(to top right, $transparent 50%, $darkGreen1 50%) 215px 685px/53px 26px,
+            // Shirt - Layer 1
+          linear-gradient(to bottom, $green1 50%, $green1 50%) 230px 639px/376px 53px,
+          linear-gradient(to bottom left, $transparent 50%, $green1 50%) 605px 637px/8px 51px,
+          linear-gradient(to bottom left, $transparent 50%, $green1 50%) 480px 607px/131px 32px,
+          linear-gradient(to bottom right, $transparent 50%, $green1 50%) 230px 611px/127px 28px,
+          linear-gradient(to bottom right, $transparent 50%, $green1 50%) 217px 641px/14px 44px,
+          linear-gradient(to bottom, $green1 50%, $green1 50%) 339px 685px/158px 62px,
+          linear-gradient(to top left, $transparent 50%, $green1 50%) 495px 688px/121px 60px,
+          linear-gradient(to top right, $transparent 50%, $green1 50%) 215px 685px/124px 60px;
+}
+
+.canvas {
+  background-repeat: no-repeat;
+}
