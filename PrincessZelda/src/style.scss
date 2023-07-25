@@ -10,6 +10,7 @@ body {
   margin: 0;
   background: #2d2d2d;
   position: relative;
+  overflow: hidden;
 }
 
 .canvas {
@@ -35,17 +36,17 @@ body {
 
 $_debug: #F00;
 $blue: #0FB1DF;
-$darkBlue: #0DA1CB;
+$darkBlue: #0f8cce;
 $eyeBlue1: #2C4F85;
 $eyeBlue2: #284779;
 $eyeBlue3: #0C1D36;
 $eyeBlue4: #0A1A31;
 $black: #222;
 $whiteBlue: #E4F9FB;
-$darkWhiteBlue: #CFE2E4;
+$darkWhiteBlue: #b5dbe3;
 $transparent: #0000;
 $skinTone1: #F4D4A7;
-$darkSkinTone1: #DEC198;
+$darkSkinTone1: #debb98;
 $darkBorderSkinTone1: #B79F7C;
 $skinTone2: #F6E0C0;
 $darkSkinTone2: #E0CCAE;
@@ -53,8 +54,8 @@ $skinTone3: #E8C28C;
 $skinTone4: #F3D9B2;
 $skinTone5: #DEC5A2;
 $yellow: #F5DA53;
-$darkYellow: #DFC54A;
-$darkerYellow: #CFAE07;
+$darkYellow: #e8ba41;
+$darkerYellow: #cf9007;
 $white: #ECEFF4;
 $lightBrown: #D1A23D;
 $darkerLightBrown: #BD9237;
@@ -64,9 +65,9 @@ $red: #E5373D;
 
 .canvas {
 
-        //opacity: 0.5;
+  //opacity: 0.5;
   background: //Hair - Layer 3
-        radial-gradient(50% 50% at 50% 50%, $red 85%, $lime 85%, $lime 100%, $transparent 100%) 382px 675px/47px 78px,
+          radial-gradient(50% 50% at 50% 50%, $red 85%, $lime 85%, $lime 100%, $transparent 100%) 382px 675px/47px 78px,
           radial-gradient(190% 110% at -90% 110%, $transparent calc(100% - 2px), #0003 calc(100% - 2px), #0003 100%, $transparent 100%) 416px 91px/27px 114px,
           linear-gradient(to bottom, $darkYellow 50%, $darkYellow 50%) 260px 526px/7px 44px,
           linear-gradient(to bottom right, $darkYellow 50%, $yellow 50%) 263px 526px/27px 68px,
@@ -107,7 +108,7 @@ $red: #E5373D;
           linear-gradient(to top right, $transparent calc(50% - 1px), $skinTone3 calc(50% - 1px), $skinTone3 calc(50% + 1.5px), $transparent calc(50% + 1.5px),) 421px 411px/7px 12px,
           linear-gradient(to bottom right, $transparent calc(50% - 1px), $skinTone3 calc(50% - 1px), $skinTone3 calc(50% + 1.5px), $transparent calc(50% + 1.5px),) 421px 378.5px/18px 24px,
             //   Eyes and Eyebrows
-          radial-gradient(55% 100% at 55% 100%, $transparent 78%, $skinTone2 78%, $skinTone2 100%, $transparent 100%) 467px 272px/102px 36px,
+          radial-gradient(55% 100% at 55% 100%, $transparent 78%, $skinTone2 78%, $skinTone2 100%, $transparent 100%) 467px 272px/103px 36px,
           radial-gradient(55% 100% at 55% 100%, $transparent 78%, $lightBrown 78%, $lightBrown 100%, $transparent 100%) 468px 265px/101px 34px,
           linear-gradient(to bottom, $darkSkinTone2 50%, $darkSkinTone2 50%) 289px 274px/9px 30px,
           linear-gradient(to bottom left, $transparent 50%, $darkSkinTone2 50%) 313px 274px/2px 30px,
@@ -159,7 +160,7 @@ $red: #E5373D;
           linear-gradient(to top left, $transparent 50%, $skinTone4 50%) 564px 365px/47px 22px,
           conic-gradient(from 196deg at 100% 0, $skinTone4 34deg, $transparent 0deg) 564px 202px/99px 151px,
             //Hair - Layer 1
-          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) 581px 227px/26px 136px,
+          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) 584px 227px/26px 136px,
           linear-gradient(to bottom, $yellow 50%, $yellow 50%) 548px 571px/33px 24px,
           linear-gradient(to bottom, $yellow 50%, $yellow 50%) 550px 359px/34px 213px,
           linear-gradient(to bottom right, $transparent 50%, $yellow 50%) 543px 359px/8px 244px,

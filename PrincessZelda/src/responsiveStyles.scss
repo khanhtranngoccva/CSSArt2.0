@@ -1,0 +1,239 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #2d2d2d;
+  position: relative;
+  overflow: hidden;
+  --unitSize: 1.3vmin;
+}
+
+.canvas {
+  width: calc(var(--unitSize) * 80);
+  height: calc(var(--unitSize) * 80);
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  //outline: calc(var(--unitSize) * 0.1) solid;
+}
+
+.template {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  opacity: 0.5;
+  display: none;
+  transform: translate(calc(var(--unitSize) * -32));
+}
+
+$_debug: #F00;
+$blue: #0FB1DF;
+$darkBlue: #0f8cce;
+$eyeBlue1: #2C4F85;
+$eyeBlue2: #284779;
+$eyeBlue3: #0C1D36;
+$eyeBlue4: #0A1A31;
+$black: #222;
+$whiteBlue: #E4F9FB;
+$darkWhiteBlue: #b5dbe3;
+$transparent: #0000;
+$skinTone1: #F4D4A7;
+$darkSkinTone1: #debb98;
+$darkBorderSkinTone1: #B79F7C;
+$skinTone2: #F6E0C0;
+$darkSkinTone2: #E0CCAE;
+$skinTone3: #E8C28C;
+$skinTone4: #F3D9B2;
+$skinTone5: #DEC5A2;
+$yellow: #F5DA53;
+$darkYellow: #e8ba41;
+$darkerYellow: #cf9007;
+$white: #ECEFF4;
+$lightBrown: #D1A23D;
+$darkerLightBrown: #BD9237;
+$pink: #E37070;
+$lime: #F3F0A4;
+$red: #E5373D;
+
+.canvas {
+
+  //opacity: 0.5;
+  background: //Hair - Layer 3
+          radial-gradient(50% 50% at 50% 50%, $red 85%, $lime 85%, $lime 100%, $transparent 100%) calc(var(--unitSize) * 38.2) calc(var(--unitSize) * 67.5)/calc(var(--unitSize) * 4.7) calc(var(--unitSize) * 7.8),
+          radial-gradient(190% 110% at -90% 110%, $transparent calc(100% - calc(var(--unitSize) * 0.2)), #0003 calc(100% - calc(var(--unitSize) * 0.2)), #0003 100%, $transparent 100%) calc(var(--unitSize) * 41.6) calc(var(--unitSize) * 9.1)/calc(var(--unitSize) * 2.7) calc(var(--unitSize) * 11.4),
+          linear-gradient(to bottom, $darkYellow 50%, $darkYellow 50%) calc(var(--unitSize) * 26) calc(var(--unitSize) * 52.6)/calc(var(--unitSize) * 0.7) calc(var(--unitSize) * 4.4),
+          linear-gradient(to bottom right, $darkYellow 50%, $yellow 50%) calc(var(--unitSize) * 26.3) calc(var(--unitSize) * 52.6)/calc(var(--unitSize) * 2.7) calc(var(--unitSize) * 6.8),
+          linear-gradient(264.4deg, $transparent 50%, $darkYellow 50%) calc(var(--unitSize) * 25.9) calc(var(--unitSize) * 27.1)/calc(var(--unitSize) * 3.8) calc(var(--unitSize) * 27.2),
+          linear-gradient(to bottom left, $transparent 50%, $yellow 50%) calc(var(--unitSize) * 29) calc(var(--unitSize) * 52.6)/calc(var(--unitSize) * 0.7) calc(var(--unitSize) * 6.8),
+          linear-gradient(802deg, $transparent 50%, $darkYellow 50%) calc(var(--unitSize) * 25.1) calc(var(--unitSize) * 56.5)/calc(var(--unitSize) * 1.9) calc(var(--unitSize) * 2.8),
+          linear-gradient(87.5deg, $transparent 50%, $darkYellow 50%) calc(var(--unitSize) * 24.3) calc(var(--unitSize) * 27.5)/calc(var(--unitSize) * 1.8) calc(var(--unitSize) * 29.1),
+          linear-gradient(to top right, $transparent 50%, $yellow 50%) calc(var(--unitSize) * 26.3) calc(var(--unitSize) * 59.3)/calc(var(--unitSize) * 1.5) calc(var(--unitSize) * 3.1),
+          conic-gradient(from -37deg at 100% 100%, $yellow 31.5deg, $transparent 0deg) calc(var(--unitSize) * 27.7) calc(var(--unitSize) * 54.9)/calc(var(--unitSize) * 2.6) calc(var(--unitSize) * 10.8),
+            // Right Ear
+          radial-gradient(180% 180% at -80% 180%, $transparent calc(100% - calc(var(--unitSize) * 0.2)), $darkBorderSkinTone1 calc(100% - calc(var(--unitSize) * 0.2)), $darkBorderSkinTone1 100%, $transparent 100%) calc(var(--unitSize) * 17.5) calc(var(--unitSize) * 24.3)/calc(var(--unitSize) * 7.75) calc(var(--unitSize) * 10.3),
+          linear-gradient(to top, $skinTone5 50%, $skinTone5 50%) calc(var(--unitSize) * 19) calc(var(--unitSize) * 34)/calc(var(--unitSize) * 6.5) calc(var(--unitSize) * 3.1),
+          radial-gradient(100% 100% at 100% 0, $skinTone5 100%, $transparent 100%) calc(var(--unitSize) * 17.4) calc(var(--unitSize) * 34.7)/calc(var(--unitSize) * 1.9) calc(var(--unitSize) * 2.4),
+          linear-gradient(to top right, $transparent 50%, $skinTone5 50%) calc(var(--unitSize) * 18.4) calc(var(--unitSize) * 36.9)/calc(var(--unitSize) * 6.9) calc(var(--unitSize) * 3.1),
+          conic-gradient(from 127deg at 0 0, $skinTone5 35deg, $transparent 0deg) calc(var(--unitSize) * 12.6) calc(var(--unitSize) * 20.5)/calc(var(--unitSize) * 12.9) calc(var(--unitSize) * 15.5),
+            //Hair - Layer 2
+          linear-gradient(to top, $darkYellow 100%, $darkYellow 100%) calc(var(--unitSize) * 27.85) calc(var(--unitSize) * 21)/calc(var(--unitSize) * 1.8) calc(var(--unitSize) * 3.3),
+          radial-gradient(140% 140% at 130% 140%, $transparent 97%, $darkYellow 97%) calc(var(--unitSize) * 29.55) calc(var(--unitSize) * 15.9)/calc(var(--unitSize) * 3.1) calc(var(--unitSize) * 9.4),
+          radial-gradient(140% 140% at -30% 140%, $transparent 97%, $darkYellow 97%) calc(var(--unitSize) * 23.85) calc(var(--unitSize) * 23.8)/calc(var(--unitSize) * 5.7) calc(var(--unitSize) * 1.2),
+          linear-gradient(to top, $yellow 100%, $yellow 100%) calc(var(--unitSize) * 37.15) calc(var(--unitSize) * 14.2)/calc(var(--unitSize) * 7) calc(var(--unitSize) * 4.4),
+          radial-gradient(130% 130% at 130% 130%, $transparent 70%, $yellow 0, $yellow 90%, $transparent 90%) calc(var(--unitSize) * 27) calc(var(--unitSize) * 7.2)/calc(var(--unitSize) * 14.7) calc(var(--unitSize) * 16.5),
+          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) calc(var(--unitSize) * 24.65) calc(var(--unitSize) * 13.5)/calc(var(--unitSize) * 11.1) calc(var(--unitSize) * 16.1),
+          linear-gradient(to top, $darkYellow 100%, $darkYellow 100%) calc(var(--unitSize) * 18.75) calc(var(--unitSize) * 22.9)/calc(var(--unitSize) * 7.5) calc(var(--unitSize) * 7),
+          radial-gradient(75% 130% at 75% 130%, $transparent 65%, $darkYellow 0, $darkYellow 100%, $transparent 100%) calc(var(--unitSize) * 16.1) calc(var(--unitSize) * 8.9)/calc(var(--unitSize) * 25.4) calc(var(--unitSize) * 16.5),
+          linear-gradient(to bottom, $yellow 100%, $yellow 100%) calc(var(--unitSize) * 52.95) calc(var(--unitSize) * 17.4)/calc(var(--unitSize) * 5.9) calc(var(--unitSize) * 5.8),
+          linear-gradient(to bottom, $yellow 100%, $yellow 100%) calc(var(--unitSize) * 43.85) calc(var(--unitSize) * 14.1)/calc(var(--unitSize) * 11.2) calc(var(--unitSize) * 4.1),
+          radial-gradient(67% 98% at 33% 98%, $transparent 60%, $yellow 0, $yellow 100%, $transparent 100%) calc(var(--unitSize) * 40.95) calc(var(--unitSize) * 8.6)/calc(var(--unitSize) * 20) calc(var(--unitSize) * 14.6),
+          radial-gradient(140% 140% at -30% 140%, $transparent 97%, $yellow 97%) calc(var(--unitSize) * 23.85) calc(var(--unitSize) * 23.1)/calc(var(--unitSize) * 8.8) calc(var(--unitSize) * 4.4),
+          radial-gradient(123% 160% at 115% 160%, $transparent 100%, $yellow 100%) calc(var(--unitSize) * 52.95) calc(var(--unitSize) * 23.1)/calc(var(--unitSize) * 7.8) calc(var(--unitSize) * 3.9),
+          radial-gradient(107% 170% at -00% 170%, $transparent 102%, $yellow 102%) calc(var(--unitSize) * 46.05) calc(var(--unitSize) * 18)/calc(var(--unitSize) * 7) calc(var(--unitSize) * 9),
+          radial-gradient(100% 100% at 100% 100%, $transparent 97%, $yellow 97%) calc(var(--unitSize) * 44.35) calc(var(--unitSize) * 17.9)/calc(var(--unitSize) * 3.1) calc(var(--unitSize) * 4.1),
+          radial-gradient(94% 240% at 61% 250%, $transparent 90%, $yellow 90%, $yellow 111%, $transparent 111%) calc(var(--unitSize) * 32.6) calc(var(--unitSize) * 14)/calc(var(--unitSize) * 11.8) calc(var(--unitSize) * 13.5),
+            //   Nose and Mouth
+          radial-gradient(50% 120% at 50% 120%, $pink 100%, $transparent 100%,) calc(var(--unitSize) * 41.5) calc(var(--unitSize) * 46.85)/calc(var(--unitSize) * 2.65) calc(var(--unitSize) * 0.45),
+          radial-gradient(50% 120% at 50% -20%, $pink 100%, $transparent 100%,) calc(var(--unitSize) * 41.5) calc(var(--unitSize) * 47.25)/calc(var(--unitSize) * 2.65) calc(var(--unitSize) * 0.45),
+          radial-gradient(50% 50% at 50% 50%, $black 100%, $transparent 100%,) calc(var(--unitSize) * 41.3) calc(var(--unitSize) * 45.65)/calc(var(--unitSize) * 3.1) calc(var(--unitSize) * 2.05),
+          radial-gradient(130% 50% at 130% 60%, $transparent calc(100% - calc(var(--unitSize) * 0.2)), $skinTone3 calc(100% - calc(var(--unitSize) * 0.2)), $skinTone3 100%, $transparent 100%,) calc(var(--unitSize) * 42) calc(var(--unitSize) * 39.45)/calc(var(--unitSize) * 0.4) calc(var(--unitSize) * 2.05),
+          linear-gradient(to top right, $transparent calc(50% - calc(var(--unitSize) * 0.1)), $skinTone3 calc(50% - calc(var(--unitSize) * 0.1)), $skinTone3 calc(50% + calc(var(--unitSize) * 0.15)), $transparent calc(50% + calc(var(--unitSize) * 0.15)),) calc(var(--unitSize) * 42.1) calc(var(--unitSize) * 41.1)/calc(var(--unitSize) * 0.7) calc(var(--unitSize) * 1.2),
+          linear-gradient(to bottom right, $transparent calc(50% - calc(var(--unitSize) * 0.1)), $skinTone3 calc(50% - calc(var(--unitSize) * 0.1)), $skinTone3 calc(50% + calc(var(--unitSize) * 0.15)), $transparent calc(50% + calc(var(--unitSize) * 0.15)),) calc(var(--unitSize) * 42.1) calc(var(--unitSize) * 37.85)/calc(var(--unitSize) * 1.8) calc(var(--unitSize) * 2.4),
+            //   Eyes and Eyebrows
+          radial-gradient(55% 100% at 55% 100%, $transparent 78%, $skinTone2 78%, $skinTone2 100%, $transparent 100%) calc(var(--unitSize) * 46.7) calc(var(--unitSize) * 27.2)/calc(var(--unitSize) * 10.3) calc(var(--unitSize) * 3.6),
+          radial-gradient(55% 100% at 55% 100%, $transparent 78%, $lightBrown 78%, $lightBrown 100%, $transparent 100%) calc(var(--unitSize) * 46.8) calc(var(--unitSize) * 26.5)/calc(var(--unitSize) * 10.1) calc(var(--unitSize) * 3.4),
+          linear-gradient(to bottom, $darkSkinTone2 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 28.9) calc(var(--unitSize) * 27.4)/calc(var(--unitSize) * 0.9) calc(var(--unitSize) * 3),
+          linear-gradient(to bottom left, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 31.3) calc(var(--unitSize) * 27.4)/calc(var(--unitSize) * 0.2) calc(var(--unitSize) * 3),
+          radial-gradient(200% 100% at 200% 100%, $darkSkinTone2 100%, $transparent 100%) calc(var(--unitSize) * 28.9) calc(var(--unitSize) * 27.1)/calc(var(--unitSize) * 2.45) calc(var(--unitSize) * 3.3),
+          radial-gradient(200% 100% at 200% 100%, $darkerLightBrown 100%, $transparent 100%) calc(var(--unitSize) * 29.2) calc(var(--unitSize) * 26.5)/calc(var(--unitSize) * 2.1) calc(var(--unitSize) * 2.4),
+          radial-gradient(52% 100% at 48% 100%, $transparent 80%, $skinTone2 80%, $skinTone2 100%, $transparent 100%) calc(var(--unitSize) * 29.4) calc(var(--unitSize) * 26.78)/calc(var(--unitSize) * 12.5) calc(var(--unitSize) * 3.6),
+          radial-gradient(55% 100% at 45% 100%, $transparent 80%, $lightBrown 80%, $lightBrown 100%, $transparent 100%) calc(var(--unitSize) * 29.8) calc(var(--unitSize) * 26.080000000000002)/calc(var(--unitSize) * 12.2) calc(var(--unitSize) * 3.9),
+          linear-gradient(265deg, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 26.05) calc(var(--unitSize) * 26.9)/calc(var(--unitSize) * 6.8) calc(var(--unitSize) * 13.6),
+          linear-gradient(265deg, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 28.95) calc(var(--unitSize) * 26.9)/calc(var(--unitSize) * 4.8) calc(var(--unitSize) * 3.5),
+          linear-gradient(265deg, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 29.65) calc(var(--unitSize) * 36.4)/calc(var(--unitSize) * 4.8) calc(var(--unitSize) * 3.8),
+          radial-gradient(130% 100% at 130% 0%, $transparent 100%, $darkSkinTone2 100%) calc(var(--unitSize) * 28.9) calc(var(--unitSize) * 28.080000000000002)/calc(var(--unitSize) * 3.1) calc(var(--unitSize) * 8.49),
+          radial-gradient(130% 100% at 130% 100%, $transparent 100%, $darkSkinTone2 100%) calc(var(--unitSize) * 29.15) calc(var(--unitSize) * 30.2)/calc(var(--unitSize) * 2.4) calc(var(--unitSize) * 5.49),
+          linear-gradient($skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 42.25) calc(var(--unitSize) * 24.8)/calc(var(--unitSize) * 4) calc(var(--unitSize) * 12.8),
+          linear-gradient($skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 42.45) calc(var(--unitSize) * 24.6)/calc(var(--unitSize) * 11.1) calc(var(--unitSize) * 4.9),
+          radial-gradient(50% 110% at 50% -10%, $transparent 100%, $skinTone2 100%) calc(var(--unitSize) * 46.05) calc(var(--unitSize) * 32.7)/calc(var(--unitSize) * 11.1) calc(var(--unitSize) * 4.890000000000001),
+          radial-gradient(45% 130% at 60% 130%, $transparent 100%, $skinTone2 100%) calc(var(--unitSize) * 44.2) calc(var(--unitSize) * 29.4)/calc(var(--unitSize) * 12.9) calc(var(--unitSize) * 4.7),
+          radial-gradient(50% 50% at 50% 50%, $eyeBlue3 100%, $transparent 100%) calc(var(--unitSize) * 44.55) calc(var(--unitSize) * 29)/calc(var(--unitSize) * 6.5) calc(var(--unitSize) * 6.5),
+          radial-gradient(50% 50% at 50% 50%, $eyeBlue1 100%, $transparent 100%) calc(var(--unitSize) * 42.85) calc(var(--unitSize) * 27.6)/calc(var(--unitSize) * 9.7) calc(var(--unitSize) * 9.59),
+          radial-gradient(50% 110% at 50% -10%, $white 100%, $transparent 100%) calc(var(--unitSize) * 46.05) calc(var(--unitSize) * 32.7)/calc(var(--unitSize) * 11.1) calc(var(--unitSize) * 4.890000000000001),
+          radial-gradient(45% 130% at 60% 130%, $white 100%, $transparent 100%) calc(var(--unitSize) * 44.2) calc(var(--unitSize) * 29.4)/calc(var(--unitSize) * 12.9) calc(var(--unitSize) * 4.7),
+          radial-gradient(50% 100% at 50% 100%, $transparent 50%, $skinTone2 50%, $skinTone2 75%, $transparent 75%) calc(var(--unitSize) * 23.45) calc(var(--unitSize) * 24.7)/calc(var(--unitSize) * 24.4) calc(var(--unitSize) * 8.89),
+          radial-gradient(50% 110% at 50% -10%, $transparent 50%, $skinTone2 50%, $skinTone2 75%, $transparent 75%) calc(var(--unitSize) * 23.15) calc(var(--unitSize) * 32.5)/calc(var(--unitSize) * 25.3) calc(var(--unitSize) * 11.39),
+          linear-gradient(266.5deg, $transparent 50%, #0000001a 50%) calc(var(--unitSize) * 29.1) calc(var(--unitSize) * 30.2)/calc(var(--unitSize) * 5.3) calc(var(--unitSize) * 6.6),
+          radial-gradient(50% 50% at 50% 50%, $eyeBlue3 100%, $transparent 100%) calc(var(--unitSize) * 30.65) calc(var(--unitSize) * 28.9)/calc(var(--unitSize) * 6.3) calc(var(--unitSize) * 6.3),
+          radial-gradient(50% 50% at 50% 50%, $eyeBlue1 100%, $transparent 100%) calc(var(--unitSize) * 29.25) calc(var(--unitSize) * 27.3)/calc(var(--unitSize) * 9.7) calc(var(--unitSize) * 9.59),
+          radial-gradient(50% 110% at 50% -10%, $white 50%, $transparent 50%) calc(var(--unitSize) * 23.15) calc(var(--unitSize) * 32.5)/calc(var(--unitSize) * 25.3) calc(var(--unitSize) * 11.39),
+          radial-gradient(50% 100% at 50% 100%, $white 50%, $transparent 50%) calc(var(--unitSize) * 23.45) calc(var(--unitSize) * 24.7)/calc(var(--unitSize) * 24.4) calc(var(--unitSize) * 8.89),
+            //Face
+          linear-gradient(to top, $darkSkinTone2 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 25.4) calc(var(--unitSize) * 41.9)/calc(var(--unitSize) * 5.8) calc(var(--unitSize) * 2),
+          linear-gradient(to top, $darkSkinTone2 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 24.4) calc(var(--unitSize) * 21)/calc(var(--unitSize) * 6.5) calc(var(--unitSize) * 21),
+          linear-gradient(to top, $skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 34.7) calc(var(--unitSize) * 17.6)/calc(var(--unitSize) * 16.9) calc(var(--unitSize) * 7.5),
+          linear-gradient(to bottom left, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 30.8) calc(var(--unitSize) * 22.6)/calc(var(--unitSize) * 1.7) calc(var(--unitSize) * 21.6),
+          conic-gradient(from -54.5deg at 100% 100%, $darkSkinTone2 50deg, $transparent 0) calc(var(--unitSize) * 25.4) calc(var(--unitSize) * 43.8)/calc(var(--unitSize) * 7.5) calc(var(--unitSize) * 5.4),
+          radial-gradient(100% 100% at 0% 0%, $skinTone2 50%, $transparent 50%) calc(var(--unitSize) * 55.25) calc(var(--unitSize) * 42.6)/calc(var(--unitSize) * 2.6) calc(var(--unitSize) * 5.9),
+          radial-gradient(100% 100% at 100% 0%, $darkSkinTone2 50%, $transparent 50%) calc(var(--unitSize) * 23.35) calc(var(--unitSize) * 41.5)/calc(var(--unitSize) * 2.2) calc(var(--unitSize) * 4.49),
+          radial-gradient(50% 120% at 50% -20%, $skinTone2 50%, $transparent 50%) calc(var(--unitSize) * 36.85) calc(var(--unitSize) * 53.1)/calc(var(--unitSize) * 9.3) calc(var(--unitSize) * 4.59),
+          linear-gradient(to top right, $transparent 50%, $darkSkinTone2 50%) calc(var(--unitSize) * 22.5) calc(var(--unitSize) * 21.7)/calc(var(--unitSize) * 2) calc(var(--unitSize) * 20.7),
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) calc(var(--unitSize) * 56.4) calc(var(--unitSize) * 22.7)/calc(var(--unitSize) * 2.4) calc(var(--unitSize) * 21.3),
+          linear-gradient(to top left, $transparent 50%, $skinTone2 50%) calc(var(--unitSize) * 42.5) calc(var(--unitSize) * 45.3)/calc(var(--unitSize) * 13.3) calc(var(--unitSize) * 9.4),
+          linear-gradient(to top right, $transparent 50%, $skinTone2 50%) calc(var(--unitSize) * 25.3) calc(var(--unitSize) * 43.7)/calc(var(--unitSize) * 15.4) calc(var(--unitSize) * 11.1),
+          linear-gradient(to top, $skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 24.4) calc(var(--unitSize) * 21.9)/calc(var(--unitSize) * 32.1) calc(var(--unitSize) * 19.7),
+          linear-gradient(to top, $skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 54.7) calc(var(--unitSize) * 41.1)/calc(var(--unitSize) * 1.8) calc(var(--unitSize) * 1.7),
+          linear-gradient(to top left, $transparent 41.5%, $skinTone2 41.5%) calc(var(--unitSize) * 40.6) calc(var(--unitSize) * 43.6)/calc(var(--unitSize) * 14.9) calc(var(--unitSize) * 9.6),
+          linear-gradient(to top, $skinTone2 50%, $skinTone2 50%) calc(var(--unitSize) * 25.5) calc(var(--unitSize) * 41.1)/calc(var(--unitSize) * 30.7) calc(var(--unitSize) * 2.8),
+            //Left Ear
+          radial-gradient(180% 180% at 180% 180%, $transparent calc(100% - calc(var(--unitSize) * 0.2)), $darkBorderSkinTone1 calc(100% - calc(var(--unitSize) * 0.2)), $darkBorderSkinTone1 100%, $transparent 100%) calc(var(--unitSize) * 54.5) calc(var(--unitSize) * 22.7)/calc(var(--unitSize) * 8.75) calc(var(--unitSize) * 11.8),
+          linear-gradient(to bottom, $skinTone4 100%, $skinTone4 100%) calc(var(--unitSize) * 56.4) calc(var(--unitSize) * 34.4)/calc(var(--unitSize) * 3.95) calc(var(--unitSize) * 2.4),
+          radial-gradient(100% 100% at 0 0, $skinTone4 100%, $transparent 100%) calc(var(--unitSize) * 60.2) calc(var(--unitSize) * 34.4)/calc(var(--unitSize) * 1.9) calc(var(--unitSize) * 2.4),
+          linear-gradient(to top left, $transparent 50%, $skinTone4 50%) calc(var(--unitSize) * 56.4) calc(var(--unitSize) * 36.5)/calc(var(--unitSize) * 4.7) calc(var(--unitSize) * 2.2),
+          conic-gradient(from 196deg at 100% 0, $skinTone4 34deg, $transparent 0deg) calc(var(--unitSize) * 56.4) calc(var(--unitSize) * 20.2)/calc(var(--unitSize) * 9.9) calc(var(--unitSize) * 15.1),
+            //Hair - Layer 1
+          linear-gradient(to top left, $transparent 50%, $darkYellow 50%) calc(var(--unitSize) * 58.4) calc(var(--unitSize) * 22.7)/calc(var(--unitSize) * 2.6) calc(var(--unitSize) * 13.6),
+          linear-gradient(to bottom, $yellow 50%, $yellow 50%) calc(var(--unitSize) * 54.8) calc(var(--unitSize) * 57.1)/calc(var(--unitSize) * 3.3) calc(var(--unitSize) * 2.4),
+          linear-gradient(to bottom, $yellow 50%, $yellow 50%) calc(var(--unitSize) * 55) calc(var(--unitSize) * 35.9)/calc(var(--unitSize) * 3.4) calc(var(--unitSize) * 21.3),
+          linear-gradient(to bottom right, $transparent 50%, $yellow 50%) calc(var(--unitSize) * 54.3) calc(var(--unitSize) * 35.9)/calc(var(--unitSize) * 0.8) calc(var(--unitSize) * 24.4),
+          linear-gradient(to bottom left, $transparent 50%, $yellow 50%) calc(var(--unitSize) * 58.3) calc(var(--unitSize) * 35.9)/calc(var(--unitSize) * 0.6) calc(var(--unitSize) * 20.4),
+          linear-gradient(to top left, $transparent 50%, $yellow 50%) calc(var(--unitSize) * 57.9) calc(var(--unitSize) * 56.3)/calc(var(--unitSize) * 1) calc(var(--unitSize) * 3.4),
+          conic-gradient(from 2deg at 0% 100%, $yellow 24.5deg, $transparent 0deg) calc(var(--unitSize) * 54.1) calc(var(--unitSize) * 59.4)/calc(var(--unitSize) * 4.1) calc(var(--unitSize) * 7.9),
+            //   Neck
+          linear-gradient(to top right, $transparent 50%, $darkSkinTone1 50%) calc(var(--unitSize) * 30.8) calc(var(--unitSize) * 57.2)/calc(var(--unitSize) * 0.3) calc(var(--unitSize) * 0.9),
+          linear-gradient(-7deg, $transparent 50%, $darkSkinTone1 50%) calc(var(--unitSize) * 31.1) calc(var(--unitSize) * 57.3)/calc(var(--unitSize) * 4.4) calc(var(--unitSize) * 0.9),
+          linear-gradient(to bottom right, $transparent 50%, $skinTone1 50%) calc(var(--unitSize) * 35.4) calc(var(--unitSize) * 52.2)/calc(var(--unitSize) * 2) calc(var(--unitSize) * 5.6),
+          radial-gradient(40% 60% at 50% 65%, $darkSkinTone1 100%, $transparent 100%) calc(var(--unitSize) * 34.9) calc(var(--unitSize) * 50.8)/calc(var(--unitSize) * 2.8) calc(var(--unitSize) * 6.7),
+          radial-gradient(40% 60% at 50% 65%, $darkSkinTone1 100%, $transparent 100%) calc(var(--unitSize) * 34.9) calc(var(--unitSize) * 50.6)/calc(var(--unitSize) * 2.8) calc(var(--unitSize) * 6.9),
+          radial-gradient(50% 130% at 50% 58%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 35.3) calc(var(--unitSize) * 51.3)/calc(var(--unitSize) * 12.1) calc(var(--unitSize) * 7.7),
+          radial-gradient(50% 130% at 50% 58%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 35.3) calc(var(--unitSize) * 51.3)/calc(var(--unitSize) * 12.1) calc(var(--unitSize) * 7.7),
+          radial-gradient(46% 72% at 54% 72%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 45.2) calc(var(--unitSize) * 54.2)/calc(var(--unitSize) * 6.4) calc(var(--unitSize) * 3.1),
+          radial-gradient(46% 72% at 54% 72%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 45.2) calc(var(--unitSize) * 54.2)/calc(var(--unitSize) * 6.4) calc(var(--unitSize) * 3.1),
+          radial-gradient(48% 72% at 50% 72%, $darkSkinTone1 100%, $transparent 100%) calc(var(--unitSize) * 30.45) calc(var(--unitSize) * 54.3)/calc(var(--unitSize) * 7) calc(var(--unitSize) * 3.1),
+          radial-gradient(250% 140% at -150% -40%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 40.5) calc(var(--unitSize) * 57.2)/calc(var(--unitSize) * 12.2) calc(var(--unitSize) * 13),
+          radial-gradient(250% 140% at 250% -40%, $skinTone1 100%, $transparent 100%) calc(var(--unitSize) * 29.6) calc(var(--unitSize) * 57.2)/calc(var(--unitSize) * 11) calc(var(--unitSize) * 13),
+            //   Shirt
+          linear-gradient(to top, $darkWhiteBlue 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 28.3) calc(var(--unitSize) * 54.9)/calc(var(--unitSize) * 4.6) calc(var(--unitSize) * 2.3),
+          linear-gradient(to top, $darkWhiteBlue 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 25.9) calc(var(--unitSize) * 55.6)/calc(var(--unitSize) * 4.8) calc(var(--unitSize) * 2.3),
+          linear-gradient(to top left, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 26) calc(var(--unitSize) * 57.9)/calc(var(--unitSize) * 1.1) calc(var(--unitSize) * 1.6),
+          linear-gradient(to top right, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 24.8) calc(var(--unitSize) * 56.6)/calc(var(--unitSize) * 1.2) calc(var(--unitSize) * 2.9),
+          linear-gradient(to top left, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 26.3) calc(var(--unitSize) * 57.1)/calc(var(--unitSize) * 12) calc(var(--unitSize) * 1.6),
+          linear-gradient(to top, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 50.5) calc(var(--unitSize) * 56.3)/calc(var(--unitSize) * 4.8) calc(var(--unitSize) * 2.3),
+          radial-gradient(50% 90% at 50% 90%, $whiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 45.6) calc(var(--unitSize) * 53.4)/calc(var(--unitSize) * 9.6) calc(var(--unitSize) * 3),
+          radial-gradient(50% 90% at 50% 90%, $darkWhiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 28.3) calc(var(--unitSize) * 53.4)/calc(var(--unitSize) * 8.8) calc(var(--unitSize) * 1.6),
+          radial-gradient(50% 90% at 50% 90%, $darkWhiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 28.3) calc(var(--unitSize) * 53.4)/calc(var(--unitSize) * 8.8) calc(var(--unitSize) * 1.6),
+          radial-gradient(50% 90% at 50% 90%, $darkWhiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 24.8) calc(var(--unitSize) * 55.1)/calc(var(--unitSize) * 3.7) calc(var(--unitSize) * 1.5),
+          radial-gradient(50% 110% at 50% -10%, $whiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 46.8) calc(var(--unitSize) * 70.6)/calc(var(--unitSize) * 2.4) calc(var(--unitSize) * 0.8),
+          radial-gradient(50% 100% at 50% 0%, $whiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 30.9) calc(var(--unitSize) * 70.7)/calc(var(--unitSize) * 2.2) calc(var(--unitSize) * 0.7),
+          linear-gradient(to top, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 47) calc(var(--unitSize) * 58.8)/calc(var(--unitSize) * 2.2) calc(var(--unitSize) * 11.9),
+          linear-gradient(to top, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 30.9) calc(var(--unitSize) * 59)/calc(var(--unitSize) * 2) calc(var(--unitSize) * 11.9),
+          linear-gradient(to top, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 30.7) calc(var(--unitSize) * 54.8)/calc(var(--unitSize) * 19.9) calc(var(--unitSize) * 11.9),
+          linear-gradient(to top left, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 49.1) calc(var(--unitSize) * 57.8)/calc(var(--unitSize) * 8.3) calc(var(--unitSize) * 13.2),
+          linear-gradient(to top right, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 40.5) calc(var(--unitSize) * 66.6)/calc(var(--unitSize) * 6.7) calc(var(--unitSize) * 4.6),
+          linear-gradient(to top left, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 32.7) calc(var(--unitSize) * 66.6)/calc(var(--unitSize) * 8) calc(var(--unitSize) * 4.6),
+          linear-gradient(to top right, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 24.8) calc(var(--unitSize) * 56.5)/calc(var(--unitSize) * 6.2) calc(var(--unitSize) * 14.5),
+          radial-gradient($darkBlue 100%, $darkBlue 100%) calc(var(--unitSize) * 22.8) calc(var(--unitSize) * 55.4)/calc(var(--unitSize) * 8.2) calc(var(--unitSize) * 2),
+          radial-gradient(300% 100% at 300% 0%, $darkBlue 100%, $transparent 100%) calc(var(--unitSize) * 22.7) calc(var(--unitSize) * 55.5)/calc(var(--unitSize) * 0.4) calc(var(--unitSize) * 11.2),
+          radial-gradient(100% 100% at 100% 100%, $transparent 100%, $darkBlue 100%) calc(var(--unitSize) * 23) calc(var(--unitSize) * 57.1)/calc(var(--unitSize) * 11.8) calc(var(--unitSize) * 7.5),
+          radial-gradient(50% 140% at 50% 140%, $blue 100%, $transparent 100%) calc(var(--unitSize) * 54.9) calc(var(--unitSize) * 55)/calc(var(--unitSize) * 4.9) calc(var(--unitSize) * 0.6),
+          radial-gradient(50% 140% at 50% 140%, $darkBlue 100%, $transparent 100%) calc(var(--unitSize) * 22.7) calc(var(--unitSize) * 54.7)/calc(var(--unitSize) * 7.3) calc(var(--unitSize) * 0.9),
+          radial-gradient(50% 200% at 50% 0%, $blue 100%, $transparent 100%) calc(var(--unitSize) * 22.7) calc(var(--unitSize) * 55.4)/calc(var(--unitSize) * 36.8) calc(var(--unitSize) * 20.4),
+          linear-gradient(to top right, $darkWhiteBlue 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 20.6) calc(var(--unitSize) * 56)/calc(var(--unitSize) * 4.6) calc(var(--unitSize) * 2.6),
+          linear-gradient(to top right, $darkWhiteBlue 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 17.7) calc(var(--unitSize) * 56)/calc(var(--unitSize) * 4.8) calc(var(--unitSize) * 8.1),
+          radial-gradient(100% 100% at 100% 100%, $transparent 100%, $darkWhiteBlue 100%) calc(var(--unitSize) * 21.7) calc(var(--unitSize) * 57.8)/calc(var(--unitSize) * 9.6) calc(var(--unitSize) * 11.2),
+          linear-gradient(to top right, $darkWhiteBlue 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 12.2) calc(var(--unitSize) * 63.7)/calc(var(--unitSize) * 9.6) calc(var(--unitSize) * 3.5),
+          radial-gradient(80% 100% at 70% 100%, $darkWhiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 17.4) calc(var(--unitSize) * 54.1)/calc(var(--unitSize) * 2.1) calc(var(--unitSize) * 2.2),
+          radial-gradient(100% 100% at 100% 70%, $darkWhiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 9.5) calc(var(--unitSize) * 63.8)/calc(var(--unitSize) * 2.7) calc(var(--unitSize) * 2.7),
+          linear-gradient(to top right, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 13.1) calc(var(--unitSize) * 65.7)/calc(var(--unitSize) * 8.7) calc(var(--unitSize) * 2.3),
+          linear-gradient(-80deg, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 13.5) calc(var(--unitSize) * 67.1)/calc(var(--unitSize) * 8.7) calc(var(--unitSize) * 8.6),
+          linear-gradient(to bottom right, $transparent 20%, $whiteBlue 20%) calc(var(--unitSize) * 16.5) calc(var(--unitSize) * 63.4)/calc(var(--unitSize) * 8.9) calc(var(--unitSize) * 12.3),
+          linear-gradient(to bottom left, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 19.3) calc(var(--unitSize) * 54.2)/calc(var(--unitSize) * 6.2) calc(var(--unitSize) * 2),
+          linear-gradient(to bottom right, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 9.8) calc(var(--unitSize) * 54.5)/calc(var(--unitSize) * 8.1) calc(var(--unitSize) * 9.8),
+          linear-gradient(81deg, $transparent 50%, $darkWhiteBlue 50%) calc(var(--unitSize) * 6.1) calc(var(--unitSize) * 66.1)/calc(var(--unitSize) * 8.3) calc(var(--unitSize) * 9.6),
+          radial-gradient(50% 120% at 50% 120%, $whiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 63.4) calc(var(--unitSize) * 54)/calc(var(--unitSize) * 1.9) calc(var(--unitSize) * 0.7),
+          linear-gradient(to bottom, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 63.6) calc(var(--unitSize) * 54.5)/calc(var(--unitSize) * 1.6) calc(var(--unitSize) * 2.5),
+          linear-gradient(to bottom, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 68.5) calc(var(--unitSize) * 64.4)/calc(var(--unitSize) * 2.6) calc(var(--unitSize) * 1.2),
+          radial-gradient(250% 80% at -150% 40%, $whiteBlue 100%, $transparent 100%) calc(var(--unitSize) * 71) calc(var(--unitSize) * 64.3)/calc(var(--unitSize) * 0.3) calc(var(--unitSize) * 1.6),
+          linear-gradient(to bottom, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 56.6) calc(var(--unitSize) * 56.6)/calc(var(--unitSize) * 8.9) calc(var(--unitSize) * 11.6),
+          linear-gradient(to bottom, $whiteBlue 50%, $whiteBlue 50%) calc(var(--unitSize) * 56.6) calc(var(--unitSize) * 64.2)/calc(var(--unitSize) * 12.5) calc(var(--unitSize) * 11.6),
+          linear-gradient(to bottom right, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 56.7) calc(var(--unitSize) * 54.2)/calc(var(--unitSize) * 7) calc(var(--unitSize) * 2.6),
+          linear-gradient(to bottom left, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 65.1) calc(var(--unitSize) * 54.3)/calc(var(--unitSize) * 6.2) calc(var(--unitSize) * 10.2),
+          linear-gradient(to top left, $transparent 50%, $whiteBlue 50%) calc(var(--unitSize) * 69.1) calc(var(--unitSize) * 65.5)/calc(var(--unitSize) * 2.1) calc(var(--unitSize) * 10.4),
+            // Hair Layer 1
+          radial-gradient(120% 60% at -50% 40%, $transparent 100%, $darkerYellow 100%) calc(var(--unitSize) * 17.2) calc(var(--unitSize) * 36.1)/calc(var(--unitSize) * 2.9) calc(var(--unitSize) * 20),
+          linear-gradient(to bottom, $darkerYellow 50%, $darkerYellow 50%) calc(var(--unitSize) * 19.4) calc(var(--unitSize) * 36.7)/calc(var(--unitSize) * 37.4) calc(var(--unitSize) * 19.5),
+
+}
+
+.canvas {
+  background-repeat: no-repeat;
+}
