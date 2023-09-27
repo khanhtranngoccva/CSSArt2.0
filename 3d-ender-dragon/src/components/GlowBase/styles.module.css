@@ -1,0 +1,19 @@
+.glowBase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--width) * 1.05 + 1px);
+    width: calc(var(--length) * 1.05 + 1px);
+    backface-visibility: visible;
+}
+
+.glowBase::before {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    background: purple;
+    filter: blur(10px);
+}

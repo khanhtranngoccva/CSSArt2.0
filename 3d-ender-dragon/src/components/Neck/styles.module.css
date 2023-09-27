@@ -1,0 +1,14 @@
+.lightNodeSide {
+    filter: drop-shadow(0 0 3px purple);
+}
+
+.node {
+    transform: translateY(-3px);
+    animation: move 1s ease-in-out infinite;
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(3px);
+    }
+}

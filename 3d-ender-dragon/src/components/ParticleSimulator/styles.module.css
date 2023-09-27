@@ -1,0 +1,10 @@
+.windParticle {
+    transform: translateZ(5000px);
+    animation: flow infinite linear;
+}
+
+@keyframes flow {
+    100% {
+        transform: translateZ(-5000px);
+    }
+}

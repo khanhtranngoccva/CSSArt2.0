@@ -1,0 +1,16 @@
+.camera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    --rotateX: 0deg;
+    --rotateY: 0deg;
+    --rotateZ: 0deg;
+}
+
+.cameraRotator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) rotateZ(var(--rotateZ));
+}

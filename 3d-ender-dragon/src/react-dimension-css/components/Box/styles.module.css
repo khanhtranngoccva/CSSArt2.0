@@ -1,0 +1,51 @@
+.root {
+    --width: 0px;
+    --height: 0px;
+    --length: 0px;
+    --x: 0px;
+    --y: 0px;
+    --z: 0px;
+    transform: translate3d(var(--x), var(--y), var(--z));
+}
+
+.left {
+    height: var(--height);
+    width: var(--width);
+    transform: translate(-50%, -50%) rotateY(-90deg) translateZ(calc(var(--length) / 2));
+}
+
+.front {
+    height: var(--height);
+    width: var(--length);
+    transform: translate(-50%, -50%) translateZ(calc(var(--width) / 2));
+}
+
+.back {
+    height: var(--height);
+    width: var(--length);
+    transform: translate(-50%, -50%) rotateY(180deg) translateZ(calc(var(--width) / 2));
+}
+
+.right {
+    height: var(--height);
+    width: var(--width);
+    transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc(var(--length) / 2));
+}
+
+.top {
+    height: var(--width);
+    width: var(--length);
+    transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc(var(--height) / 2));
+}
+
+.bottom {
+    height: var(--width);
+    width: var(--length);
+    transform: translate(-50%, -50%) rotateX(-90deg) translateZ(calc(var(--height) / 2));
+}
+
+.side {
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: flat;
+}

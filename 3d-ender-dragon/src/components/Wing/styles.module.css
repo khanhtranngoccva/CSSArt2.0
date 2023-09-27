@@ -1,0 +1,96 @@
+.wingSegment2Background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #181818;
+    clip-path: polygon(0px 0px, 0% 100%, 100% 100%, 76.58% 86.4%, 61.99% 56.97%, 58.81% 35.23%, 41.19% 32.54%, 24.73% 27.84%, 7.11% 15.08%);
+}
+
+.flipped {
+    transform: scaleX(-1);
+}
+
+.wingSegment2Curve1 {
+    position: absolute;
+    width: 60%;
+    height: 36%;
+    border: 5px solid #ffd9ff;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.wingSegment2Curve2 {
+    position: absolute;
+    width: 40%;
+    top: 33%;
+    left: 58%;
+    height: 64%;
+    border: 4px solid #ffd9ff;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.wingSegment2Curve3 {
+    position: absolute;
+    width: 80%;
+    top: -4%;
+    left: -14%;
+    height: 103%;
+    border: 0 solid #ffd9ff;
+    border-right-width: 6px;
+    border-bottom-width: 8px;
+    border-radius: 0 0 100% 0;
+    clip-path: polygon(16.89% 20.21%, 91.86% 36.96%, 121.24% 141.27%, 16.95% 117.79%);
+}
+
+.wingSegment2Curve4 {
+    position: absolute;
+    width: 7%;
+    height: 100%;
+    background: #ffd9ff;
+    border-radius: 0 100% 0 0;
+}
+
+.wingSegment2CurveFilter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: drop-shadow(0 0 8px purple);
+}
+
+.segmentContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.backfaceSegment {
+    backface-visibility: visible;
+}
+
+.animationLayer1 {
+    transform: rotateZ(30deg);
+    animation: layer1 1s ease-in-out infinite;
+}
+
+@keyframes layer1 {
+    50% {
+        transform: rotateZ(-15deg);
+    }
+}
+
+
+.animationLayer2 {
+    transform: rotateZ(-35deg);
+    animation: layer2 1s ease-in-out infinite;
+    animation-delay: -0.15s;
+}
+
+@keyframes layer2 {
+    50% {
+        transform: rotateZ(15deg);
+    }
+}
+

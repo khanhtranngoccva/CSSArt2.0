@@ -1,0 +1,64 @@
+.head {
+    transform: translateY(-3px);
+    animation: move 1s ease-in-out infinite;
+    animation-delay: -1.2s;
+}
+
+.lightNodeSide {
+    filter: drop-shadow(0 0 5px purple);
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(3px);
+    }
+}
+
+.mouth2 {
+    transform-origin: 0 -7.5px -22.5px;
+    animation: openMouth 1s ease-in-out infinite;
+    transform: rotateX(-7.5deg);
+}
+
+@keyframes openMouth {
+    50% {
+        transform: rotateX(-17.5deg);
+    }
+}
+
+.face {
+    display: flex;
+    justify-content: center;
+}
+
+.eyeFilter {
+    filter: drop-shadow(0 0 5px purple) drop-shadow(0 0 5px purple);
+}
+
+.eye {
+    width: 12px;
+    height: 6px;
+    top: 8px;
+    right: 3px;
+    position: absolute;
+    background: #f9c6ff;
+    clip-path: polygon(0 0, 75% 0, 75% 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.eye::before {
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    top: 0;
+    position: absolute;
+    display: block;
+    content: "";
+    clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0% 100%);
+    background: #c838e0;
+}
+
+.flippedEye {
+    left: 3px;
+    transform: scaleX(-1);
+}
+

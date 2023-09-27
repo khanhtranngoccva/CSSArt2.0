@@ -1,0 +1,26 @@
+.root {
+    --radius: 0px;
+    --x: 0px;
+    --y: 0px;
+    --z: 0px;
+    transform: translate3d(var(--x), var(--y), var(--z));
+    /* Computed by JS */
+    --faceHeight: 0px;
+    --faceWidth: 0px;
+    position: absolute;
+}
+
+.arc {
+    --rotation: 0deg;
+    transform: rotateY(var(--rotation));
+    position: absolute;
+}
+
+.face {
+    height: calc(var(--faceHeight));
+    width: calc(var(--faceWidth));
+    position: absolute;
+    transform: translate(-50%, -50%) rotateX(var(--rotation)) translateZ(var(--radius));
+    transform-style: flat;
+    backface-visibility: hidden;
+}

@@ -1,0 +1,40 @@
+.flipped {
+    transform: scaleX(-1);
+}
+
+.animationLayer1 {
+    transform: rotateX(5deg);
+    animation: layer1 1s ease-in-out infinite;
+    animation-delay: -0.4s;
+}
+
+@keyframes layer1 {
+    50% {
+        transform: rotateX(15deg);
+    }
+}
+
+
+.animationLayer2 {
+    transform: rotateX(-15deg);
+    animation: layer2 1s ease-in-out infinite;
+    animation-delay: -0.3s;
+}
+
+@keyframes layer2 {
+    50% {
+        transform: rotateX(10deg);
+    }
+}
+
+.animationLayer3 {
+    transform: rotateX(-25deg);
+    animation: layer3 1s ease-in-out infinite;
+    animation-delay: -0.2s;
+}
+
+@keyframes layer3 {
+    50% {
+        transform: rotateX(15deg);
+    }
+}
